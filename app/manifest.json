@@ -1,0 +1,18 @@
+{
+	"name": "Dribles FIFA",
+	"description": "Guia de bolso (e smartphone) p/ parte mais legal do FIFA: humilhar os adversários com dribles e comemorar os golaços. Atualizado p/ FIFA15, reorganizado e agora com busca.",
+	"version": "15",
+	"manifest_version": 15,
+	"icons": {
+		"128": "icon-128.png",
+		"256": "icon-256.png"
+	},
+	"app": {
+		"urls": [
+			"http://saviomd.com/driblesfifa/"
+		],
+		"launch": {
+			"web_url": "http://saviomd.com/driblesfifa/"
+		}
+	}
+}

@@ -1,0 +1,175 @@
+block pageData
+	- var page = {}
+	- page.path = ''
+	- page.title = 'Dribles FIFA'
+	- page.description = 'Guia de bolso (e smartphone) p/ parte mais legal do FIFA: humilhar os adversários com dribles e comemorar os golaços. Atualizado p/ FIFA15, reorganizado e agora com busca.'
+	- page.keywords = 'xbox,xbox 360,xbox one,playstation,playstation 3,ps3, playstation 4, ps4,fifa,futebol,soccer,dribles,comemorações'
+
+extends ../_templates/default.jade
+
+block content
+
+	include ../_data/skills.jade
+	include ../_data/celebrations.jade
+
+	.section.row#home
+		.col-xs-12
+			p= 'Guia de bolso (e smartphone) p/ parte mais legal do FIFA: humilhar os adversários com dribles e comemorar os golaços.'
+		.col-xs-12.col-sm-8.col-sm-offset-2
+			.btn-group.btn-group-justified.videogames
+				a.btn.btn-default.active#xbox(href='#')= 'Xbox'
+				a.btn.btn-default#ps(href='#')= 'PlayStation'
+			.list-group.list-group--home
+				a.list-group-item(href='#skills')
+					span.glyphicon.glyphicon-chevron-right
+					= 'Dribles'
+				a.list-group-item(href='#celebrations')
+					span.glyphicon.glyphicon-chevron-right
+					= 'Comemorações'
+				a.list-group-item(href='#instructions')
+					span.glyphicon.glyphicon-chevron-right
+					= 'Instruções'
+			hr
+			p= 'Compartilhe:'
+			.row
+				.col-xs-4
+					a.link-share.link-share--facebook(href='https://www.facebook.com/sharer/sharer.php?u=http://saviomd.com/driblesfifa' target='_blank' title='Facebook')= 'f'
+				.col-xs-4
+					a.link-share.link-share--twitter(href='https://twitter.com/intent/tweet?url=http://saviomd.com/driblesfifa&text=Dribles FIFA: Guia de bolso (e smartphone) p/ parte mais legal do FIFA' target='_blank' title='twitter')= 't'
+				.col-xs-4
+					a.link-share.link-share--googleplus(href='https://plus.google.com/share?url=http://saviomd.com/driblesfifa' target='_blank' title='Google+')= 'g+'
+
+	.section.row.hidden#skills
+		.col-xs-12
+			.row
+				.form-group.col-xs-3
+					.dropdown
+						button.btn.btn-default.btn-block.dropdown-toggle(type='button' data-toggle='dropdown')
+							span.glyphicon.glyphicon-th-list
+						ul.dropdown-menu
+							li.active
+								a.js-filter-all(href='#' data-list='skills')= 'Todos'
+							li.divider
+							li
+								a.js-filter-new(href='#' data-list='skills')= 'Novos'
+							li.divider
+							li
+								a.js-filter-type(href='#' data-list='skills' data-type='1')= '★'
+							li
+								a.js-filter-type(href='#' data-list='skills' data-type='2')= '★★'
+							li
+								a.js-filter-type(href='#' data-list='skills' data-type='3')= '★★★'
+							li
+								a.js-filter-type(href='#' data-list='skills' data-type='4')= '★★★★'
+							li
+								a.js-filter-type(href='#' data-list='skills' data-type='5')= '★★★★★'
+				.form-group.col-xs-9
+					.input-group
+						input.form-control.js-search-field.js-search-field-skills(data-list='skills' type='search' placeholder='Buscar...')
+						span.input-group-btn
+							button.btn.btn-default.js-search-clear(data-list='skills')
+								span.glyphicon.glyphicon-remove
+			.js-list-skills
+				each item in skills
+					.well.well-sm
+						h2.well__name.name
+							= item.name.en
+							i= item.name.pt
+						h3.well__command!= item.command
+						span.label.label-default
+							if item.stars == 1
+								= '★'
+							if item.stars == 2
+								= '★★'
+							if item.stars == 3
+								= '★★★'
+							if item.stars == 4
+								= '★★★★'
+							if item.stars == 5
+								= '★★★★★'
+						if item.new == 1 || item.new == 2
+							span.label.label-primary.new= 'Novo'
+						.type.hidden= item.stars
+			include ../_includes/banner.jade
+
+	.section.row.hidden#celebrations
+		.col-xs-12
+			.row
+				.form-group.col-xs-3
+					.dropdown
+						button.btn.btn-default.btn-block.dropdown-toggle(type='button' data-toggle='dropdown')
+							span.glyphicon.glyphicon-th-list
+						ul.dropdown-menu
+							li.active
+								a.js-filter-all(href='#' data-list='celebrations')= 'Todos'
+							li.divider
+							li
+								a.js-filter-new(href='#' data-list='celebrations')= 'Novos'
+							li.divider
+							li
+								a.js-filter-type(href='#' data-list='celebrations' data-type='Corrida')= 'Corrida'
+							li
+								a.js-filter-type(href='#' data-list='celebrations' data-type='Finalização')= 'Finalização'
+							li
+								a.js-filter-type(href='#' data-list='celebrations' data-type='Pro')= 'Pro'
+							li
+								a.js-filter-type(href='#' data-list='celebrations' data-type='EASFC')= 'EASFC'
+				.form-group.col-xs-9
+					.input-group
+						input.form-control.js-search-field.js-search-field-celebrations(data-list='celebrations' type='search' placeholder='Buscar...')
+						span.input-group-btn
+							button.btn.btn-default.js-search-clear(data-list='celebrations')
+								span.glyphicon.glyphicon-remove
+			.js-list-celebrations
+				each item in celebrations
+					.well.well-sm
+						h2.well__name.name
+							= item.name.en
+							i= item.name.pt
+						h3.well__command!= item.command
+						span.label.label-default.type= item.type
+						if item.new == 1 || item.new == 2
+							span.label.label-primary.new= 'Novo'
+			include ../_includes/banner.jade
+
+	.section.row.hidden#instructions
+		.col-xs-12
+			table.table.table-striped
+				tbody
+					tr
+						td(colspan='2')= 'Comandos de drible assumem o jogador se movendo para cima da tela'
+					tr
+						td(colspan='2')= 'Comemorações Pro e EASFC precisam ser desbloqueadas (evoluindo seu jogador Pro e comprando na EASFC Catalogue) para serem usadas'
+					tr
+						td(colspan='2')= 'Comemorações marcadas como "agile players / jogador ágil" são executadas apenas pelos jogadores mais habilidosos'
+					tr
+						td= 'LS'
+						td= 'Left stick, alavanca esquerda'
+					tr
+						td= 'RS'
+						td= 'Right stick, alavanca direita'
+					tr
+						td= 'LS ↑ / → / ↓ / ← / ...'
+						td= 'Direção usando a alavanca esquerda'
+					tr
+						td= 'RS ↑ / → / ↓ / ← / ...'
+						td= 'Direção usando a alavanca direita'
+					tr
+						td= '↻'
+						td= 'Girar alavanca no sentido horário (começando de baixo)'
+					tr
+						td= '↺'
+						td= 'Girar alavanca no sentido anti-horário (começando de baixo)'
+					tr
+						td!= '<i class="btn-lb"></i>'
+						td= 'Botão superior esquerdo'
+					tr
+						td!= '<i class="btn-rb"></i>'
+						td= 'Botão superior direito'
+					tr
+						td!= '<i class="btn-lt"></i>'
+						td= 'Botão gatilho esquerdo'
+					tr
+						td!= '<i class="btn-rt"></i>'
+						td= 'Botão gatilho direito'
+			include ../_includes/banner.jade

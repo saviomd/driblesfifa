@@ -1,0 +1,16 @@
+{
+	"name": "Dribles FIFA",
+	"description": "Guia de bolso (e smartphone) p/ parte mais legal do FIFA: humilhar os adversários com dribles e comemorar os golaços. Atualizado p/ FIFA15, reorganizado e agora com busca.",
+	"launch_path": "/driblesfifa/index.html",
+	"icons": {
+		"128": "/driblesfifa/app/icon-128.png",
+		"256": "/driblesfifa/app/icon-256.png"
+	},
+	"developer": {
+		"name": "Sávio Mendes",
+		"url": "http://saviomd.com"
+	},
+	"default_locale": "pt-BR",
+	"appcache_path": "/driblesfifa/manifest.appcache",
+	"fullscreen": "true"
+}
