@@ -12,16 +12,9 @@ head
 	link(rel='shortcut icon' href=site.url + 'img/favicon.png')
 	link(rel='apple-touch-icon' href=site.url + 'img/apple-touch-icon.png')
 
-	//- android meta tags
+	//- chrome android meta tags
+	meta(name='theme-color' content='#f8cc32')
 	meta(name='mobile-web-app-capable' content='yes')
-
-	//- twitter meta tags
-	if site.twitter
-		meta(name='twitter:card' content='summary')
-		meta(name='twitter:site' content=site.twitter)
-		meta(name='twitter:title' content=site.name + ' » ' + page.title)
-		meta(name='twitter:description' content=page.description)
-		meta(name='twitter:image:src' content=site.url + 'app/img/icon-256.png')
 
 	//- open graph meta tags
 	if site.fbadmins
@@ -32,6 +25,14 @@ head
 		meta(property='og:url' content=site.url + page.path)
 		meta(property='og:type' content='website')
 		meta(property='fb:admins' content=site.fbadmins)
+
+	//- twitter meta tags
+	if site.twitter
+		meta(name='twitter:card' content='summary')
+		meta(name='twitter:site' content=site.twitter)
+		meta(name='twitter:title' content=site.name + ' » ' + page.title)
+		meta(name='twitter:description' content=page.description)
+		meta(name='twitter:image:src' content=site.url + 'app/img/icon-256.png')
 
 	//- windows meta tags
 	meta(name='msapplication-TileImage' content='img/favicon.png')
