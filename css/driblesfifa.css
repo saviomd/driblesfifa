@@ -4850,6 +4850,10 @@ a.list-group-item:hover {
 .navbar-toggle {
   padding: 2px 10px;
 }
+.navbar-toggle:before {
+  content: "☰";
+  padding-right: 4px;
+}
 .table > tbody > tr > td,
 .table > tbody > tr > th,
 .table > tfoot > tr > td,
