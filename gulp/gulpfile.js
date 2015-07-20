@@ -1,12 +1,13 @@
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
-var csscomb = require('gulp-csscomb');
+//var csscomb = require('gulp-csscomb');
 var csslint = require('gulp-csslint');
 var del = require('del');
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var jade = require('gulp-jade');
+var jscs = require('gulp-jscs');
 var jshint = require('gulp-jshint');
 var less = require('gulp-less');
 var minifyCss = require('gulp-minify-css');
@@ -23,11 +24,15 @@ configs
 -autoprefixer: https://github.com/postcss/autoprefixer#browsers
 -csscomb: https://github.com/csscomb/csscomb.js/blob/master/doc/options.md
 -csslint: https://github.com/CSSLint/csslint/wiki/Rules
+-jade: http://jade-lang.com/api/
+-jscs: http://jscs.info/rules.html
 -jshint: https://github.com/jshint/jshint/blob/master/examples/.jshintrc
 -stylestats: https://github.com/t32k/stylestats/blob/master/assets/default.json
 */
 var autoprefixerConfig = { browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Android >= 2'] };
 var csslintConfig = require('./csslintrc.json');
+var jadeConfig = { pretty: true };
+var jscsConfig = { configPath: './jscs.json', fix: true };
 var jshintConfig = require('./jshintrc.json');
 var stylestatsConfig = require('./stylestats.json');
 
@@ -44,7 +49,7 @@ gulp.task('clean', function(cb) {
 
 gulp.task('html', function() {
 	return gulp.src('../_pages/*.jade')
-		.pipe(jade({ pretty: true }))
+		.pipe(jade(jadeConfig))
 		.pipe(minifyHtml())
 		.pipe(gulp.dest('../'))
 		.pipe(notify({ onLast: true, message: 'Finished html' }))
@@ -63,8 +68,8 @@ gulp.task('manifests', function() {
 
 gulp.task('css', function() {
 	return gulp.src('../_css/driblesfifa.less')
-		.pipe(csscomb())
-		.pipe(gulp.dest('../_css'))
+		//.pipe(csscomb())
+		//.pipe(gulp.dest('../_css'))
 		.pipe(less())
 		.pipe(autoprefixer(autoprefixerConfig))
 		.pipe(csslint(csslintConfig))
@@ -88,6 +93,8 @@ gulp.task('js', function() {
 				return file.relative + ' (' + file.jshint.results.length + ' errors)';
 			}
 		}))
+		.pipe(jscs(jscsConfig))
+		.pipe(gulp.dest('../_js'))
 
 	return gulp.src([
 			'../../lib/bootstrap/js/transition.js',
