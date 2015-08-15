@@ -1,17 +1,12 @@
-/* global _gaq, cookie, List */
-/*! driblesfifa js */
+/* global _gaq, Cookies, List */
 
 var driblesfifa = driblesfifa || {};
 
 driblesfifa.load = (function() {
 
-	if ('console' in window) {
-		console.log('Original source code: http://github.com/saviomd/driblesfifa');
-	}
-
 	/*
 	recarregar pagina se conteudo foi alterado
-	==================================================
+	====================
 	*/
 	applicationCache.onupdateready = function() {
 		location.reload();
@@ -23,7 +18,7 @@ driblesfifa.nav = (function() {
 
 	/*
 	navegacao do site
-	==================================================
+	====================
 	*/
 	$('.navbar-brand, .navbar-nav a, .list-group--home a').on('click', function(e) {
 		e.preventDefault();
@@ -44,10 +39,10 @@ driblesfifa.nav = (function() {
 
 	/*
 	cookie videogame
-	==================================================
+	====================
 	*/
 	var alterarVideogame = function() {
-		var videogame = cookie.get('videogame');
+		var videogame = Cookies.get('videogame');
 		$('.videogames a').removeClass('active');
 		if (typeof videogame !== 'undefined' && videogame === 'ps') {
 			$('#ps').addClass('active');
@@ -62,7 +57,7 @@ driblesfifa.nav = (function() {
 	$('.videogames a').on('click', function(e) {
 		e.preventDefault();
 		var videogame = $(this).attr('id');
-		cookie.set('videogame', videogame, {expires:365, path:'/'});
+		Cookies.set('videogame', videogame, {expires: 365, path: '/'});
 		alterarVideogame();
 	});
 
@@ -177,7 +172,7 @@ driblesfifa.share = (function() {
 
 	/*
 	share popup
-	==================================================
+	====================
 	*/
 	$('.link-share').on('click', function(e) {
 		e.preventDefault();
@@ -191,7 +186,7 @@ driblesfifa.events = (function() {
 
 	/*
 	track events
-	==================================================
+	====================
 	*/
 	if (location.search.indexOf('a=0') === -1) {
 

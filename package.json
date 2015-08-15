@@ -1,31 +1,38 @@
 {
   "name": "driblesfifa",
-  "version": "1.0.20150719",
+  "version": "1.0.20150815",
   "description": "Guia de bolso (e smartphone) p/ parte mais legal do FIFA: humilhar os adversários com dribles e comemorar os golaços.",
+  "license": "No license",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/saviomd/driblesfifa.git"
   },
   "dependencies": {
-    "browser-sync": "2.8.0",
-    "del": "1.2.0",
+    "animate.css": "daneden/animate.css#3.4.0",
+    "bootstrap": "twbs/bootstrap#v3.3.5",
+    "browser-sync": "2.8.2",
+    "del": "1.2.1",
     "gulp": "3.9.0",
     "gulp-autoprefixer": "2.3.1",
     "gulp-concat": "2.6.0",
     "gulp-csscomb": "3.0.6",
     "gulp-csslint": "0.1.5",
     "gulp-imagemin": "2.3.0",
-    "gulp-jade": "1.0.1",
-    "gulp-jscs": "1.6.0",
+    "gulp-jade": "1.1.0",
+    "gulp-jscs": "2.0.0",
     "gulp-jshint": "1.11.2",
     "gulp-less": "3.0.3",
     "gulp-minify-css": "1.2.0",
     "gulp-minify-html": "1.0.4",
     "gulp-notify": "2.2.0",
     "gulp-rename": "1.2.2",
-    "gulp-replace": "0.5.3",
-    "gulp-stylestats": "0.8.0",
+    "gulp-replace": "0.5.4",
+    "gulp-stylestats": "0.8.2",
     "gulp-uglify": "1.2.0",
-    "gulp-util": "3.0.6"
+    "gulp-util": "3.0.6",
+    "jquery": "jquery/jquery#1.11.3",
+    "js-cookie": "2.0.3",
+    "list.js": "1.1.1"
   }
 }

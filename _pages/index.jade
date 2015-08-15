@@ -73,8 +73,8 @@ block content
 				each item in skills
 					.well.well-sm
 						h2.well__name.name
-							= item.name.en
-							i= item.name.pt
+							= item.nameEn
+							i= item.namePt
 						h3.well__command!= item.command
 						span.label.label-default
 							if item.stars == 1
@@ -124,8 +124,8 @@ block content
 				each item in celebrations
 					.well.well-sm
 						h2.well__name.name
-							= item.name.en
-							i= item.name.pt
+							= item.nameEn
+							i= item.namePt
 						h3.well__command!= item.command
 						span.label.label-default.type= item.type
 						if item.new == 1 || item.new == 2
@@ -134,42 +134,40 @@ block content
 
 	.section.row.hidden#instructions
 		.col-xs-12
-			table.table.table-striped
-				tbody
-					tr
-						td(colspan='2')= 'Comandos de drible assumem o jogador se movendo para cima da tela'
-					tr
-						td(colspan='2')= 'Comemorações Pro e EASFC precisam ser desbloqueadas (evoluindo seu jogador Pro e comprando na EASFC Catalogue) para serem usadas'
-					tr
-						td(colspan='2')= 'Comemorações marcadas como "agile players / jogador ágil" são executadas apenas pelos jogadores mais habilidosos'
-					tr
-						td= 'LS'
-						td= 'Left stick, alavanca esquerda'
-					tr
-						td= 'RS'
-						td= 'Right stick, alavanca direita'
-					tr
-						td= 'LS ↑ / → / ↓ / ← / ...'
-						td= 'Direção usando a alavanca esquerda'
-					tr
-						td= 'RS ↑ / → / ↓ / ← / ...'
-						td= 'Direção usando a alavanca direita'
-					tr
-						td= '↻'
-						td= 'Girar alavanca no sentido horário (começando de baixo)'
-					tr
-						td= '↺'
-						td= 'Girar alavanca no sentido anti-horário (começando de baixo)'
-					tr
-						td!= '<i class="btn-lb"></i>'
-						td= 'Botão superior esquerdo'
-					tr
-						td!= '<i class="btn-rb"></i>'
-						td= 'Botão superior direito'
-					tr
-						td!= '<i class="btn-lt"></i>'
-						td= 'Botão gatilho esquerdo'
-					tr
-						td!= '<i class="btn-rt"></i>'
-						td= 'Botão gatilho direito'
+			.well.well-sm
+				h2.well__name= 'Comandos de drible assumem o jogador se movendo para cima da tela'
+			.well.well-sm
+				h2.well__name= 'Comemorações Pro e EASFC precisam ser desbloqueadas (evoluindo seu jogador Pro e comprando na EASFC Catalogue) para serem usadas'
+			.well.well-sm
+				h2.well__name= 'Comemorações marcadas como "agile players / jogador ágil" são executadas apenas pelos jogadores mais habilidosos'
+			.well.well-sm
+				h2.well__name= 'LS'
+				h3.well__command= 'Left stick, alavanca esquerda'
+			.well.well-sm
+				h2.well__name= 'RS'
+				h3.well__command= 'Right stick, alavanca direita'
+			.well.well-sm
+				h2.well__name= 'LS ↑ / → / ↓ / ← / ...'
+				h3.well__command= 'Direção usando a alavanca esquerda'
+			.well.well-sm
+				h2.well__name= 'RS ↑ / → / ↓ / ← / ...'
+				h3.well__command= 'Direção usando a alavanca direita'
+			.well.well-sm
+				h2.well__name= '↻'
+				h3.well__command= 'Girar alavanca no sentido horário (começando de baixo)'
+			.well.well-sm
+				h2.well__name= '↺'
+				h3.well__command= 'Girar alavanca no sentido anti-horário (começando de baixo)'
+			.well.well-sm
+				h2.well__name!= '<i class="btn-lb"></i>'
+				h3.well__command= 'Botão superior esquerdo'
+			.well.well-sm
+				h2.well__name!= '<i class="btn-rb"></i>'
+				h3.well__command= 'Botão superior direito'
+			.well.well-sm
+				h2.well__name!= '<i class="btn-lt"></i>'
+				h3.well__command= 'Botão gatilho esquerdo'
+			.well.well-sm
+				h2.well__name!= '<i class="btn-rt"></i>'
+				h3.well__command= 'Botão gatilho direito'
 			include ../_includes/banner.jade
