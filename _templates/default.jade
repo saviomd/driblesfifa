@@ -5,9 +5,9 @@ html(lang=site.lang manifest=(site.dev ? null : 'manifest.appcache'))
 	block pageData
 
 	include ../_includes/head.jade
-	include ../_includes/header.jade
 
 	body
+		include ../_includes/header.jade
 		.container.animated.fadeInUp
 			block content
 			include ../_includes/footer.jade
