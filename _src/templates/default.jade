@@ -1,0 +1,12 @@
+include /data/site.jade
+
+doctype html
+html(lang=site.lang, manifest=(site.dev ? null : 'manifest.appcache'))
+	block pageData
+
+	include /includes/head.jade
+	body
+		include /includes/header.jade
+		.container.animated.fadeInUp
+			block content
+			include /includes/footer.jade

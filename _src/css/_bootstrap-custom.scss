@@ -1,0 +1,101 @@
+a {
+	color: $color-tertiary-dark;
+	transition: 0.3s;
+}
+
+a:focus,
+a:hover {
+	color: $color-tertiary-dark;
+}
+
+h1 {
+	font-size: 21px;
+}
+
+.btn-primary {
+	background: $color-default;
+	border-color: $color-default;
+	color: #333;
+}
+
+.btn-primary:hover {
+	background: $color-default-dark;
+	border-color: $color-default-dark;
+	color: #333;
+}
+
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .btn-primary.dropdown-toggle {
+	background: $color-default-dark;
+	border-color: $color-default-dark;
+	color: #333;
+}
+
+.dropdown-menu {
+	background: $color-default;
+}
+
+.dropdown-divider {
+	background: $color-default-dark;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+	background: $color-default-dark;
+}
+
+.dropdown-item.active,
+.dropdown-item.active:focus,
+.dropdown-item.active:hover {
+	background: $color-default-dark;
+	color: #373a3c;
+}
+
+.container {
+	max-width: 450px;
+}
+
+.navbar-light {
+	background: linear-gradient(to right, $color-secondary, $color-tertiary);
+}
+
+.navbar-brand:before {
+	content: "☰";
+	margin-right: 5px;
+}
+
+.card {
+	border-color: $color-tertiary;
+}
+
+.card-block {
+	padding: 0.75rem;
+}
+
+.label {
+	margin-right: 5px;
+}
+
+.label-default {
+	background: $color-tertiary;
+}
+
+.label-primary {
+	background: $color-default;
+	color: #333;
+}
+
+.list-group-item {
+	background: $color-default;
+	border-color: $color-default-dark;
+}
+
+a.list-group-item:focus,
+a.list-group-item:hover,
+button.list-group-item:focus,
+button.list-group-item:hover {
+	background: $color-default-dark;
+}

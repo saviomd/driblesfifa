@@ -1,0 +1,45 @@
+include /data/skills.jade
+
+- var skillsNew = false
+each item in skills
+	if item.new === 1
+		- skillsNew = true
+
+.section.hidden-xs-up#skills
+	.clearfix.m-b
+		h1.pull-left= 'Dribles'
+		.btn-group.pull-right
+			button.btn.btn-primary.btn-sm.btn--filter.dropdown-toggle.js-filter-current(type='button', data-toggle='dropdown')= 'Todos'
+			.dropdown-menu
+				a.dropdown-item.active.js-filter(href='#', data-list='skills', data-filter='all')= 'Todos'
+				if skillsNew
+					.dropdown-divider
+					a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='new')= 'Novos'
+				.dropdown-divider
+				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='1')= '★'
+				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='2')= '★★'
+				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='3')= '★★★'
+				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='4')= '★★★★'
+				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='5')= '★★★★★'
+	.js-list-skills
+		each item in skills
+			.card(data-new=item.new, data-type=item.stars)
+				.card-block
+					h2.card__name
+						= item.name.en
+						i= item.name.pt
+					.card__command!= item.command
+					span.label.label-default
+						case item.stars
+							when 1
+								= '★'
+							when 2
+								= '★★'
+							when 3
+								= '★★★'
+							when 4
+								= '★★★★'
+							when 5
+								= '★★★★★'
+					if item.new === 1
+						span.label.label-primary= 'Novo'

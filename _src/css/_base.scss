@@ -1,0 +1,59 @@
+body {
+	background: $color-secondary;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+body > .container {
+	margin-top: 54px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+.logo-fifa {
+	color: #fff;
+	font-weight: bold;
+}
+
+.logo-fifa__year {
+	color: #fecf00;
+}
+
+.list-group--home {
+	font-size: 18px;
+}
+
+.videogames {
+	margin: 0 0 20px;
+	width: 100%;
+}
+
+.videogames .btn {
+	width: 50%;
+}
+
+.share {
+	border-top: 1px solid $color-tertiary;
+}
+
+.card__name {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.card__name i {
+	display: block;
+	font-size: 14px;
+}
+
+.card__command {
+	text-align: right;
+}
+
+.copy {
+	border-top: 1px solid $color-tertiary;
+	font-size: 12px;
+	margin: 20px 0 0;
+	padding: 5px 0;
+	text-align: center;
+}

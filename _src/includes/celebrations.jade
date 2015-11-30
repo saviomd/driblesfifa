@@ -1,0 +1,33 @@
+include /data/celebrations.jade
+
+- var celebrationsNew = false
+each item in celebrations
+	if item.new === 1
+		- celebrationsNew = true
+
+.section.hidden-xs-up#celebrations
+	.clearfix.m-b
+		h1.pull-left= 'Comemorações'
+		.btn-group.pull-right
+			button.btn.btn-primary.btn-sm.btn--filter.dropdown-toggle.js-filter-current(type='button', data-toggle='dropdown')= 'Todos'
+			.dropdown-menu
+				a.dropdown-item.active.js-filter(href='#', data-list='celebrations', data-filter='all')= 'Todos'
+				if celebrationsNew
+					.dropdown-divider
+					a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='new')= 'Novos'
+				.dropdown-divider
+				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Corrida')= 'Corrida'
+				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Finalização')= 'Finalização'
+				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Pro')= 'Pro'
+				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='EASFC')= 'EASFC'
+	.js-list-celebrations
+		each item in celebrations
+			.card(data-new=item.new, data-type=item.type)
+				.card-block
+					h2.card__name
+						= item.name.en
+						i= item.name.pt
+					.card__command!= item.command
+					span.label.label-default= item.type
+					if item.new === 1
+						span.label.label-primary= 'Novo'

@@ -1,0 +1,11 @@
+$color-default: #d2f311;
+$color-default-dark: darken($color-default, 10%);
+$color-default-light: lighten($color-default, 10%);
+
+$color-secondary: #7ce0e8;
+$color-secondary-dark: darken($color-secondary, 10%);
+$color-secondary-light: lighten($color-secondary, 10%);
+
+$color-tertiary: #3f8da4;
+$color-tertiary-dark: darken($color-tertiary, 10%);
+$color-tertiary-light: lighten($color-tertiary, 10%);
