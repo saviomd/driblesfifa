@@ -118,9 +118,9 @@ body > .container {
   font-size: 18px;
   font-weight: normal; }
 
-.card__name i {
-  display: block;
-  font-size: 14px; }
+.card__name-pt {
+  font-size: 14px;
+  font-style: italic; }
 
 .card__command {
   text-align: right; }

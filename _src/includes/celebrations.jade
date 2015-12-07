@@ -26,7 +26,7 @@ each item in celebrations
 				.card-block
 					h2.card__name
 						= item.name.en
-						i= item.name.pt
+						.card__name-pt= item.name.pt
 					.card__command!= item.command
 					span.label.label-default= item.type
 					if item.new === 1

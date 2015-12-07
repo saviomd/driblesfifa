@@ -27,7 +27,7 @@ each item in skills
 				.card-block
 					h2.card__name
 						= item.name.en
-						i= item.name.pt
+						.card__name-pt= item.name.pt
 					.card__command!= item.command
 					span.label.label-default
 						case item.stars
