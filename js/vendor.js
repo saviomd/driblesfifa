@@ -13871,7 +13871,7 @@ var Popover = (function ($) {
 }(jQuery);
 
 /*!
- * JavaScript Cookie v2.0.4
+ * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
  *
  * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
@@ -13927,8 +13927,12 @@ var Popover = (function ($) {
 					}
 				} catch (e) {}
 
-				value = encodeURIComponent(String(value));
-				value = value.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+				if (!converter.write) {
+					value = encodeURIComponent(String(value))
+						.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+				} else {
+					value = converter.write(value, key);
+				}
 
 				key = encodeURIComponent(String(key));
 				key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent);
@@ -13966,7 +13970,9 @@ var Popover = (function ($) {
 				}
 
 				try {
-					cookie = converter && converter(cookie, name) || cookie.replace(rdecode, decodeURIComponent);
+					cookie = converter.read ?
+						converter.read(cookie, name) : converter(cookie, name) ||
+						cookie.replace(rdecode, decodeURIComponent);
 
 					if (this.json) {
 						try {
@@ -14007,5 +14013,5 @@ var Popover = (function ($) {
 		return api;
 	}
 
-	return init();
+	return init(function () {});
 }));

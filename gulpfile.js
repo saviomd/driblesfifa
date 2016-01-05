@@ -27,7 +27,7 @@ configs
 */
 var autoprefixerConfig = { browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Android >= 2'] };
 var jadeConfig = { basedir: '_src', pretty: true };
-var stylestatsConfig = { config: '.stylestatsrc' };
+var stylestatsConfig = { config: '.stylestatsrc', outfile: true, type: 'json' };
 
 /*
 tasks
@@ -64,6 +64,7 @@ gulp.task('buildCssVendor', function() {
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('css'))
 		.pipe(stylestats(stylestatsConfig))
+		.pipe(gulp.dest('css'))
 });
 
 gulp.task('lintCssSite', function() {
@@ -82,6 +83,7 @@ gulp.task('buildCssSite', ['lintCssSite'], function() {
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('css'))
 		.pipe(stylestats(stylestatsConfig))
+		.pipe(gulp.dest('css'))
 });
 
 gulp.task('buildJsVendor', function() {
