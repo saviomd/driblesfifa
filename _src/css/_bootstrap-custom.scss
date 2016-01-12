@@ -58,6 +58,10 @@ h1 {
 	max-width: 450px;
 }
 
+.navbar-fixed-top {
+	will-change: transform;
+}
+
 .navbar-light {
 	background: linear-gradient(to right, $color-secondary, $color-tertiary);
 }
@@ -98,4 +102,8 @@ a.list-group-item:hover,
 button.list-group-item:focus,
 button.list-group-item:hover {
 	background: $color-default-dark;
+}
+
+.embed-responsive {
+	background: #333;
 }

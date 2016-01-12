@@ -1,13 +1,13 @@
-var autoprefixer = require('gulp-autoprefixer');
+var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
+var cssnano = require('cssnano');
 var del = require('del');
 var eslint = require('gulp-eslint');
 var gulp = require('gulp');
+var htmlmin = require('gulp-htmlmin');
 var imagemin = require('gulp-imagemin');
 var jade = require('gulp-jade');
-var minifyCss = require('gulp-minify-css');
-var minifyHtml = require('gulp-minify-html');
 var postcss = require('gulp-postcss');
 var rename = require('gulp-rename');
 var replace = require('gulp-replace');
@@ -20,12 +20,16 @@ var uglify = require('gulp-uglify');
 configs
 ====================
 - autoprefixer: https://github.com/postcss/autoprefixer#browsers
+- cssnano: http://cssnano.co/options/
 - eslint: https://github.com/eslint/eslint/blob/master/conf/eslint.json
+- htmlmin: https://github.com/kangax/html-minifier#options-quick-reference
 - jade: http://jade-lang.com/api/
 - stylelint: https://github.com/stylelint/stylelint/tree/master/src/rules
 - stylestats: https://github.com/t32k/stylestats/blob/master/assets/default.json
 */
 var autoprefixerConfig = { browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'Android >= 2'] };
+var cssnanoConfig = { autoprefixer: false, discardUnused: false, reduceIdents: false };
+var htmlminConfig = { collapseBooleanAttributes: true, collapseWhitespace: true, minifyCSS: true, minifyJS: true, removeAttributeQuotes: true, removeComments: true, removeOptionalTags: true };
 var jadeConfig = { basedir: '_src', pretty: true };
 var stylestatsConfig = { config: '.stylestatsrc', outfile: true, type: 'json' };
 
@@ -43,7 +47,7 @@ gulp.task('clean', function(cb) {
 gulp.task('buildHtml', function() {
 	return gulp.src('_src/pages/*.jade')
 		.pipe(jade(jadeConfig))
-		.pipe(minifyHtml())
+		.pipe(htmlmin(htmlminConfig))
 		.pipe(gulp.dest('./'))
 });
 
@@ -58,9 +62,9 @@ gulp.task('buildManifests', function() {
 gulp.task('buildCssVendor', function() {
 	return gulp.src('_src/css/vendor.scss')
 		.pipe(sass())
-		.pipe(autoprefixer(autoprefixerConfig))
+		.pipe(postcss([ autoprefixer(autoprefixerConfig) ]))
 		.pipe(gulp.dest('css'))
-		.pipe(minifyCss())
+		.pipe(postcss([ cssnano(cssnanoConfig) ]))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('css'))
 		.pipe(stylestats(stylestatsConfig))
@@ -77,9 +81,9 @@ gulp.task('lintCssSite', function() {
 gulp.task('buildCssSite', ['lintCssSite'], function() {
 	return gulp.src('_src/css/driblesfifa.scss')
 		.pipe(sass())
-		.pipe(autoprefixer(autoprefixerConfig))
+		.pipe(postcss([ autoprefixer(autoprefixerConfig) ]))
 		.pipe(gulp.dest('css'))
-		.pipe(minifyCss())
+		.pipe(postcss([ cssnano(cssnanoConfig) ]))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('css'))
 		.pipe(stylestats(stylestatsConfig))
@@ -101,11 +105,12 @@ gulp.task('buildJsVendor', function() {
 
 gulp.task('buildJsSite', function() {
 	return gulp.src([
+			'_src/js/_templates.js',
 			'_src/js/_cache.js',
 			'_src/js/_nav.js',
 			'_src/js/_filter.js',
 			'_src/js/_share.js',
-			'_src/js/_events.js'
+			'_src/js/_tutorials.js'
 		])
 		.pipe(eslint())
 		.pipe(eslint.format())
