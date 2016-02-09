@@ -6,11 +6,11 @@ each item in celebrations
 		- celebrationsNew = true
 
 .section.hidden-xs-up#celebrations
-	.clearfix.m-b
-		h1.pull-left= 'Comemorações'
-		.btn-group.pull-right
+	.clearfix.m-b-1
+		h1.pull-xs-left= 'Comemorações'
+		.btn-group.pull-xs-right
 			button.btn.btn-primary.btn-sm.btn--filter.dropdown-toggle.js-filter-current(type='button', data-toggle='dropdown')= 'Todos'
-			.dropdown-menu
+			.dropdown-menu.dropdown-menu-right
 				a.dropdown-item.active.js-filter(href='#', data-list='celebrations', data-filter='all')= 'Todos'
 				if celebrationsNew
 					.dropdown-divider
