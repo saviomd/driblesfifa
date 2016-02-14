@@ -13,12 +13,8 @@ head
 	if site.noindex
 		meta(name='robots', content='noindex, nofollow')
 
-	if site.dev
-		link(rel='stylesheet', href='css/vendor.css')
-		link(rel='stylesheet', href='css/driblesfifa.css')
-	else
-		link(rel='stylesheet', href='css/vendor.min.css')
-		link(rel='stylesheet', href='css/driblesfifa.min.css')
+	link(rel='stylesheet', href='css/vendor' + (site.dev ? '' : '.min') + '.css')
+	link(rel='stylesheet', href='css/driblesfifa' + (site.dev ? '' : '.min') + '.css')
 	link(rel='shortcut icon', href=site.url + 'img/favicon.png')
 	link(rel='apple-touch-icon', href=site.url + 'img/apple-touch-icon.png')
 	link(rel='canonical', href=site.url + page.path)

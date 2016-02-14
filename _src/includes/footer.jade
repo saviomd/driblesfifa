@@ -1,11 +1,7 @@
 .copy.row
 	.col-xs-12!= '&copy; 2012-' + year + ' <a href="http://saviomd.com/" target="_blank">Sávio Mendes</a>'
-if site.dev
-	script(defer, src='js/vendor.js')
-	script(defer, src='js/driblesfifa.js')
-else
-	script(defer, src='js/vendor.min.js')
-	script(defer, src='js/driblesfifa.min.js')
+script(defer, src='js/vendor' + (site.dev ? '' : '.min') + '.js')
+script(defer, src='js/driblesfifa' + (site.dev ? '' : '.min') + '.js')
 script.
 	// mouseflow
 	if (location.search.indexOf('a=0') === -1) {
