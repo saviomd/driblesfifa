@@ -1,6 +1,6 @@
-/* global ga */
-
+/* eslint-disable no-use-before-define */
 var driblesfifa = driblesfifa || {};
+/* eslint-enable no-use-before-define */
 
 driblesfifa.filter = (function () {
 	var $currentFilter;
@@ -22,9 +22,6 @@ driblesfifa.filter = (function () {
 			$commands.addClass('hidden-xs-up').filter('[data-new="1"]').removeClass('hidden-xs-up');
 		} else {
 			$commands.addClass('hidden-xs-up').filter('[data-type="' + filter + '"]').removeClass('hidden-xs-up');
-		}
-		if (typeof ga !== 'undefined') {
-			ga('send', 'event', 'Dribles FIFA', 'Filtro', $this.attr('data-list') + ' ' + filter);
 		}
 	});
 })();

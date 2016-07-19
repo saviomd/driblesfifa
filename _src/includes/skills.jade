@@ -11,35 +11,28 @@ each item in skills
 		.btn-group.pull-xs-right
 			button.btn.btn-primary.btn-sm.btn--filter.dropdown-toggle.js-filter-current(type='button', data-toggle='dropdown')= 'Todos'
 			.dropdown-menu.dropdown-menu-right
-				a.dropdown-item.active.js-filter(href='#', data-list='skills', data-filter='all')= 'Todos'
+				a.dropdown-item.active.js-filter(href='#', data-list='skills', data-filter='all', data-event-category=site.name, data-event-action='Filtro', data-event-label='skills all')= 'Todos'
 				if skillsNew
 					.dropdown-divider
-					a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='new')= 'Novos'
+					a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='new', data-event-category=site.name, data-event-action='Filtro', data-event-label='skills new')= 'Novos'
 				.dropdown-divider
-				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='1')= '★'
-				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='2')= '★★'
-				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='3')= '★★★'
-				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='4')= '★★★★'
-				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='5')= '★★★★★'
+				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='1', data-event-category=site.name, data-event-action='Filtro', data-event-label='skills 1')= '★'
+				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='2', data-event-category=site.name, data-event-action='Filtro', data-event-label='skills 2')= '★★'
+				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='3', data-event-category=site.name, data-event-action='Filtro', data-event-label='skills 3')= '★★★'
+				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='4', data-event-category=site.name, data-event-action='Filtro', data-event-label='skills 4')= '★★★★'
+				a.dropdown-item.js-filter(href='#', data-list='skills', data-filter='5', data-event-category=site.name, data-event-action='Filtro', data-event-label='skills 5')= '★★★★★'
 	.js-list-skills
 		each item in skills
+			-
+				var stars = ''
+				for (var i =0; i < item.stars; i++)
+					stars += '★'
 			.card(data-new=item.new, data-type=item.stars)
 				.card-block
 					h2.card__name
 						= item.name.en
 						.card__name-pt= item.name.pt
 					.card__command!= item.command
-					span.label.label-default
-						case item.stars
-							when 1
-								= '★'
-							when 2
-								= '★★'
-							when 3
-								= '★★★'
-							when 4
-								= '★★★★'
-							when 5
-								= '★★★★★'
-					if item.new === 1
+					span.label.label-default= stars
+					if item.new
 						span.label.label-primary= 'Novo'

@@ -1,27 +1,27 @@
 .section.row#home
 	.col-xs-12.col-sm-8.col-sm-offset-2
 		.btn-group.videogames
-			a.btn.btn-primary.active#xbox(href='#')= 'Xbox'
-			a.btn.btn-primary#ps(href='#')= 'PlayStation'
+			a.btn.btn-primary.active#xbox(href='#', data-event-category=site.name, data-event-action='Seleção de videogame', data-event-label='xbox')= 'Xbox'
+			a.btn.btn-primary#ps(href='#', data-event-category=site.name, data-event-action='Seleção de videogame', data-event-label='ps')= 'PlayStation'
 		.list-group.list-group--home
-			a.list-group-item(href='#skills')
+			a.list-group-item(href='#skills', data-event-category=site.name, data-event-action='Navegação', data-event-label='skills')
 				span.glyphicon.glyphicon-chevron-right
 				= 'Dribles'
-			a.list-group-item(href='#celebrations')
+			a.list-group-item(href='#celebrations', data-event-category=site.name, data-event-action='Navegação', data-event-label='celebrations')
 				span.glyphicon.glyphicon-chevron-right
 				= 'Comemorações'
-			a.list-group-item.js-link-tutorials(href='#tutorials')
+			a.list-group-item.js-link-tutorials(href='#tutorials', data-event-category=site.name, data-event-action='Navegação', data-event-label='tutorials')
 				span.glyphicon.glyphicon-chevron-right
 				= 'Tutoriais'
-			a.list-group-item(href='#about')
+			a.list-group-item(href='#about', data-event-category=site.name, data-event-action='Navegação', data-event-label='about')
 				span.glyphicon.glyphicon-chevron-right
 				= 'Sobre'
 		.share.m-t-1.p-t-1
 			h1= 'Compartilhe:'
 			.row
 				.col-xs-4
-					a.btn.btn-block.btn--facebook.js-link-share(href='https://www.facebook.com/sharer/sharer.php?u=http://saviomd.com/driblesfifa/', target='_blank', title='Facebook')= 'f'
+					a.btn.btn-block.btn--facebook.js-link-share(href='https://www.facebook.com/sharer/sharer.php?u=http://saviomd.com/driblesfifa/', target='_blank', title='Facebook', data-event-category=site.name, data-event-action='Compartilhe', data-event-label='Facebook')= 'f'
 				.col-xs-4
-					a.btn.btn-block.btn--twitter.js-link-share(href='https://twitter.com/intent/tweet?url=http://saviomd.com/driblesfifa/&text=Dribles FIFA: Guia de bolso (e smartphone) p/ parte mais legal do FIFA', target='_blank', title='twitter')= 't'
+					a.btn.btn-block.btn--twitter.js-link-share(href='https://twitter.com/intent/tweet?url=http://saviomd.com/driblesfifa/&text=Dribles FIFA: Guia de bolso (e smartphone) p/ parte mais legal do FIFA', target='_blank', title='twitter', data-event-category=site.name, data-event-action='Compartilhe', data-event-label='twitter')= 't'
 				.col-xs-4
-					a.btn.btn-block.btn--googleplus.js-link-share(href='https://plus.google.com/share?url=http://saviomd.com/driblesfifa/', target='_blank', title='Google+')= 'G+'
+					a.btn.btn-block.btn--googleplus.js-link-share(href='https://plus.google.com/share?url=http://saviomd.com/driblesfifa/', target='_blank', title='Google+', data-event-category=site.name, data-event-action='Compartilhe', data-event-label='Google+')= 'G+'

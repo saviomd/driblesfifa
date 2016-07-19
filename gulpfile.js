@@ -1,28 +1,26 @@
 var autoprefixer = require('autoprefixer');
-var autoprefixerConfig = require('autoprefixer-config-saviomd');
+var autoprefixerConfig = require('tools-config-saviomd/autoprefixer-config');
 var browserSync = require('browser-sync');
-var browserSyncConfig = require('browser-sync-config-saviomd')
+var browserSyncConfig = require('tools-config-saviomd/browser-sync-config')
 var concat = require('gulp-concat');
 var cssnano = require('cssnano');
-var cssnanoConfig = require('cssnano-config-saviomd');
+var cssnanoConfig = require('tools-config-saviomd/cssnano-config');
 var del = require('del');
 var eslint = require('gulp-eslint');
-var eslintConfig = require('eslint-config-saviomd');
+var eslintConfig = require('tools-config-saviomd/eslint-config');
 var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
-var htmlminConfig = require('htmlmin-config-saviomd');
-var imagemin = require('gulp-imagemin');
-var imageminConfig = require('imagemin-config-saviomd');
+var htmlminConfig = require('tools-config-saviomd/htmlmin-config');
 var jade = require('gulp-jade');
-var jadeConfig = require('jade-config-saviomd');
+var jadeConfig = require('tools-config-saviomd/jade-config');
 var postcss = require('gulp-postcss');
 var rename = require('gulp-rename');
 var replace = require('gulp-replace');
 var sass = require('gulp-sass');
 var stylelint = require('stylelint');
-var stylelintConfig = require('stylelint-config-saviomd');
+var stylelintConfig = require('tools-config-saviomd/stylelint-config');
 var stylestats = require('gulp-stylestats');
-var stylestatsConfig = require('stylestats-config-saviomd');
+var stylestatsConfig = require('tools-config-saviomd/stylestats-config');
 var uglify = require('gulp-uglify');
 
 /*
@@ -36,14 +34,14 @@ gulp.task('clean', function(cb) {
 		], cb)
 });
 
-gulp.task('buildHtml', function() {
+gulp.task('html', function() {
 	return gulp.src('_src/pages/*.jade')
 		.pipe(jade(jadeConfig))
 		.pipe(htmlmin(htmlminConfig))
 		.pipe(gulp.dest('./'))
 });
 
-gulp.task('buildManifests', function() {
+gulp.task('manifests', function() {
 	var version = Date.now()
 
 	return gulp.src('_src/manifests/manifest.*')
@@ -51,7 +49,7 @@ gulp.task('buildManifests', function() {
 		.pipe(gulp.dest('./'))
 });
 
-gulp.task('buildCssVendor', function() {
+gulp.task('cssVendor', function() {
 	return gulp.src('_src/css/vendor.scss')
 		.pipe(sass())
 		.pipe(postcss([ autoprefixer(autoprefixerConfig) ]))
@@ -63,12 +61,12 @@ gulp.task('buildCssVendor', function() {
 		.pipe(gulp.dest('css'))
 });
 
-gulp.task('lintCssSite', function() {
+gulp.task('cssSiteLint', function() {
 	return gulp.src('_src/css/_*.scss')
 		.pipe(postcss([ stylelint(stylelintConfig) ]))
 });
 
-gulp.task('buildCssSite', ['lintCssSite'], function() {
+gulp.task('cssSite', ['cssSiteLint'], function() {
 	return gulp.src('_src/css/driblesfifa.scss')
 		.pipe(sass())
 		.pipe(postcss([ autoprefixer(autoprefixerConfig) ]))
@@ -80,7 +78,7 @@ gulp.task('buildCssSite', ['lintCssSite'], function() {
 		.pipe(gulp.dest('css'))
 });
 
-gulp.task('buildJsVendor', function() {
+gulp.task('jsVendor', function() {
 	return gulp.src(require('./_src/js/vendor.js'))
 		.pipe(concat('vendor.js'))
 		.pipe(gulp.dest('js'))
@@ -89,7 +87,7 @@ gulp.task('buildJsVendor', function() {
 		.pipe(gulp.dest('js'))
 });
 
-gulp.task('buildJsSite', function() {
+gulp.task('jsSite', function() {
 	return gulp.src(require('./_src/js/driblesfifa.js'))
 		.pipe(eslint(eslintConfig))
 		.pipe(eslint.format())
@@ -100,13 +98,7 @@ gulp.task('buildJsSite', function() {
 		.pipe(gulp.dest('js'))
 });
 
-gulp.task('imagemin', function() {
-	return gulp.src('imgmin/**/*.+(gif|jpg|png)')
-		.pipe(imagemin(imageminConfig))
-		.pipe(gulp.dest('img'))
-});
-
-gulp.task('browser-sync', function() {
+gulp.task('browserSync', function() {
 	browserSync.init(browserSyncConfig);
 });
 
@@ -115,21 +107,20 @@ build and dev tasks
 ====================
 */
 gulp.task('default', ['clean'], function(){
-	gulp.start('buildHtml', 'buildManifests', 'css', 'js');
+	gulp.start('html', 'manifests', 'css', 'js');
 });
 
 gulp.task('css', function(){
-	gulp.start('buildCssVendor', 'buildCssSite');
+	gulp.start('cssVendor', 'cssSite');
 });
 
 gulp.task('js', function(){
-	gulp.start('buildJsVendor', 'buildJsSite');
+	gulp.start('jsVendor', 'jsSite');
 });
 
-gulp.task('dev', ['browser-sync'], function() {
-	gulp.watch('_src/**/*.jade', ['buildHtml', browserSync.reload])
-	gulp.watch('_src/manifests/manifest.*', ['buildManifests', browserSync.reload])
+gulp.task('dev', ['browserSync'], function() {
+	gulp.watch('_src/**/*.jade', ['html', browserSync.reload])
+	gulp.watch('_src/manifests/manifest.*', ['manifests', browserSync.reload])
 	gulp.watch('_src/css/*.scss', ['css', browserSync.reload])
 	gulp.watch('_src/js/*.js', ['js', browserSync.reload])
-	gulp.watch('img/**/*.+(gif|jpg|png)', ['imagemin'])
 });

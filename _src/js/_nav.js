@@ -1,6 +1,8 @@
-/* global Cookies, ga */
+/* global Cookies */
 
+/* eslint-disable no-use-before-define */
 var driblesfifa = driblesfifa || {};
+/* eslint-enable no-use-before-define */
 
 driblesfifa.nav = (function () {
 	/*
@@ -12,9 +14,6 @@ driblesfifa.nav = (function () {
 		$('.section').addClass('hidden-xs-up');
 		var section = '#' + this.href.split('#')[1];
 		$(section).removeClass('hidden-xs-up');
-		if (typeof ga !== 'undefined') {
-			ga('send', 'event', 'Dribles FIFA', 'Navegação', section.split('#')[1]);
-		}
 	});
 
 	/*
@@ -39,18 +38,5 @@ driblesfifa.nav = (function () {
 		var videogame = $(this).attr('id');
 		Cookies.set('videogame', videogame, {expires: 365, path: '/'});
 		alterarVideogame();
-		if (typeof ga !== 'undefined') {
-			ga('send', 'event', 'Dribles FIFA', 'Seleção de videogame', videogame);
-		}
 	});
-
-	/*
-	rodape
-	====================
-	*/
-	if (typeof ga !== 'undefined') {
-		$('.copy a').on('click', function () {
-			ga('send', 'event', 'Dribles FIFA', 'Links no rodapé', $(this).text());
-		});
-	}
 })();

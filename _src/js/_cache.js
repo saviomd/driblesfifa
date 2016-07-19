@@ -1,4 +1,6 @@
+/* eslint-disable no-use-before-define */
 var driblesfifa = driblesfifa || {};
+/* eslint-enable no-use-before-define */
 
 driblesfifa.cache = (function () {
 	/*

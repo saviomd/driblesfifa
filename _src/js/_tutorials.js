@@ -1,8 +1,16 @@
 /* global ga */
 
+/* eslint-disable no-use-before-define */
 var driblesfifa = driblesfifa || {};
+/* eslint-enable no-use-before-define */
 
 driblesfifa.tutorials = (function () {
+	var templateTutorial = '<li class="m-b-1 animated fadeInRight">' +
+			'<a class="embed-responsive embed-responsive-4by3 js-link-tutorial" href="https://www.youtube.com/watch?v={{videoId}}" target="_blank" data-event-category="Dribles FIFA" data-event-action="Tutoriais" data-event-label="{{title}}">' +
+				'<img alt="{{title}}" class="embed-responsive-item" src="{{thumbnail}}">' +
+			'</a>' +
+		'</li>';
+
 	var tutorialsLoaded = false;
 
 	$('.js-link-tutorials').on('click', function () {
@@ -16,9 +24,8 @@ driblesfifa.tutorials = (function () {
 			}).done(function (response) {
 				var items = response.items;
 				var html = '';
-				var template = driblesfifa.templates.getTutorial();
 				for (var i = 0, len = items.length; i < len; i++) {
-					var item = template;
+					var item = templateTutorial;
 					var videoId = items[i].snippet.resourceId.videoId;
 					var title = items[i].snippet.title;
 					var thumbnail = items[i].snippet.thumbnails.high.url;
@@ -31,14 +38,10 @@ driblesfifa.tutorials = (function () {
 				tutorialsLoaded = true;
 			}).fail(function () {
 				$listTutorials.html('<li class="animated fadeInRight text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
+				if (typeof ga !== 'undefined') {
+					ga('send', 'event', 'Dribles FIFA', 'Tutoriais', 'Erro - Ajax fail');
+				}
 			});
-
-			if (typeof ga !== 'undefined') {
-				$listTutorials.on('click', '.js-link-tutorial', function () {
-					var title = $(this).attr('data-title');
-					ga('send', 'event', 'Dribles FIFA', 'Tutorial', title);
-				});
-			}
 		}
 	});
 })();
