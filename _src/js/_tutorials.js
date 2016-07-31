@@ -6,7 +6,7 @@ var driblesfifa = driblesfifa || {};
 
 driblesfifa.tutorials = (function () {
 	var templateTutorial = '<li class="m-b-1 animated fadeInRight">' +
-			'<a class="embed-responsive embed-responsive-4by3 js-link-tutorial" href="https://www.youtube.com/watch?v={{videoId}}" target="_blank" data-event-category="Dribles FIFA" data-event-action="Tutoriais" data-event-label="{{title}}">' +
+			'<a class="embed-responsive embed-responsive-4by3 js-link-tutorial" href="https://www.youtube.com/watch?v={{videoId}}" target="_blank" ga-on="click" ga-event-category="Dribles FIFA" ga-event-action="Tutoriais" ga-event-label="{{title}}">' +
 				'<img alt="{{title}}" class="embed-responsive-item" src="{{thumbnail}}">' +
 			'</a>' +
 		'</li>';

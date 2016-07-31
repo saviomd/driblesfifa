@@ -11,15 +11,15 @@ each item in celebrations
 		.btn-group.pull-xs-right
 			button.btn.btn-primary.btn-sm.btn--filter.dropdown-toggle.js-filter-current(type='button', data-toggle='dropdown')= 'Todos'
 			.dropdown-menu.dropdown-menu-right
-				a.dropdown-item.active.js-filter(href='#', data-list='celebrations', data-filter='all', data-event-category=site.name, data-event-action='Filtro', data-event-label='celebrations all')= 'Todos'
+				a.dropdown-item.active.js-filter(href='#', data-list='celebrations', data-filter='all', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations all')= 'Todos'
 				if celebrationsNew
 					.dropdown-divider
-					a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='new', data-event-category=site.name, data-event-action='Filtro', data-event-label='celebrations new')= 'Novos'
+					a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='new', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations new')= 'Novos'
 				.dropdown-divider
-				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Corrida', data-event-category=site.name, data-event-action='Filtro', data-event-label='celebrations Corrida')= 'Corrida'
-				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Finalização', data-event-category=site.name, data-event-action='Filtro', data-event-label='celebrations Finalização')= 'Finalização'
-				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Pro', data-event-category=site.name, data-event-action='Filtro', data-event-label='celebrations Pro')= 'Pro'
-				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='EASFC', data-event-category=site.name, data-event-action='Filtro', data-event-label='celebrations EASFC')= 'EASFC'
+				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Corrida', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations Corrida')= 'Corrida'
+				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Finalização', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations Finalização')= 'Finalização'
+				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Pro', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations Pro')= 'Pro'
+				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='EASFC', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations EASFC')= 'EASFC'
 	.js-list-celebrations
 		each item in celebrations
 			.card(data-new=item.new, data-type=item.type)
@@ -28,6 +28,6 @@ each item in celebrations
 						= item.name.en
 						.card__name-pt= item.name.pt
 					.card__command!= item.command
-					span.label.label-default= item.type
+					span.tag.tag-default= item.type
 					if item.new
-						span.label.label-primary= 'Novo'
+						span.tag.tag-primary= 'Novo'

@@ -106,15 +106,15 @@ gulp.task('browserSync', function() {
 build and dev tasks
 ====================
 */
-gulp.task('default', ['clean'], function(){
+gulp.task('default', ['clean'], function() {
 	gulp.start('html', 'manifests', 'css', 'js');
 });
 
-gulp.task('css', function(){
+gulp.task('css', function() {
 	gulp.start('cssVendor', 'cssSite');
 });
 
-gulp.task('js', function(){
+gulp.task('js', function() {
 	gulp.start('jsVendor', 'jsSite');
 });
 

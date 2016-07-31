@@ -85,13 +85,13 @@ h1 {
 .card-block {
   padding: 0.75rem; }
 
-.label {
+.tag {
   margin-right: 5px; }
 
-.label-default {
+.tag-default {
   background: #3f8da4; }
 
-.label-primary {
+.tag-primary {
   background: #d2f311;
   color: #333; }
 
