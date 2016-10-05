@@ -1,8 +1,16 @@
 -
-	var skills = [
+	var skillMoves = {}
+	skillMoves.types = [
+		'★',
+		'★★',
+		'★★★',
+		'★★★★',
+		'★★★★★'
+	]
+	skillMoves.movements = [
 		{
 			'new': 0,
-			'stars': 1,
+			'type': skillMoves.types[0],
 			'name': {
 				'en': 'Ball Juggle',
 				'pt': 'Embaixadinhas'
@@ -11,34 +19,34 @@
 		},
 		{
 			'new': 0,
-			'stars': 1,
+			'type': skillMoves.types[0],
 			'name': {
 				'en': 'Foot fake',
 				'pt': 'Fingir toque'
 			},
-			'command': 'parado,<br>segure <i class="btn-controller btn-controller--lb"><\/i>'
+			'command': 'parado,<br>segure <i class="btn-controller btn-controller--lb"><\/i> + <i class="btn-controller btn-controller--rb"><\/i>'
 		},
 		{
 			'new': 0,
-			'stars': 2,
+			'type': skillMoves.types[1],
 			'name': {
 				'en': 'Body feint right',
 				'pt': 'Finta de corpo p/ direita'
 			},
-			'command': 'RS toque →'
+			'command': 'toque RS →'
 		},
 		{
 			'new': 0,
-			'stars': 2,
+			'type': skillMoves.types[1],
 			'name': {
 				'en': 'Body feint left',
 				'pt': 'Finta de corpo p/ esquerda'
 			},
-			'command': 'RS toque ←'
+			'command': 'toque RS ←'
 		},
 		{
 			'new': 0,
-			'stars': 2,
+			'type': skillMoves.types[1],
 			'name': {
 				'en': 'Stepover right',
 				'pt': 'Pedalada p/ direita'
@@ -47,7 +55,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 2,
+			'type': skillMoves.types[1],
 			'name': {
 				'en': 'Stepover left',
 				'pt': 'Pedalada p/ esquerda'
@@ -56,7 +64,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 2,
+			'type': skillMoves.types[1],
 			'name': {
 				'en': 'Reverse stepover right',
 				'pt': 'Pedalada invertida p/ direita'
@@ -65,7 +73,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 2,
+			'type': skillMoves.types[1],
 			'name': {
 				'en': 'Reverse stepover left',
 				'pt': 'Pedalada invertida p/ esquerda'
@@ -74,52 +82,52 @@
 		},
 		{
 			'new': 0,
-			'stars': 2,
+			'type': skillMoves.types[1],
 			'name': {
 				'en': 'Ball roll left',
 				'pt': 'Rolada p/ esquerda'
 			},
-			'command': 'RS segure ←'
+			'command': 'segure RS ←'
 		},
 		{
 			'new': 0,
-			'stars': 2,
+			'type': skillMoves.types[1],
 			'name': {
 				'en': 'Ball roll right',
 				'pt': 'Rolada p/ direita'
 			},
-			'command': 'RS segure →'
+			'command': 'segure RS →'
 		},
 		{
 			'new': 0,
-			'stars': 2,
+			'type': skillMoves.types[1],
 			'name': {
 				'en': 'Drag back',
 				'pt': 'Puxada de bola'
 			},
-			'command': 'parado,<br><i class="btn-controller btn-controller--rb"></i> + LS toque ↓'
+			'command': 'parado,<br><i class="btn-controller btn-controller--rb"></i> + toque LS ↓'
 		},
 		{
 			'new': 0,
-			'stars': 3,
+			'type': skillMoves.types[2],
 			'name': {
 				'en': 'Heel flick',
 				'pt': 'Toque de calcanhar'
 			},
-			'command': 'RS toque ↑ ↓'
+			'command': 'toque RS ↑ ↓'
 		},
 		{
 			'new': 0,
-			'stars': 3,
+			'type': skillMoves.types[2],
 			'name': {
 				'en': 'Flick up',
 				'pt': 'Toque para cima'
 			},
-			'command': 'RS toque ↑ ↑ ↑'
+			'command': 'toque RS ↑ ↑ ↑'
 		},
 		{
 			'new': 0,
-			'stars': 3,
+			'type': skillMoves.types[2],
 			'name': {
 				'en': 'Roulette right',
 				'pt': 'Giro p/ direita'
@@ -128,7 +136,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 3,
+			'type': skillMoves.types[2],
 			'name': {
 				'en': 'Roulette left',
 				'pt': 'Giro p/ esquerda'
@@ -137,7 +145,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 3,
+			'type': skillMoves.types[2],
 			'name': {
 				'en': 'Fake left & go right',
 				'pt': 'Fingir p/ esquerda e sair p/ direita'
@@ -146,7 +154,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 3,
+			'type': skillMoves.types[2],
 			'name': {
 				'en': 'Fake right & go left',
 				'pt': 'Fingir p/ direita e sair p/ esquerda'
@@ -155,7 +163,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Ball hop',
 				'pt': 'Quique da bola'
@@ -164,52 +172,52 @@
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Heel to heel flick',
 				'pt': 'Drible com calcanhares'
 			},
-			'command': 'RS toque ↑ ↓'
+			'command': 'toque RS ↑ ↓'
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Simple rainbow',
 				'pt': 'Carretilha simples'
 			},
-			'command': 'RS toque ↓ ↑ ↑'
+			'command': 'toque RS ↓ ↑ ↑'
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Advanced rainbow',
 				'pt': 'Carretilha avançada'
 			},
-			'command': 'RS toque ↓ segure ↑ toque ↑'
+			'command': 'toque RS ↓ segure RS ↑ toque RS ↑'
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Feint left & exit right',
-				'pt': 'Fintar p/ esquerda e sair p/ direita'
+				'pt': 'Driblar p/ esquerda e sair p/ direita'
 			},
 			'command': 'RS ← ↙ ↓ ↘ →'
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Feint right & exit left',
-				'pt': 'Fintar p/ direita e sair p/ esquerda'
+				'pt': 'Driblar p/ direita e sair p/ esquerda'
 			},
 			'command': 'RS → ↘ ↓ ↙ ←'
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Spin left',
 				'pt': 'Giro p/ esquerda'
@@ -218,7 +226,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Spin right',
 				'pt': 'Giro p/ direita'
@@ -227,25 +235,25 @@
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Stop and turn left',
 				'pt': 'Parada com giro p/ esquerda'
 			},
-			'command': 'correndo,<br>RS toque ↑ toque ←'
+			'command': 'correndo,<br>toque RS ↑ toque RS ←'
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Stop and turn right',
 				'pt': 'Parada com giro p/ direita'
 			},
-			'command': 'correndo,<br>RS toque ↑ toque →'
+			'command': 'correndo,<br>toque RS ↑ toque RS →'
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Ball roll cut right',
 				'pt': 'Rolada com corte p/ direita'
@@ -254,7 +262,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 4,
+			'type': skillMoves.types[3],
 			'name': {
 				'en': 'Ball roll cut left',
 				'pt': 'Rolada com corte p/ esquerda'
@@ -263,7 +271,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Elastico',
 				'pt': 'Elástico'
@@ -272,7 +280,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Reverse elastico',
 				'pt': 'Elástico invertido'
@@ -281,7 +289,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Quick ball rolls',
 				'pt': 'Roladas rápidas'
@@ -290,7 +298,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Hocus pocus',
 				'pt': 'Abracadabra'
@@ -299,7 +307,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Triple elastico',
 				'pt': 'Elástico triplo'
@@ -308,70 +316,70 @@
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Ball roll and flick left',
 				'pt': 'Rolada com toque p/ esquerda'
 			},
-			'command': 'correndo,<br>RS segure → toque ↑'
+			'command': 'correndo,<br>segure RS → toque RS ↑'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Ball roll and flick right',
 				'pt': 'Rolada com toque p/ direita'
 			},
-			'command': 'correndo,<br>RS segure ← toque ↑'
+			'command': 'correndo,<br>segure RS ← toque RS ↑'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Sombrero flick',
 				'pt': 'Chapéu'
 			},
-			'command': 'parado,<br>RS toque ↑ ↑ ↓'
+			'command': 'parado,<br>toque RS ↑ ↑ ↓'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Turn & spin left',
-				'pt': 'Volta e giro p/ esquerda'
+				'pt': 'Volta e giro à esquerda'
 			},
-			'command': 'RS toque ↑ toque ←'
+			'command': 'toque RS ↑ toque RS ←'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Turn & spin right',
-				'pt': 'Volta e giro p/ direita'
+				'pt': 'Volta e giro à direita'
 			},
-			'command': 'RS toque ↑ toque →'
+			'command': 'toque RS ↑ toque RS →'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Ball roll fake left',
 				'pt': 'Fingir rolada p/ esquerda'
 			},
-			'command': 'parado,<br>RS segure ← e RS toque →'
+			'command': 'parado,<br>segure RS ← e toque RS →'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Ball roll fake right',
 				'pt': 'Fingir rolada p/ direita'
 			},
-			'command': 'parado,<br>RS segure → e RS toque ←'
+			'command': 'parado,<br>segure RS → e toque RS ←'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Rabona fake',
 				'pt': 'Fingir toque de letra'
@@ -380,25 +388,25 @@
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Elastico chop left',
 				'pt': 'Elástico p/ esquerda'
 			},
-			'command': 'RS toque ↓ toque ←'
+			'command': 'toque RS ↓ toque RS ←'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Elastico chop right',
 				'pt': 'Elástico p/ direita'
 			},
-			'command': 'RS toque ↓ toque →'
+			'command': 'toque RS ↓ toque RS →'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Laces flick up',
 				'pt': 'Toque de peito de pé'
@@ -407,34 +415,34 @@
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Sombrero flick backwards',
 				'pt': 'Chapéu p/ trás'
 			},
-			'command': 'durante embaixadinha,<br>LS segure ↓'
+			'command': 'durante embaixadinha,<br>segure LS ↓'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Sombrero flick left',
 				'pt': 'Chapéu p/ esquerda'
 			},
-			'command': 'durante embaixadinha,<br>LS segure ←'
+			'command': 'durante embaixadinha,<br>segure LS ←'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Sombrero flick right',
 				'pt': 'Chapéu p/ direita'
 			},
-			'command': 'durante embaixadinha,<br>LS segure →'
+			'command': 'durante embaixadinha,<br>segure LS →'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Around the world',
 				'pt': 'Ao redor do mundo'
@@ -443,34 +451,34 @@
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'In air elastico',
 				'pt': 'Elástico no ar'
 			},
-			'command': 'durante embaixadinha,<br>RS toque → toque ←'
+			'command': 'durante embaixadinha,<br>toque RS → toque RS ←'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Reverse in air elastico',
 				'pt': 'Elástico no ar invertido'
 			},
-			'command': 'durante embaixadinha,<br>RS toque ← toque →'
+			'command': 'durante embaixadinha,<br>toque RS ← toque RS →'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Flick up for a volley',
 				'pt': 'Toque p/ cima p/ voleio'
 			},
-			'command': 'durante embaixadinha,<br>LS segure ↑'
+			'command': 'durante embaixadinha,<br>segure LS ↑'
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'Chest flick',
 				'pt': 'Toque de peito'
@@ -479,7 +487,7 @@
 		},
 		{
 			'new': 0,
-			'stars': 5,
+			'type': skillMoves.types[4],
 			'name': {
 				'en': 'T. around the world',
 				'pt': 'Volta ao mundo'

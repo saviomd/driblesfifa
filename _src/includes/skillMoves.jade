@@ -1,0 +1,11 @@
+include /data/skillMoves.jade
+include /mixins/movements.jade
+include /mixins/movementsFilter.jade
+
+.hidden-xs-up.p-y-1.js-page#skill-moves
+	.container.animated.fadeInRight
+		.clearfix.m-b-1
+			h1.pull-xs-left= 'Dribles'
+			+movementsFilter(skillMoves, 'skill-moves')
+		.js-list-skill-moves
+			+movements(skillMoves.movements)

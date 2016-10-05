@@ -29,7 +29,7 @@ bootstrap
 // @import "../../node_modules/bootstrap/scss/custom-forms";
 @import "../../node_modules/bootstrap/scss/nav";
 @import "../../node_modules/bootstrap/scss/navbar";
-@import "../../node_modules/bootstrap/scss/card";
+// @import "../../node_modules/bootstrap/scss/card";
 // @import "../../node_modules/bootstrap/scss/breadcrumb";
 // @import "../../node_modules/bootstrap/scss/pagination";
 @import "../../node_modules/bootstrap/scss/tags";
@@ -55,6 +55,4 @@ animate.css
 ====================
 */
 @import "../../node_modules/animate.css/source/_base";
-@import "../../node_modules/animate.css/source/fading_entrances/fadeInDown";
 @import "../../node_modules/animate.css/source/fading_entrances/fadeInRight";
-@import "../../node_modules/animate.css/source/fading_entrances/fadeInUp";

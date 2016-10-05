@@ -1,8 +1,15 @@
 -
-	var celebrations = [
+	var celebrations = {}
+	celebrations.types = [
+		'Corrida',
+		'Finalização',
+		'Pro',
+		'EASFC'
+	]
+	celebrations.movements = [
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'One arm raised',
 				'pt': 'Um braço levantado'
@@ -11,7 +18,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Thumb suck',
 				'pt': 'Chupar dedão'
@@ -20,7 +27,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Ear twist',
 				'pt': 'Parafusar orelha'
@@ -29,7 +36,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Finger points',
 				'pt': 'Apontar com os dedos'
@@ -38,7 +45,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Arms out',
 				'pt': 'Braços abertos'
@@ -47,16 +54,16 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Wrist flick',
-				'pt': 'Balançar as mãos'
+				'pt': 'Balançar a mão'
 			},
 			'command': 'toque <i class="btn-controller btn-controller--y"></i> e segure <i class="btn-controller btn-controller--y"></i>'
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Aeroplane',
 				'pt': 'Avião'
@@ -65,7 +72,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Point to sky',
 				'pt': 'Apontar para o céu'
@@ -74,7 +81,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Shhhhhh!',
 				'pt': 'Quietinhos!'
@@ -83,7 +90,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Telephone',
 				'pt': 'Telefone'
@@ -92,7 +99,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Can you hear me?',
 				'pt': 'Consegue me ouvir?'
@@ -101,7 +108,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Hands out',
 				'pt': 'Mãos estendidas'
@@ -110,7 +117,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Come on!',
 				'pt': 'Vamos!'
@@ -119,7 +126,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Blow kisses',
 				'pt': 'Beijinhos'
@@ -128,7 +135,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Double arm swing',
 				'pt': 'Girar os dois braços'
@@ -137,7 +144,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Flying bird',
 				'pt': 'Pássaro voando'
@@ -146,7 +153,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Hand on head',
 				'pt': 'Mão na cabeça'
@@ -155,7 +162,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Heart symbol',
 				'pt': 'Coração com as mãos'
@@ -164,7 +171,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Arms pointing up',
 				'pt': 'Braços para cima'
@@ -173,7 +180,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Corrida',
+			'type': celebrations.types[0],
 			'name': {
 				'en': 'Windmill',
 				'pt': 'Moinho de vento'
@@ -182,7 +189,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Point to the sky',
 				'pt': 'Apontar para o céu'
@@ -191,7 +198,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Show respect',
 				'pt': 'Respeito é bom'
@@ -199,8 +206,8 @@
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> toque 2x <i class="btn-controller btn-controller--b"></i>'
 		},
 		{
-			'new': 1,
-			'type': 'Finalização',
+			'new': 0,
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Spanish dance',
 				'pt': 'Dança espanhola'
@@ -209,7 +216,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Belly flop',
 				'pt': 'Mergulho de barriga'
@@ -218,7 +225,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Riding the wave',
 				'pt': 'Surfando a onda'
@@ -226,35 +233,35 @@
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> aperte <i class="btn-controller btn-controller--y"></i>'
 		},
 		{
-			'new': 0,
-			'type': 'Finalização',
+			'new': 1,
+			'type': celebrations.types[1],
 			'name': {
-				'en': 'The business',
-				'pt': 'Executivo'
+				'en': 'Triangle',
+				'pt': 'Triângulo'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> toque RS ↓ ↓'
 		},
 		{
-			'new': 0,
-			'type': 'Finalização',
+			'new': 1,
+			'type': celebrations.types[1],
 			'name': {
-				'en': 'Standing archer',
-				'pt': 'Arqueiro de pé'
+				'en': 'Big man',
+				'pt': 'Em cima e embaixo'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> segure RS →'
 		},
 		{
-			'new': 0,
-			'type': 'Finalização',
+			'new': 1,
+			'type': celebrations.types[1],
 			'name': {
-				'en': 'Punch & dodge',
-				'pt': 'Socos e esquiva'
+				'en': 'Baby girl',
+				'pt': 'Menininha'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> segure RS ←'
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Chest slide',
 				'pt': 'Deslizar com o peito'
@@ -262,26 +269,26 @@
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> toque RS ↓ ↑'
 		},
 		{
-			'new': 1,
-			'type': 'Finalização',
+			'new': 0,
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Point up',
-				'pt': 'Discordar com a cabeça'
+				'pt': 'Apontar p/ cima'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> toque RS ← →'
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Signature finishing move',
-				'pt': 'Movimento final'
+				'pt': 'Finalização com marca registrada'
 			},
 			'command': 'aperte <i class="btn-controller btn-controller--a"></i>'
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Back flip (agile players) or Arms to crowd',
 				'pt': 'Mortal p/ trás (jogador ágil) ou Para a galera'
@@ -290,7 +297,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Hand spring (agile players) or Roll & punch',
 				'pt': 'Cambalhota com a mão (jogador ágil) ou Rolada e soco'
@@ -298,17 +305,17 @@
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> RS ↻'
 		},
 		{
-			'new': 0,
-			'type': 'Finalização',
+			'new': 1,
+			'type': celebrations.types[1],
 			'name': {
-				'en': 'Double back flip (agile players) and roll',
-				'pt': 'Mortal duplo (jogador ágil) e cambalhota'
+				'en': 'Floor spin',
+				'pt': 'Giro no chão'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> RS ↺'
 		},
 		{
-			'new': 1,
-			'type': 'Finalização',
+			'new': 0,
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Timber',
 				'pt': 'Madeira'
@@ -317,7 +324,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Violinist',
 				'pt': 'Violino'
@@ -326,7 +333,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Spanish archer',
 				'pt': 'Arqueiro espanhol'
@@ -335,7 +342,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Hands on ears',
 				'pt': 'Mãos nas orelhas'
@@ -343,8 +350,8 @@
 			'command': 'segure <i class="btn-controller btn-controller--lt"></i> toque 2x <i class="btn-controller btn-controller--x"></i>'
 		},
 		{
-			'new': 1,
-			'type': 'Finalização',
+			'new': 0,
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Stomach slide',
 				'pt': 'Deslizar de barriga'
@@ -353,7 +360,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Knee slide arms out',
 				'pt': 'Deslizar de joelhos de braços abertos'
@@ -362,7 +369,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'I can\'t hear you',
 				'pt': 'Não estou escutando'
@@ -371,7 +378,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Side slide',
 				'pt': 'Deslizar de lado'
@@ -380,7 +387,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Brick fall',
 				'pt': 'Queda inconsciente'
@@ -389,7 +396,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Knee slide',
 				'pt': 'Deslizar de joelhos'
@@ -398,7 +405,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Samba dance',
 				'pt': 'Sambadinha'
@@ -407,7 +414,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Who am I',
 				'pt': 'Quem sou eu?'
@@ -416,7 +423,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Knee slide to sit',
 				'pt': 'Deslizar de joelho e indiozinho'
@@ -424,8 +431,8 @@
 			'command': 'segure <i class="btn-controller btn-controller--lt"></i> toque RS ↓ ↓'
 		},
 		{
-			'new': 1,
-			'type': 'Finalização',
+			'new': 0,
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Knee slide fail',
 				'pt': 'Falha ao deslizar de joelhos'
@@ -434,7 +441,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Flip (agile player) or Cartwheel',
 				'pt': 'Mortal (jogador ágil) ou estrela'
@@ -443,7 +450,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Twist flip (agile player) or Cartwheel roll',
 				'pt': 'Mortal com giro (jogador ágil) ou estrela e rolar'
@@ -451,26 +458,26 @@
 			'command': 'segure <i class="btn-controller btn-controller--lt"></i> RS ↺'
 		},
 		{
-			'new': 0,
-			'type': 'Finalização',
+			'new': 1,
+			'type': celebrations.types[1],
 			'name': {
-				'en': 'If I catch you',
-				'pt': 'Ai, se eu te pego'
+				'en': 'Rugby',
+				'pt': 'Rúgbi'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rt"></i> aperte RS'
 		},
 		{
-			'new': 0,
-			'type': 'Finalização',
+			'new': 1,
+			'type': celebrations.types[1],
 			'name': {
-				'en': 'Why always me',
-				'pt': 'Por que sempre eu?'
+				'en': 'Elbow',
+				'pt': 'Dab dance'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rb"></i> toque 2x <i class="btn-controller btn-controller--y"></i>'
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Kiss the pitch',
 				'pt': 'Beijo no gramado'
@@ -479,7 +486,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Finalização',
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'The salute',
 				'pt': 'Saudação'
@@ -487,8 +494,8 @@
 			'command': 'segure <i class="btn-controller btn-controller--rb"></i> aperte <i class="btn-controller btn-controller--y"></i>'
 		},
 		{
-			'new': 1,
-			'type': 'Finalização',
+			'new': 0,
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Chest stump',
 				'pt': 'Bater no peito'
@@ -496,17 +503,17 @@
 			'command': 'segure <i class="btn-controller btn-controller--rt"></i> toque RS ↓ ↓'
 		},
 		{
-			'new': 0,
-			'type': 'Finalização',
+			'new': 1,
+			'type': celebrations.types[1],
 			'name': {
-				'en': 'Peacock',
-				'pt': 'Pavão'
+				'en': 'Push it down',
+				'pt': 'Empurre p/ baixo'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rb"></i> toque 2x <i class="btn-controller btn-controller--b"></i>'
 		},
 		{
-			'new': 1,
-			'type': 'Finalização',
+			'new': 0,
+			'type': celebrations.types[1],
 			'name': {
 				'en': 'Glamour slide',
 				'pt': 'Deslize glamouroso'
@@ -515,7 +522,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Many bows',
 				'pt': 'Muitas reverências'
@@ -524,25 +531,25 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Pardon',
-				'pt': 'Perdão'
+				'pt': 'Como é que é?'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rt"></i> segure RS →'
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
-				'en': 'Fall to knees and beg',
+				'en': 'Fall to knees & beg',
 				'pt': 'De joelhos e implorando'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rt"></i> segure RS ↓'
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Backflips',
 				'pt': 'Mortal p/ trás'
@@ -551,7 +558,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Slide on back',
 				'pt': 'Deslizar de costas'
@@ -560,7 +567,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Cockroach',
 				'pt': 'Barata'
@@ -569,7 +576,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'River dance',
 				'pt': 'Dança irlandesa'
@@ -578,7 +585,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Break dance',
 				'pt': 'Break dance'
@@ -587,16 +594,16 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Praise on knees',
-				'pt': 'Louvor de joelhos'
+				'pt': 'Reverência de joelhos'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rt"></i> segure RS ←'
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Backwards worm',
 				'pt': 'Rastejar p/ trás'
@@ -605,7 +612,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Uncontrolled backflip',
 				'pt': 'Mortal p/ trás descontrolado'
@@ -614,16 +621,16 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Handstand',
-				'pt': 'Parada de mãos'
+				'pt': 'Bananeira'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rt"></i> RS ↺'
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Spin & fall',
 				'pt': 'Girar e cair'
@@ -632,7 +639,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Rowing on knees',
 				'pt': 'Remando de joelhos'
@@ -641,7 +648,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Seated rowing',
 				'pt': 'Remando sentado'
@@ -650,7 +657,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Knee walk',
 				'pt': 'Andar de joelhos'
@@ -659,25 +666,25 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Cradle swing',
-				'pt': 'Balançar o berço'
+				'pt': 'Balançar bebê'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rt"></i> aperte <i class="btn-controller btn-controller--y"></i>'
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Baby',
-				'pt': 'Bebê'
+				'pt': 'Ninar bebê'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rt"></i> toque 2x <i class="btn-controller btn-controller--y"></i>'
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Flying dive',
 				'pt': 'Salto voador'
@@ -686,16 +693,16 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Karate kicks',
-				'pt': 'Chutes de caratê'
+				'pt': 'Taekwondo'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rb"></i> segure RS →'
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Jump kicks',
 				'pt': 'Chutes no ar'
@@ -704,7 +711,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Ice skating',
 				'pt': 'Patinação no gelo'
@@ -713,7 +720,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Golf swing',
 				'pt': 'Tacada de golfe'
@@ -722,7 +729,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Dance 1',
 				'pt': 'Dança 1'
@@ -731,7 +738,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Dance 2',
 				'pt': 'Dança 2'
@@ -740,7 +747,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Dance 3',
 				'pt': 'Dança 3'
@@ -749,7 +756,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'Pro',
+			'type': celebrations.types[2],
 			'name': {
 				'en': 'Dance 4',
 				'pt': 'Dança 4'
@@ -757,8 +764,8 @@
 			'command': 'segure <i class="btn-controller btn-controller--rt"></i> toque RS → ←'
 		},
 		{
-			'new': 1,
-			'type': 'EASFC',
+			'new': 0,
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'KO',
 				'pt': 'Nocaute'
@@ -767,7 +774,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Right here right now',
 				'pt': 'Aqui e agora'
@@ -776,7 +783,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Hand bite',
 				'pt': 'Mordida na mão'
@@ -785,7 +792,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Stand tall',
 				'pt': 'Parada'
@@ -794,7 +801,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Kiss the wrist',
 				'pt': 'Beijo no pulso'
@@ -803,16 +810,16 @@
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Old man',
-				'pt': 'Homem velho'
+				'pt': 'Velhote'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--lt"></i> aperte RS'
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Calm down',
 				'pt': 'Calma aí'
@@ -821,34 +828,34 @@
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'The Bear',
-				'pt': 'O urso'
+				'pt': 'Urso'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> segure RS ↑'
 		},
 		{
-			'new': 0,
-			'type': 'EASFC',
+			'new': 1,
+			'type': celebrations.types[3],
 			'name': {
-				'en': 'Riding the cat',
-				'pt': 'O gato'
+				'en': 'Motorbike',
+				'pt': 'Moto'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> segure RS ↓'
 		},
 		{
-			'new': 1,
-			'type': 'EASFC',
+			'new': 0,
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Bailando robot',
-				'pt': 'Dança da galinha'
+				'pt': 'Dança do robô'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> toque RS ↑ ↓'
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Muevelo',
 				'pt': 'Muévelo'
@@ -857,25 +864,25 @@
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Patty cake',
-				'pt': 'Adoletá'
+				'pt': 'Adoleta'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--lb"></i> toque RS → →'
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Muscle flex',
-				'pt': 'Musculoso'
+				'pt': 'Musculação'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rb"></i> toque RS ↑ ↓'
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Push ups',
 				'pt': 'Flexões'
@@ -884,7 +891,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'The worm',
 				'pt': 'Verme'
@@ -893,7 +900,7 @@
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Dance',
 				'pt': 'Dança'
@@ -902,16 +909,16 @@
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Prancing bird',
-				'pt': 'Pássaro com pompa'
+				'pt': 'Pássaro saltador'
 			},
 			'command': 'segure <i class="btn-controller btn-controller--rb"></i> aperte <i class="btn-controller btn-controller--x"></i>'
 		},
 		{
 			'new': 0,
-			'type': 'EASFC',
+			'type': celebrations.types[3],
 			'name': {
 				'en': 'Gallop dance',
 				'pt': 'Dança do galope'

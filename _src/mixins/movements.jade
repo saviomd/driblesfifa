@@ -1,0 +1,13 @@
+mixin movements(movements)
+	each movement in movements
+		.movement.m-b-1.p-a-1.js-movement(data-new=movement.new, data-type=movement.type)
+			if movement.name.en
+				h2.movement__name
+					= movement.name.en
+					.movement__name-pt= movement.name.pt
+			else
+				h2.movement__name!= movement.name
+			.text-xs-right!= movement.command
+			span.tag.tag-default= movement.type
+			if movement.new
+				span.tag.tag-default= 'Novo'

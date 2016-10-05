@@ -1,0 +1,1153 @@
+-
+	var basicControls = {}
+	basicControls.types = [
+		'Ataque - Simples',
+		'Ataque - Avançado',
+		'Movimentação',
+		'Táticas',
+		'Defesa',
+		'Goleiro',
+		'Bolas paradas - Faltas',
+		'Bolas paradas - Faltas - Avançado',
+		'Bolas paradas - Escanteios e laterais',
+		'Bolas paradas - Pênaltis',
+		'Seja um craque: Jogador (sem a bola)',
+		'Seja um craque: Goleiro (sem a bola)',
+		'Seja um craque: Goleiro (protegendo)'
+	]
+	basicControls.movements = [
+		{
+			'new': 0,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'Short pass / Header',
+				'pt': 'Passe curto / De cabeça'
+			},
+			'command': '<i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'Lob pass / Cross / Header',
+				'pt': 'Por cima / Cruzamento / De cabeça'
+			},
+			'command': '<i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'Through ball',
+				'pt': 'Bola enfiada'
+			},
+			'command': '<i class="btn-controller btn-controller--y"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'Shoot / Volley / Header',
+				'pt': 'Chute / Voleio / Cabeceio'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'No touch small feints',
+				'pt': 'Dribles curtos sem toque'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'No touch big feints',
+				'pt': 'Dribles longos sem toque'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i> + <i class="btn-controller btn-controller--rt"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'Manual protect',
+				'pt': 'Proteger manualmente'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i> + <i class="btn-controller btn-controller--lt"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'Chip shot',
+				'pt': 'Cavadinha'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i> + <i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'Finesse shot',
+				'pt': 'Chute colocado'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i> + <i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'Low shot / Downward header',
+				'pt': 'Chute por baixo / Cabeceio para baixo'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i> + toque <i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'Fake shot',
+				'pt': 'Fingir chute'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i> então <i class="btn-controller btn-controller--a"></i> + direção'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'Fake pass',
+				'pt': 'Fingir passe'
+			},
+			'command': '<i class="btn-controller btn-controller--x"></i> então <i class="btn-controller btn-controller--a"></i> + direção'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[0],
+			'name': {
+				'en': 'Threaded through pass',
+				'pt': 'Bola enfiada precisa'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i> + <i class="btn-controller btn-controller--y"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Protect ball',
+				'pt': 'Proteger bola'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Lobbed through ball',
+				'pt': 'Bola enfiada por cobertura'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i> + <i class="btn-controller btn-controller--y"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Bouncing lob pass',
+				'pt': 'Lançamento com quique'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i> + <i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Low cross',
+				'pt': 'Cruzamento por baixo'
+			},
+			'command': '2x <i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Ground cross',
+				'pt': 'Cruzamento rasteiro'
+			},
+			'command': '3x <i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Early cross',
+				'pt': 'Cruzamento antecipado'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i> + <i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Call for support',
+				'pt': 'Pedir aproximação'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Dummy a pass',
+				'pt': 'Corta-luz'
+			},
+			'command': 'aperte e segure <i class="btn-controller btn-controller--rb"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Cancel',
+				'pt': 'Cancelar'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> + <i class="btn-controller btn-controller--rt"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Flair pass',
+				'pt': 'Passe com firula'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> + <i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Flair shot',
+				'pt': 'Finalização com firula'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> + <i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[1],
+			'name': {
+				'en': 'Driven ground pass',
+				'pt': 'Passe rasteiro direto'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i> + <i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[2],
+			'name': {
+				'en': 'Move player',
+				'pt': 'Mover jogador'
+			},
+			'command': 'LS'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[2],
+			'name': {
+				'en': 'First touch / Knock-on',
+				'pt': 'Primeiro toque / Adiantar a bola'
+			},
+			'command': '<i class="btn-controller btn-controller--rt"></i> + RS + direção'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[2],
+			'name': {
+				'en': 'Skill moves',
+				'pt': 'Fintas'
+			},
+			'command': 'RS'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[2],
+			'name': {
+				'en': 'Stop and face goal',
+				'pt': 'Parar e virar para o gol'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i> + nenhuma direção'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[2],
+			'name': {
+				'en': 'Stop ball',
+				'pt': 'Parar a bola'
+			},
+			'command': '<i class="btn-controller btn-controller--rt"></i> + nenhuma direção'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[2],
+			'name': {
+				'en': 'Sprint',
+				'pt': 'Pique'
+			},
+			'command': '<i class="btn-controller btn-controller--rt"></i> + direção'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[2],
+			'name': {
+				'en': 'Protect / Slow dribble / Jockey',
+				'pt': 'Proteger / Avançar devagar / Cercar'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> + direção'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[2],
+			'name': {
+				'en': 'Face up dribbling',
+				'pt': 'Drible de cabeça erguida'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> + <i class="btn-controller btn-controller--rt"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[3],
+			'name': {
+				'en': 'Offside trap',
+				'pt': 'Linha de impedimento'
+			},
+			'command': 'DP ↑ então DP ↑'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[3],
+			'name': {
+				'en': 'Team press',
+				'pt': 'Pressão'
+			},
+			'command': 'DP ↑ então DP ↓'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[3],
+			'name': {
+				'en': 'Swap wings',
+				'pt': 'Inverter pontas'
+			},
+			'command': 'DP ↑ então DP ←'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[3],
+			'name': {
+				'en': 'CB joins attack',
+				'pt': 'Zagueiro no ataque'
+			},
+			'command': 'DP ↑ então DP →'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[3],
+			'name': {
+				'en': 'Counter attack',
+				'pt': 'Contra-ataque'
+			},
+			'command': 'DP ↓ então DP ↑'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[3],
+			'name': {
+				'en': 'High pressure',
+				'pt': 'Pressão constante'
+			},
+			'command': 'DP ↓ então DP ↓'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[3],
+			'name': {
+				'en': 'Possession',
+				'pt': 'Posse de bola'
+			},
+			'command': 'DP ↓ então DP ←'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[3],
+			'name': {
+				'en': 'Long ball',
+				'pt': 'Bolas longas'
+			},
+			'command': 'DP ↓ então DP →'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[3],
+			'name': {
+				'en': 'Change mentality',
+				'pt': 'Mudar mentalidade'
+			},
+			'command': 'DP ← ou DP →'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Change player',
+				'pt': 'Mudar jogador'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Switch player (manual)',
+				'pt': 'Trocar jogador (manual)'
+			},
+			'command': 'RS + direção'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Tackle / Push or pull (when chasing)',
+				'pt': 'Dividida / Empurrar / Puxar (ao correr)'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Sliding tackle',
+				'pt': 'Carrinho'
+			},
+			'command': '<i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Clearance',
+				'pt': 'Chutão'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Tackle / Push or pull / Jockey',
+				'pt': 'Dividida / Empurrar ou puxar / Cercar'
+			},
+			'command': 'aperte e segure <i class="btn-controller btn-controller--lt"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Contain',
+				'pt': 'Conter'
+			},
+			'command': 'aperte e segure <i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Teammate contain',
+				'pt': 'Conter com o companheiro'
+			},
+			'command': 'aperte e segure <i class="btn-controller btn-controller--rb"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Running jockey',
+				'pt': 'Cercar na corrida'
+			},
+			'command': 'aperte e segure <i class="btn-controller btn-controller--lt"></i> + <i class="btn-controller btn-controller--rt"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Pull and hold (when chasing)',
+				'pt': 'Puxar e agarrar (ao perseguir)'
+			},
+			'command': 'aperte e segure <i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Quick get up (after slide tackle)',
+				'pt': 'Levantar-se rapidamente (depois do carrinho)'
+			},
+			'command': '<i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[4],
+			'name': {
+				'en': 'Engage shielding opponent',
+				'pt': 'Enfrentar adversário que protege a bola'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> + LS em direção ao driblador'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[5],
+			'name': {
+				'en': 'Drop kick',
+				'pt': 'Balão'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i> ou <i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[5],
+			'name': {
+				'en': 'Throw / Pass',
+				'pt': 'Arremessar / Passar'
+			},
+			'command': '<i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[5],
+			'name': {
+				'en': 'Charge / Drop ball',
+				'pt': 'Sair com o goleiro / Soltar a bola'
+			},
+			'command': '<i class="btn-controller btn-controller--y"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[5],
+			'name': {
+				'en': 'Pick up ball',
+				'pt': 'Pegar bola'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[5],
+			'name': {
+				'en': 'Switch to goalkeeper',
+				'pt': 'Controlar goleiro'
+			},
+			'command': '<i class="btn-controller btn-controller--view"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[5],
+			'name': {
+				'en': 'Driven throw',
+				'pt': 'Arremesso direto'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i> + <i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[5],
+			'name': {
+				'en': 'Driven kick',
+				'pt': 'Chute colocado'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i> + <i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Ground pass',
+				'pt': 'Passe rasteiro'
+			},
+			'command': '<i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'High pass / Cross',
+				'pt': 'Passe alto / Cruzamento'
+			},
+			'command': '<i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Curled shot',
+				'pt': 'Chute com efeito'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Driven shot',
+				'pt': 'Cobrança direta'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i> + <i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Wall jump',
+				'pt': 'Pulo da barreira'
+			},
+			'command': '<i class="btn-controller btn-controller--y"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Wall charge',
+				'pt': 'Sair da barreira'
+			},
+			'command': '<i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Move wall',
+				'pt': 'Mover barreira'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> ou <i class="btn-controller btn-controller--rt"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Wall creep',
+				'pt': 'Andar com a barreira'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Adjust start position',
+				'pt': 'Ajustar posição inicial'
+			},
+			'command': 'RS'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Aim / Move camera',
+				'pt': 'Mirar / Mover câmera'
+			},
+			'command': 'LS'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Apply shot power',
+				'pt': 'Usar força do chute'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Apply curl during run up',
+				'pt': 'Aplicar efeito durante a corrida'
+			},
+			'command': 'LS'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Select kick taker',
+				'pt': 'Selecionar cobrador'
+			},
+			'command': '<i class="btn-controller btn-controller--rt"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[6],
+			'name': {
+				'en': 'Add kick taker',
+				'pt': 'Adicionar cobrador'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i> ou <i class="btn-controller btn-controller--lt"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[7],
+			'name': {
+				'en': 'Call 2nd kick taker',
+				'pt': 'Chamar 2o cobrador'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[7],
+			'name': {
+				'en': '2nd kick taker curled shot',
+				'pt': 'Batida com efeito do 2o cobrador'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> + <i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[7],
+			'name': {
+				'en': '2nd kick taker layoff pass',
+				'pt': 'Passe do 2o cobrador'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> + <i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[7],
+			'name': {
+				'en': '2nd kick taker layoff chip',
+				'pt': 'Cavadinha do 2o cobrador'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> + <i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[7],
+			'name': {
+				'en': '2nd kick taker run over ball',
+				'pt': 'Salto sobre a bola do 2o cobrador'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> + <i class="btn-controller btn-controller--b"></i> então <i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[7],
+			'name': {
+				'en': 'Call 3rd kick taker',
+				'pt': 'Chamar 3o cobrador'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[7],
+			'name': {
+				'en': '3rd kick taker curled shot',
+				'pt': 'Batida com efeito do 3o cobrador'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i> + <i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[7],
+			'name': {
+				'en': '3rd kick taker run over ball',
+				'pt': 'Salto sobre a bola do 3o cobrador'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i> + <i class="btn-controller btn-controller--b"></i> então <i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Corners - Lob cross',
+				'pt': 'Escanteios - Cruzamento por cima'
+			},
+			'command': '<i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Corners - Low cross',
+				'pt': 'Escanteios - Cruzamento por baixo'
+			},
+			'command': '2x <i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Corners - Ground cross',
+				'pt': 'Escanteios - Cruzamento rasteiro'
+			},
+			'command': '3x <i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Corners - Pass',
+				'pt': 'Escanteios - Passe'
+			},
+			'command': '<i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Change player',
+				'pt': 'Mudar jogador'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'AIM kick',
+				'pt': 'Mirar chute'
+			},
+			'command': 'LS'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Apply kick power',
+				'pt': 'Usar força da cobrança'
+			},
+			'command': '<i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Call player short',
+				'pt': 'Pedir aproximação do jogador'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Movement along the line',
+				'pt': 'Movimento ao longo da linha'
+			},
+			'command': 'LS'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Short throw in',
+				'pt': 'Arremesso curto'
+			},
+			'command': '<i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Short throw in (manual)',
+				'pt': 'Arremesso curto (manual)'
+			},
+			'command': '<i class="btn-controller btn-controller--y"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Long throw in',
+				'pt': 'Arremesso longo'
+			},
+			'command': '<i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Move throw in receiver',
+				'pt': 'Mover jogador que receberá lateral'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[8],
+			'name': {
+				'en': 'Fake throw',
+				'pt': 'Fingir arremesso'
+			},
+			'command': '<i class="btn-controller btn-controller--x"></i> + <i class="btn-controller btn-controller--a"></i> ou <i class="btn-controller btn-controller--a"></i> + <i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Adjust start position',
+				'pt': 'Ajustar posição inicial'
+			},
+			'command': 'RS'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Movement during run up',
+				'pt': 'Movimento durante corrida'
+			},
+			'command': 'LS'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Stutter',
+				'pt': 'Paradinha'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Sprint',
+				'pt': 'Pique'
+			},
+			'command': '<i class="btn-controller btn-controller--rt"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Apply kick power',
+				'pt': 'Usar força da cobrança'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Aim',
+				'pt': 'Mirar'
+			},
+			'command': 'LS'
+		},
+		{
+			'new': 1,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Select kick taker',
+				'pt': 'Selecionar cobrador'
+			},
+			'command': '<i class="btn-controller btn-controller--rt"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Shoot',
+				'pt': 'Finalização'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Finesse shot',
+				'pt': 'Chute colocado'
+			},
+			'command': '<i class="btn-controller btn-controller--rb"></i> + <i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Chip shot',
+				'pt': 'Cavadinha'
+			},
+			'command': '<i class="btn-controller btn-controller--lb"></i> + <i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Goalkeeper dive',
+				'pt': 'Salto com o goleiro'
+			},
+			'command': 'RS + direção'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[9],
+			'name': {
+				'en': 'Goalkeeper move side to side',
+				'pt': 'Movimento lateral com o goleiro'
+			},
+			'command': 'LS + direção'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[10],
+			'name': {
+				'en': 'Call for pass / cross',
+				'pt': 'Pedir passe / cruzamento'
+			},
+			'command': '<i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[10],
+			'name': {
+				'en': 'Call for or suggest through ball',
+				'pt': 'Pedir ou sugerir bola enfiada'
+			},
+			'command': '<i class="btn-controller btn-controller--y"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[10],
+			'name': {
+				'en': 'Suggest shot',
+				'pt': 'Sugerir finalização'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[11],
+			'name': {
+				'en': 'Call for or suggest pass',
+				'pt': 'Pedir ou sugerir passe'
+			},
+			'command': '<i class="btn-controller btn-controller--a"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[11],
+			'name': {
+				'en': 'Sugest through ball',
+				'pt': 'Sugerir bola enfiada'
+			},
+			'command': '<i class="btn-controller btn-controller--y"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[11],
+			'name': {
+				'en': 'Suggest cross',
+				'pt': 'Sugerir cruzamento'
+			},
+			'command': '<i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[11],
+			'name': {
+				'en': 'Suggest shot',
+				'pt': 'Sugerir finalização'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[11],
+			'name': {
+				'en': 'Toggle camera target',
+				'pt': 'Alternar foco da câmera'
+			},
+			'command': '<i class="btn-controller btn-controller--view"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[12],
+			'name': {
+				'en': 'Dive',
+				'pt': 'Saltar'
+			},
+			'command': 'RS + direção (segure)'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[12],
+			'name': {
+				'en': 'Dive',
+				'pt': 'Saltar'
+			},
+			'command': '<i class="btn-controller btn-controller--a"></i> + direção (segure)'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[12],
+			'name': {
+				'en': 'Autopositioning',
+				'pt': 'Autoposicionamento'
+			},
+			'command': 'aperte e segure <i class="btn-controller btn-controller--lb"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[12],
+			'name': {
+				'en': 'Slow movement facing ball',
+				'pt': 'Movimento lento olhando para a bola'
+			},
+			'command': '<i class="btn-controller btn-controller--lt"></i> + LS'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[12],
+			'name': {
+				'en': 'Charge / Punch',
+				'pt': 'Sair / Socar'
+			},
+			'command': 'aperte e segure <i class="btn-controller btn-controller--y"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[12],
+			'name': {
+				'en': 'Dive at feet',
+				'pt': 'Saltar aos pés'
+			},
+			'command': '<i class="btn-controller btn-controller--x"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[12],
+			'name': {
+				'en': 'Anticipation save',
+				'pt': 'Antecipação'
+			},
+			'command': '<i class="btn-controller btn-controller--b"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[12],
+			'name': {
+				'en': '2nd defender contain',
+				'pt': 'Conter com segundo defensor'
+			},
+			'command': 'aperte e segure <i class="btn-controller btn-controller--rb"></i>'
+		},
+		{
+			'new': 0,
+			'type': basicControls.types[12],
+			'name': {
+				'en': 'Toggle camera target',
+				'pt': 'Alternar foco da câmera'
+			},
+			'command': '<i class="btn-controller btn-controller--view"></i>'
+		}
+	]

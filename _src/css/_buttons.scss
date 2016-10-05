@@ -10,18 +10,6 @@
 	color: #fff;
 }
 
-.btn--googleplus {
-	background: #cd3726;
-	color: #fff;
-	font-weight: bold;
-}
-
-.btn--googleplus:focus,
-.btn--googleplus:hover {
-	background: darken(#cd3726, 10%);
-	color: #fff;
-}
-
 .btn--twitter {
 	background: #2298f0;
 	color: #fff;
@@ -35,14 +23,16 @@
 }
 
 .btn--filter {
+	overflow: hidden;
 	text-align: right;
+	text-overflow: ellipsis;
 	width: 110px;
 }
 
 .btn-controller {
-	background: #333;
-	border-radius: 50%;
-	color: #eee;
+	background: #eee;
+	border-radius: 12px; /* 12 = height/2 */
+	color: #333;
 	display: inline-block;
 	font-style: normal;
 	height: 24px; /* 24 = line-height(16+8) */
@@ -54,17 +44,21 @@
 .btn-controller--lt,
 .btn-controller--rb,
 .btn-controller--rt {
-	width: 38px;
+	width: 32px;
 }
 
 .btn-controller--lb,
 .btn-controller--lt {
-	border-radius: 50% 0 0 0;
+	border-radius: 12px 0 0 0;
 }
 
 .btn-controller--rb,
 .btn-controller--rt {
-	border-radius: 0 50% 0 0;
+	border-radius: 0 12px 0 0;
+}
+
+.btn-controller--view {
+	width: 56px;
 }
 
 .btn-controller--a:after {
@@ -129,4 +123,12 @@
 
 .ps .btn-controller--rt:after {
 	content: "R2";
+}
+
+.btn-controller--view:after {
+	content: "View";
+}
+
+.ps .btn-controller--view:after {
+	content: "Select";
 }

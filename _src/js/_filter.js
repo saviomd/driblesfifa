@@ -13,12 +13,12 @@ driblesfifa.filter = (function () {
 		var $this = $(this);
 		var filter = $this.attr('data-filter');
 		var $list = $('.js-list-' + $this.attr('data-list'));
-		var $commands = $list.find('.card');
+		var $commands = $list.find('.js-movement');
 		$this.addClass('active').siblings().removeClass('active');
 		$currentFilter.text($this.text());
-		if (filter === 'all') {
+		if (filter === 'Todos') {
 			$commands.removeClass('hidden-xs-up');
-		} else if (filter === 'new') {
+		} else if (filter === 'Novos') {
 			$commands.addClass('hidden-xs-up').filter('[data-new="1"]').removeClass('hidden-xs-up');
 		} else {
 			$commands.addClass('hidden-xs-up').filter('[data-type="' + filter + '"]').removeClass('hidden-xs-up');

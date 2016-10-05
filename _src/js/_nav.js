@@ -9,33 +9,35 @@ driblesfifa.nav = (function () {
 	navegacao do site
 	====================
 	*/
-	$('.navbar-brand, .list-group--home a').on('click', function (e) {
+	$('.js-page-trigger').on('click', function (e) {
 		e.preventDefault();
-		$('.section').addClass('hidden-xs-up');
-		var section = '#' + this.href.split('#')[1];
-		$(section).removeClass('hidden-xs-up');
+		window.scrollTo(0, 0);
+		$('.js-page').addClass('hidden-xs-up');
+		var page = '#' + this.href.split('#')[1];
+		$(page).removeClass('hidden-xs-up');
 	});
 
 	/*
 	cookie videogame
 	====================
 	*/
+	var $videogame = $('.js-videogame');
 	var alterarVideogame = function () {
 		var videogame = Cookies.get('videogame');
-		$('.videogames').find('.btn').removeClass('active');
+		$videogame.removeClass('active');
 		if (typeof videogame !== 'undefined' && videogame === 'ps') {
-			$('#ps').addClass('active');
+			$videogame.filter('[data-id="ps"]').addClass('active');
 			$('body').addClass('ps');
 		} else {
-			$('#xbox').addClass('active');
+			$videogame.filter('[data-id="xbox"]').addClass('active');
 			$('body').removeClass('ps');
 		}
 	};
 	alterarVideogame();
 
-	$('.videogames').find('.btn').on('click', function (e) {
+	$videogame.on('click', function (e) {
 		e.preventDefault();
-		var videogame = $(this).attr('id');
+		var videogame = $(this).attr('data-id');
 		Cookies.set('videogame', videogame, {expires: 365, path: '/'});
 		alterarVideogame();
 	});

@@ -1,7 +1,7 @@
 head
 	meta(charset='utf-8')
 	link(rel='dns-prefetch', href='//cdn.mouseflow.com')
-	link(rel='dns-prefetch', href='//pagead2.googlesyndication.com')
+	link(rel='dns-prefetch', href='//static.hotjar.com')
 	link(rel='dns-prefetch', href='//www.google-analytics.com')
 	meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
 	meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
@@ -13,25 +13,32 @@ head
 	if site.noindex
 		meta(name='robots', content='noindex, nofollow')
 
-	link(rel='stylesheet', href='css/vendor' + (site.dev ? '' : '.min') + '.css')
-	link(rel='stylesheet', href='css/driblesfifa' + (site.dev ? '' : '.min') + '.css')
+	link(rel='stylesheet', href='css/vendor' + (site.minify ? '.min' : '') + '.css')
+	link(rel='stylesheet', href='css/driblesfifa' + (site.minify ? '.min' : '') + '.css')
 	link(rel='shortcut icon', href=site.url + 'img/favicon.png')
 	link(rel='apple-touch-icon', href=site.url + 'img/apple-touch-icon.png')
 	link(rel='canonical', href=site.url + page.path)
 
-	//- chrome android meta tags
-	meta(name='theme-color', content='#7ce0e8')
-	meta(name='mobile-web-app-capable', content='yes')
+	//- web app manifest
+	link(rel='manifest', href=site.url + 'manifest.json')
 
-	//- twitter and open graph meta tags
+	//- ios web app
+	meta(name='apple-mobile-web-app-capable', content='yes')
+	meta(name='apple-mobile-web-app-status-bar-style', content='black')
+	meta(name='apple-mobile-web-app-title', content=site.name)
+
+	//- chrome android toolbar color
+	meta(name='theme-color', content=site.themeColor)
+
+	//- twitter card and open graph
 	meta(name='twitter:card', content='summary')
 	meta(name='twitter:site', content=site.twitter)
 	meta(property='og:url', content=site.url + page.path)
 	meta(property='og:title', content=page.title)
 	meta(property='og:description', content=page.description)
-	meta(property='og:image', content=site.url + 'app/icon-256.png')
+	meta(property='og:image', content=site.url + 'img/icon-256.png')
 
-	//- windows meta tags
+	//- windows pinned site
 	meta(name='msapplication-TileImage', content='img/favicon.png')
 	meta(name='msapplication-TileColor', content='#fff')
 

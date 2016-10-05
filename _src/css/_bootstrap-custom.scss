@@ -1,11 +1,5 @@
 a {
-	color: $color-tertiary-dark;
 	transition: 0.3s;
-}
-
-a:focus,
-a:hover {
-	color: $color-tertiary-dark;
 }
 
 h1 {
@@ -55,10 +49,16 @@ h1 {
 
 .dropdown-menu {
 	background: $color-default;
+	max-width: 290px;
 }
 
 .dropdown-divider {
 	background: $color-default-dark;
+}
+
+.dropdown-item {
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .dropdown-item:focus,
@@ -77,26 +77,13 @@ h1 {
 	max-width: 450px;
 }
 
-.navbar-fixed-top {
-	will-change: transform;
-}
-
-.navbar-light {
-	background: linear-gradient(to right, $color-secondary, $color-tertiary);
-}
-
 .navbar-brand:before {
 	content: "☰";
 	margin-right: 5px;
 }
 
-.card {
-	background-color: transparent;
-	border-color: $color-tertiary;
-}
-
-.card-block {
-	padding: 0.75rem;
+.bg-inverse {
+	background: #000 !important;
 }
 
 .tag {
@@ -104,10 +91,6 @@ h1 {
 }
 
 .tag-default {
-	background: $color-tertiary;
-}
-
-.tag-primary {
 	background: $color-default;
 	color: #333;
 }

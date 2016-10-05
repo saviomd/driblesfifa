@@ -1,33 +1,11 @@
 include /data/celebrations.jade
+include /mixins/movements.jade
+include /mixins/movementsFilter.jade
 
-- var celebrationsNew = false
-each item in celebrations
-	if item.new === 1
-		- celebrationsNew = true
-
-.section.hidden-xs-up#celebrations
-	.clearfix.m-b-1
-		h1.pull-xs-left= 'Comemorações'
-		.btn-group.pull-xs-right
-			button.btn.btn-primary.btn-sm.btn--filter.dropdown-toggle.js-filter-current(type='button', data-toggle='dropdown')= 'Todos'
-			.dropdown-menu.dropdown-menu-right
-				a.dropdown-item.active.js-filter(href='#', data-list='celebrations', data-filter='all', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations all')= 'Todos'
-				if celebrationsNew
-					.dropdown-divider
-					a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='new', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations new')= 'Novos'
-				.dropdown-divider
-				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Corrida', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations Corrida')= 'Corrida'
-				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Finalização', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations Finalização')= 'Finalização'
-				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='Pro', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations Pro')= 'Pro'
-				a.dropdown-item.js-filter(href='#', data-list='celebrations', data-filter='EASFC', ga-on='click', ga-event-category=site.name, ga-event-action='Filtro', ga-event-label='celebrations EASFC')= 'EASFC'
-	.js-list-celebrations
-		each item in celebrations
-			.card(data-new=item.new, data-type=item.type)
-				.card-block
-					h2.card__name
-						= item.name.en
-						.card__name-pt= item.name.pt
-					.card__command!= item.command
-					span.tag.tag-default= item.type
-					if item.new
-						span.tag.tag-primary= 'Novo'
+.hidden-xs-up.p-y-1.js-page#celebrations
+	.container.animated.fadeInRight
+		.clearfix.m-b-1
+			h1.pull-xs-left= 'Comemorações'
+			+movementsFilter(celebrations, 'celebrations')
+		.js-list-celebrations
+			+movements(celebrations.movements)

@@ -1,52 +1,8 @@
-.section.hidden-xs-up#about
-	h1= 'Sobre'
-	p= 'Guia de bolso (e smartphone) p/ parte mais legal do FIFA: humilhar os adversários com dribles e comemorar os golaços.'
-	.card
-		.card-block
-			h2.card__name= 'Comandos de drible assumem o jogador se movendo para cima da 	tela'
-	.card
-		.card-block
-			h2.card__name= 'Comemorações Pro e EASFC precisam ser desbloqueadas 	(evoluindo seu jogador Pro e comprando na EASFC Catalogue) para serem usadas'
-	.card
-		.card-block
-			h2.card__name= 'Comemorações marcadas como "agile players / jogador ágil" são 	executadas apenas pelos jogadores mais habilidosos'
-	.card
-		.card-block
-			h2.card__name= 'LS'
-			.card__command= 'Left stick, alavanca esquerda'
-	.card
-		.card-block
-			h2.card__name= 'RS'
-			.card__command= 'Right stick, alavanca direita'
-	.card
-		.card-block
-			h2.card__name= 'LS ↑ / → / ↓ / ← / ...'
-			.card__command= 'Direção usando a alavanca esquerda'
-	.card
-		.card-block
-			h2.card__name= 'RS ↑ / → / ↓ / ← / ...'
-			.card__command= 'Direção usando a alavanca direita'
-	.card
-		.card-block
-			h2.card__name= '↻'
-			.card__command= 'Girar alavanca no sentido horário (começando de baixo)'
-	.card
-		.card-block
-			h2.card__name= '↺'
-			.card__command= 'Girar alavanca no sentido anti-horário (começando de baixo)'
-	.card
-		.card-block
-			h2.card__name!= '<i class="btn-controller btn-controller--lb"></i>'
-			.card__command= 'Botão superior esquerdo'
-	.card
-		.card-block
-			h2.card__name!= '<i class="btn-controller btn-controller--rb"></i>'
-			.card__command= 'Botão superior direito'
-	.card
-		.card-block
-			h2.card__name!= '<i class="btn-controller btn-controller--lt"></i>'
-			.card__command= 'Botão gatilho esquerdo'
-	.card
-		.card-block
-			h2.card__name!= '<i class="btn-controller btn-controller--rt"></i>'
-			.card__command= 'Botão gatilho direito'
+include /data/commandGuide.jade
+include /mixins/movements.jade
+
+.hidden-xs-up.p-y-1.js-page#about
+	.container.animated.fadeInRight
+		h1= 'Sobre'
+		p= 'Guia de bolso (e smartphone) p/ parte mais legal do FIFA: humilhar os adversários com dribles e comemorar os golaços.'
+		+movements(commandGuide.movements)

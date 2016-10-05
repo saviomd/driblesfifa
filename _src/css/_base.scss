@@ -1,15 +1,11 @@
 body {
-	background: $color-secondary;
+	background: #fff;
 	font-size: 16px;
 	line-height: 1.5;
+	margin-top: 54px;
+	-webkit-overflow-scrolling: touch;
 	overflow-x: hidden;
 	width: 100%;
-}
-
-body > .container {
-	margin-top: 54px;
-	padding-bottom: 15px;
-	padding-top: 15px;
 }
 
 .logo-fifa {
@@ -21,12 +17,43 @@ body > .container {
 	color: #fecf00;
 }
 
+// 544, 768, 992, 1200, 1920
+.home {
+	background: #8b897b url("../img/bg-fifa-xs.jpg") center top no-repeat;
+	height: 500px;
+}
+
+@each $bp in (sm, md, lg, xl) {
+
+	@include media-breakpoint-up($bp) {
+
+		.home {
+			background-image: url("../img/bg-fifa-#{$bp}.jpg");
+		}
+
+	}
+
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: -2276px 0; }
+}
+
+.home--flamengo {
+	animation: animatedBackground 60s linear infinite;
+	background: #82262a url("../img/bg-flamengo.jpg") 0 0 repeat-x;
+}
+
+.home__content {
+	opacity: 0.8;
+}
+
 .list-group--home {
 	font-size: 18px;
 }
 
 .videogames {
-	margin: 0 0 20px;
 	width: 100%;
 }
 
@@ -34,30 +61,9 @@ body > .container {
 	width: 50%;
 }
 
-.share {
-	border-top: 1px solid $color-tertiary;
-}
-
-.card__name {
-	font-size: 18px;
-	font-weight: normal;
-}
-
-.card__name-pt {
-	font-size: 14px;
-	font-style: italic;
-}
-
-.card__command {
-	text-align: right;
-}
-
-.copy {
-	border-top: 1px solid $color-tertiary;
+.footer {
+	border-top: 1px solid #333;
 	font-size: 12px;
-	margin: 20px 0 0;
-	padding: 5px 0;
-	text-align: center;
 }
 
 @keyframes rotate {

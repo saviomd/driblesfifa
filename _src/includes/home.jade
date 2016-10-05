@@ -1,27 +1,20 @@
-.section.row#home
-	.col-xs-12.col-sm-8.offset-sm-2
-		.btn-group.videogames
-			a.btn.btn-primary.active#xbox(href='#', ga-on='click', ga-event-category=site.name, ga-event-action='Seleção de videogame', ga-event-label='xbox')= 'Xbox'
-			a.btn.btn-primary#ps(href='#', ga-on='click', ga-event-category=site.name, ga-event-action='Seleção de videogame', ga-event-label='ps')= 'PlayStation'
-		.list-group.list-group--home
-			a.list-group-item.list-group-item-action(href='#skills', ga-on='click', ga-event-category=site.name, ga-event-action='Navegação', ga-event-label='skills')
-				span.glyphicon.glyphicon-chevron-right
-				= 'Dribles'
-			a.list-group-item.list-group-item-action(href='#celebrations', ga-on='click', ga-event-category=site.name, ga-event-action='Navegação', ga-event-label='celebrations')
-				span.glyphicon.glyphicon-chevron-right
-				= 'Comemorações'
-			a.list-group-item.list-group-item-action.js-link-tutorials(href='#tutorials', ga-on='click', ga-event-category=site.name, ga-event-action='Navegação', ga-event-label='tutorials')
-				span.glyphicon.glyphicon-chevron-right
-				= 'Tutoriais'
-			a.list-group-item.list-group-item-action(href='#about', ga-on='click', ga-event-category=site.name, ga-event-action='Navegação', ga-event-label='about')
-				span.glyphicon.glyphicon-chevron-right
-				= 'Sobre'
-		.share.m-t-1.p-t-1
-			h1= 'Compartilhe:'
-			.row
-				.col-xs-4
-					a.btn.btn-block.btn--facebook.js-link-share(href='https://www.facebook.com/sharer/sharer.php?u=http://saviomd.com/driblesfifa/', target='_blank', title='Facebook', ga-on='click', ga-event-category=site.name, ga-event-action='Compartilhe', ga-event-label='Facebook')= 'f'
-				.col-xs-4
-					a.btn.btn-block.btn--twitter.js-link-share(href='https://twitter.com/intent/tweet?url=http://saviomd.com/driblesfifa/&text=Dribles FIFA: Guia de bolso (e smartphone) p/ parte mais legal do FIFA', target='_blank', title='twitter', ga-on='click', ga-event-category=site.name, ga-event-action='Compartilhe', ga-event-label='twitter')= 't'
-				.col-xs-4
-					a.btn.btn-block.btn--googleplus.js-link-share(href='https://plus.google.com/share?url=http://saviomd.com/driblesfifa/', target='_blank', title='Google+', ga-on='click', ga-event-category=site.name, ga-event-action='Compartilhe', ga-event-label='Google+')= 'G+'
+include /data/navLinks.jade
+include /data/shareLinks.jade
+
+.home.p-y-1.js-page#home
+	.container.animated.fadeInRight
+		.row
+			.home__content.col-xs-10.offset-xs-1.col-sm-8.offset-sm-2
+				.videogames.btn-group
+					-
+						var videogames = []
+						videogames.push({id: 'xbox', name: 'Xbox'})
+						videogames.push({id: 'ps', name: 'PlayStation'})
+					each videogame, index in videogames
+						a.btn.btn-primary.js-videogame(class=(index === 0 ? 'active' : ''), href='#', data-id=videogame.id, ga-on='click', ga-event-category=site.name, ga-event-action='Seleção de videogame', ga-event-label=videogame.id)= videogame.name
+				.list-group.list-group--home.m-t-1
+					each navLink in navLinks
+						a.list-group-item.list-group-item-action.js-page-trigger(class=navLink.cssClass, href='#' + navLink.id, ga-on='click', ga-event-category=site.name, ga-event-action='Navegação', ga-event-label=navLink.id)
+							.pull-xs-right!= '&rsaquo;'
+							= navLink.name
+				button.btn.btn-primary.btn-block.m-t-3.js-toggle-bg= 'Mengão porra!'

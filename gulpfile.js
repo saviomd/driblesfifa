@@ -30,7 +30,7 @@ tasks
 gulp.task('clean', function(cb) {
 	return del([
 			'+(css|js)',
-			'+(index.html|manifest.*)'
+			'+(index.html|manifest.json)'
 		], cb)
 });
 
@@ -42,10 +42,9 @@ gulp.task('html', function() {
 });
 
 gulp.task('manifests', function() {
-	var version = Date.now()
-
-	return gulp.src('_src/manifests/manifest.*')
-		.pipe(replace('{{version}}', version))
+	return gulp.src('_src/manifests/*.jade')
+		.pipe(jade(jadeConfig))
+		.pipe(rename({ extname: '.json' }))
 		.pipe(gulp.dest('./'))
 });
 
@@ -120,7 +119,7 @@ gulp.task('js', function() {
 
 gulp.task('dev', ['browserSync'], function() {
 	gulp.watch('_src/**/*.jade', ['html', browserSync.reload])
-	gulp.watch('_src/manifests/manifest.*', ['manifests', browserSync.reload])
+	gulp.watch('_src/manifests/*.jade', ['manifests', browserSync.reload])
 	gulp.watch('_src/css/*.scss', ['css', browserSync.reload])
 	gulp.watch('_src/js/*.js', ['js', browserSync.reload])
 });
