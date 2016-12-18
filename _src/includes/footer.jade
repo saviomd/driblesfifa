@@ -1,12 +1,12 @@
 include /data/shareLinks.jade
 
-.footer.p-y-1
+.footer.py-1
 	.container
 		.text-xs-right
 			h6.d-inline= 'Compartilhe:'
 			each shareLink in shareLinks
-				a.btn.btn-sm.m-l-1.js-link-share(class='btn--' + shareLink.id, href=shareLink.url, target='_blank', title=shareLink.name, ga-on='click', ga-event-category=site.name, ga-event-action='Compartilhe', ga-event-label=shareLink.name)= shareLink.initial
-		.m-t-1
+				a.btn.btn-sm.ml-1.js-link-share(class='btn--' + shareLink.id, href=shareLink.url, target='_blank', title=shareLink.name, ga-on='click', ga-event-category=site.name, ga-event-action='Compartilhe', ga-event-label=shareLink.name)= shareLink.initial
+		.mt-1
 			!= '&copy; 2012-' + year + ' '
 			a(href='http://saviomd.com/', target='_blank', ga-on='click' ga-event-category=site.name, ga-event-action='Rodapé', ga-event-label='Link saviomd.com')
 				img(alt='saviomd.com', src='http://saviomd.com/img/favicon.png', height='21', width='21')

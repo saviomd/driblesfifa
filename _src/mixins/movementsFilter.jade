@@ -13,7 +13,7 @@ mixin movementsFilter(obj, listId)
 	each item in obj.types
 		- options.push(item)
 
-	.btn-group.pull-xs-right
+	.btn-group.float-xs-right
 		button.btn.btn-primary.btn-sm.btn--filter.dropdown-toggle.js-filter-current(type='button', data-toggle='dropdown')= 'Todos'
 		.dropdown-menu.dropdown-menu-right
 			each option, index in options

@@ -2,10 +2,10 @@ include /data/celebrations.jade
 include /mixins/movements.jade
 include /mixins/movementsFilter.jade
 
-.hidden-xs-up.p-y-1.js-page#celebrations
+.hidden-xs-up.py-1.js-page#celebrations
 	.container.animated.fadeInRight
-		.clearfix.m-b-1
-			h1.pull-xs-left= 'Comemorações'
+		.clearfix.mb-1
+			h1.float-xs-left= 'Comemorações'
 			+movementsFilter(celebrations, 'celebrations')
 		.js-list-celebrations
 			+movements(celebrations.movements)

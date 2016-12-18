@@ -113,7 +113,7 @@ body {
   background: #8b897b url("../img/bg-fifa-xs.jpg") center top no-repeat;
   height: 500px; }
 
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   .home {
     background-image: url("../img/bg-fifa-sm.jpg"); } }
 
