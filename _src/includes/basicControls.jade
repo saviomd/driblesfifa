@@ -2,10 +2,10 @@ include /data/basicControls.jade
 include /mixins/movements.jade
 include /mixins/movementsFilter.jade
 
-.hidden-xs-up.py-1.js-page#basic-controls
+.hidden-xs-up.py-3.js-page#basic-controls
 	.container.animated.fadeInRight
-		.clearfix.mb-1
-			h1.float-xs-left= 'Controles básicos'
+		.clearfix.mb-3
+			h1.float-left= 'Controles básicos'
 			+movementsFilter(basicControls, 'basic-controls')
 		.js-list-basic-controls
 			+movements(basicControls.movements)

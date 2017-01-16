@@ -1,10 +1,10 @@
 include /data/navLinks.jade
 include /data/shareLinks.jade
 
-.home.py-1.js-page#home
+.home.py-3.js-page#home
 	.container.animated.fadeInRight
-		.row
-			.home__content.col-xs-10.offset-xs-1.col-sm-8.offset-sm-2
+		.row.justify-content-center
+			.home__content.col-10.col-sm-8
 				.videogames.btn-group
 					-
 						var videogames = []
@@ -12,9 +12,9 @@ include /data/shareLinks.jade
 						videogames.push({id: 'ps', name: 'PlayStation'})
 					each videogame, index in videogames
 						a.btn.btn-primary.js-videogame(class=(index === 0 ? 'active' : ''), href='#', data-id=videogame.id, ga-on='click', ga-event-category=site.name, ga-event-action='Seleção de videogame', ga-event-label=videogame.id)= videogame.name
-				.list-group.list-group--home.mt-1
+				.list-group.list-group--home.mt-3
 					each navLink in navLinks
-						a.list-group-item.list-group-item-action.js-page-trigger(class=navLink.cssClass, href='#' + navLink.id, ga-on='click', ga-event-category=site.name, ga-event-action='Navegação', ga-event-label=navLink.id)
-							.float-xs-right!= '&rsaquo;'
+						a.d-block.list-group-item.list-group-item-action.js-page-trigger(class=navLink.cssClass, href='#' + navLink.id, ga-on='click', ga-event-category=site.name, ga-event-action='Navegação', ga-event-label=navLink.id)
+							.float-right!= '&rsaquo;'
 							= navLink.name
-				button.btn.btn-primary.btn-block.mt-3.js-toggle-bg= 'Mengão porra!'
+				button.btn.btn-primary.btn-block.mt-5.js-toggle-bg= 'Mengão porra!'

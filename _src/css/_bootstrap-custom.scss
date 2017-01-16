@@ -18,30 +18,9 @@ h1 {
 	color: #333;
 }
 
-.btn-primary:focus,
-.btn-primary.focus {
-	background: $color-default-dark;
-	border-color: $color-default-dark;
-	color: #333;
-}
-
-.btn-primary:active,
 .btn-primary.active,
-.open > .btn-primary.dropdown-toggle {
-	background: $color-default-dark;
-	border-color: $color-default-dark;
-	color: #333;
-}
-
-.btn-primary:active:hover,
-.btn-primary:active:focus,
-.btn-primary:active.focus,
-.btn-primary.active:hover,
-.btn-primary.active:focus,
-.btn-primary.active.focus,
-.open > .btn-primary.dropdown-toggle:hover,
-.open > .btn-primary.dropdown-toggle:focus,
-.open > .btn-primary.dropdown-toggle.focus {
+.btn-primary:active,
+.show > .btn-primary.dropdown-toggle {
 	background: $color-default-dark;
 	border-color: $color-default-dark;
 	color: #333;
@@ -67,8 +46,7 @@ h1 {
 }
 
 .dropdown-item.active,
-.dropdown-item.active:focus,
-.dropdown-item.active:hover {
+.dropdown-item:active {
 	background: $color-default-dark;
 	color: #373a3c;
 }
@@ -86,11 +64,7 @@ h1 {
 	background: #000 !important;
 }
 
-.tag {
-	margin-right: 5px;
-}
-
-.tag-default {
+.badge-default {
 	background: $color-default;
 	color: #333;
 }
@@ -100,10 +74,8 @@ h1 {
 	border-color: $color-default-dark;
 }
 
-a.list-group-item:focus,
-a.list-group-item:hover,
-button.list-group-item:focus,
-button.list-group-item:hover {
+.list-group-item-action:focus,
+.list-group-item-action:hover {
 	background: $color-default-dark;
 }
 
