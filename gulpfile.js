@@ -16,7 +16,6 @@ var jadeConfig = require('tools-config-saviomd/jade-config');
 var postcss = require('gulp-postcss');
 var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 var rename = require('gulp-rename');
-var replace = require('gulp-replace');
 var sass = require('gulp-sass');
 var stylelint = require('stylelint');
 var stylelintConfig = require('tools-config-saviomd/stylelint-config');
