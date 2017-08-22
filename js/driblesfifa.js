@@ -17,11 +17,11 @@ driblesfifa.filter = (function () {
 		$this.addClass('active').siblings().removeClass('active');
 		$currentFilter.text($this.text());
 		if (filter === 'Todos') {
-			$commands.removeClass('hidden-xs-up');
+			$commands.removeClass('d-none');
 		} else if (filter === 'Novos') {
-			$commands.addClass('hidden-xs-up').filter('[data-new="1"]').removeClass('hidden-xs-up');
+			$commands.addClass('d-none').filter('[data-new="1"]').removeClass('d-none');
 		} else {
-			$commands.addClass('hidden-xs-up').filter('[data-type="' + filter + '"]').removeClass('hidden-xs-up');
+			$commands.addClass('d-none').filter('[data-type="' + filter + '"]').removeClass('d-none');
 		}
 	});
 })();
@@ -40,9 +40,9 @@ driblesfifa.nav = (function () {
 	$('.js-page-trigger').on('click', function (e) {
 		e.preventDefault();
 		window.scrollTo(0, 0);
-		$('.js-page').addClass('hidden-xs-up');
+		$('.js-page').addClass('d-none');
 		var page = '#' + this.href.split('#')[1];
-		$(page).removeClass('hidden-xs-up');
+		$(page).removeClass('d-none');
 	});
 
 	/*

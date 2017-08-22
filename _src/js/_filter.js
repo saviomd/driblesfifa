@@ -17,11 +17,11 @@ driblesfifa.filter = (function () {
 		$this.addClass('active').siblings().removeClass('active');
 		$currentFilter.text($this.text());
 		if (filter === 'Todos') {
-			$commands.removeClass('hidden-xs-up');
+			$commands.removeClass('d-none');
 		} else if (filter === 'Novos') {
-			$commands.addClass('hidden-xs-up').filter('[data-new="1"]').removeClass('hidden-xs-up');
+			$commands.addClass('d-none').filter('[data-new="1"]').removeClass('d-none');
 		} else {
-			$commands.addClass('hidden-xs-up').filter('[data-type="' + filter + '"]').removeClass('hidden-xs-up');
+			$commands.addClass('d-none').filter('[data-type="' + filter + '"]').removeClass('d-none');
 		}
 	});
 })();

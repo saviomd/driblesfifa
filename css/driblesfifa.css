@@ -28,7 +28,7 @@ h1 {
   max-width: 290px; }
 
 .dropdown-divider {
-  background: #e1bf01; }
+  border-top-color: #e1bf01; }
 
 .dropdown-item {
   overflow: hidden;
@@ -70,9 +70,7 @@ h1 {
 
 body {
   background: #fff;
-  font-size: 16px;
-  line-height: 1.5;
-  margin-top: 54px;
+  margin-top: 56px;
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   width: 100%; }

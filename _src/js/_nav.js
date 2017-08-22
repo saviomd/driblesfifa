@@ -12,9 +12,9 @@ driblesfifa.nav = (function () {
 	$('.js-page-trigger').on('click', function (e) {
 		e.preventDefault();
 		window.scrollTo(0, 0);
-		$('.js-page').addClass('hidden-xs-up');
+		$('.js-page').addClass('d-none');
 		var page = '#' + this.href.split('#')[1];
-		$(page).removeClass('hidden-xs-up');
+		$(page).removeClass('d-none');
 	});
 
 	/*
