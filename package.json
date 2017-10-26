@@ -1,6 +1,6 @@
 {
   "name": "driblesfifa",
-  "version": "1.0.20170822",
+  "version": "1.0.20171026",
   "description": "Guia de bolso (e smartphone) p/ parte mais legal do FIFA: humilhar os adversários com dribles e comemorar os golaços.",
   "author": "Sávio Mendes",
   "license": "UNLICENSED",
@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "animate.css": "^3.5.2",
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^7.1.6",
     "autotrack": "^2.4.1",
-    "bootstrap": "^4.0.0-beta",
+    "bootstrap": "^4.0.0-beta.2",
     "browser-sync": "^2.18.13",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
@@ -34,7 +34,7 @@
     "gulp-uglify": "^3.0.0",
     "jquery": "^3.2.1",
     "js-cookie": "^2.1.4",
-    "popper.js": "^1.12.3",
+    "popper.js": "^1.12.6",
     "postcss-flexbugs-fixes": "^3.2.0",
     "stylelint": "^7.7.1",
     "tools-config-saviomd": "github:saviomd/tools-config-saviomd"
