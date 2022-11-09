@@ -1,13 +1,27 @@
 <script lang="ts">
-  import { InfoCard } from "../components/app";
-  import { Heading } from "../components/library";
+  import { InfoCard, ListHeader } from "../components/app";
   import { skillMoves } from "../data";
+  import { filterList } from "../utils";
+
+  let filter = "";
+
+  const setFilter = (value) => {
+    filter = value;
+  };
+
+  $: skillMovesFiltered = filterList({
+    filter,
+    list: skillMoves,
+  });
 </script>
 
 <main>
-  <Heading level={1}>Skill Moves</Heading>
+  <ListHeader {filter} {setFilter} title="Skill Moves" />
+  {#if !skillMovesFiltered.length}
+    <div>Nothing to show</div>
+  {/if}
   <ul class="list-unstyled">
-    {#each skillMoves as skillMove}
+    {#each skillMovesFiltered as skillMove (`${skillMove.name}${skillMove.stars}`)}
       <li>
         <InfoCard
           description={skillMove.command}

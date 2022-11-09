@@ -1,13 +1,27 @@
 <script lang="ts">
-  import { InfoCard } from "../components/app";
-  import { Heading } from "../components/library";
+  import { InfoCard, ListHeader } from "../components/app";
   import { celebrations } from "../data";
+  import { filterList } from "../utils";
+
+  let filter = "";
+
+  const setFilter = (value) => {
+    filter = value;
+  };
+
+  $: celebrationsFiltered = filterList({
+    filter,
+    list: celebrations,
+  });
 </script>
 
 <main>
-  <Heading level={1}>Celebrations</Heading>
+  <ListHeader {filter} {setFilter} title="Celebrations" />
+  {#if !celebrationsFiltered.length}
+    <div>Nothing to show</div>
+  {/if}
   <ul class="list-unstyled">
-    {#each celebrations as celebration}
+    {#each celebrationsFiltered as celebration (celebration.name)}
       <li>
         <InfoCard
           description={celebration.command}

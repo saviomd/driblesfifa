@@ -5,4 +5,5 @@ export { default as Button } from "./Button.svelte";
 export { default as Card } from "./Card.svelte";
 export { default as Heading } from "./Heading.svelte";
 export { default as Icon } from "./Icon.svelte";
+export { default as InputText } from "./InputText.svelte";
 export { default as Stars } from "./Stars.svelte";

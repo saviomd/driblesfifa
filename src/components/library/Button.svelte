@@ -1,6 +1,6 @@
 <script lang="ts">
   export let onClick: (CustomEvent) => void;
-  export let stretched: boolean;
+  export let stretched: boolean = false;
 </script>
 
 <button
