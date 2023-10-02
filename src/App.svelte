@@ -5,7 +5,7 @@
 </script>
 
 <div class="container-fluid">
-  <div class="justify-content-center mb-5 px-3 pb-5 row">
+  <div class="justify-content-center mb-5 pb-5 row">
     <div class="col-12 col-sm-8 col-md-6">
       <Header />
       <Nav />

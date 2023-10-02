@@ -1,8 +1,12 @@
 <script lang="ts">
   import { Badge, Card, Heading, Stars } from "../library";
-  import type { CelebrationType, PerkType, StarCountType } from "../../types";
+  import type {
+    CelebrationType,
+    PlayStyleType,
+    StarCountType,
+  } from "../../types";
   export let description: string;
-  export let tag: CelebrationType | PerkType | StarCountType;
+  export let tag: CelebrationType | PlayStyleType | StarCountType;
   export let title: string;
 </script>
 

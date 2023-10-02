@@ -4,8 +4,8 @@
   import { currentPage } from "../../stores";
 </script>
 
-<div class="bg-secondary fixed-bottom pb-3 px-3">
-  <nav class="bg-dark nav nav-justified rounded shadow">
+<div class="fixed-bottom">
+  <nav class="bg-dark nav nav-justified pb-3 rounded shadow">
     {#each pages as page}
       <button
         class={`btn btn-link nav-link py-3 ${

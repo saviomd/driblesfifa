@@ -4,22 +4,22 @@ export interface ICelebration {
   type: CelebrationType;
 }
 
-export interface IDivision {
-  number: number;
-  pointsHold?: number;
-  pointsPromotion?: number;
-  pointsTitle: number;
-}
-
 export interface IPage {
   icon: string;
   title: string;
 }
 
-export interface IPerk {
+export interface IPlayStyle {
   description: string;
   name: string;
-  type: PerkType;
+  type: PlayStyleType;
+}
+
+export interface IReputationLevel {
+  fans: number;
+  level: number;
+  name: string;
+  rewards?: string[];
 }
 
 export interface ISkillMove {
@@ -28,16 +28,22 @@ export interface ISkillMove {
   stars: StarCountType;
 }
 
-export type CelebrationType = "Basic" | "Running Moves" | "Finishing Moves";
+export type CelebrationType =
+  | "Basics"
+  | "Running Moves"
+  | "Finishing Moves"
+  | "Pro Unlockables";
 
 export type DivisionColorsType = "info" | "success" | "warning";
 
 export type HeadingLevelsType = 1 | 2 | 3 | 4 | 5 | 6;
 
-export type PerkType =
-  | "Attacking"
-  | "Chance Creation"
-  | "Defensive"
-  | "Goalkeeper";
+export type PlayStyleType =
+  | "Ball Control"
+  | "Defending"
+  | "Goalkeeper"
+  | "Passing"
+  | "Physical"
+  | "Scoring";
 
 export type StarCountType = 1 | 2 | 3 | 4 | 5;

@@ -4,7 +4,7 @@
 </script>
 
 <button
-  class={`btn btn-primary btn-sm ${stretched ? "stretched-link" : ""}`}
+  class={`btn btn-success btn-sm ${stretched ? "stretched-link" : ""}`}
   on:click={onClick}
 >
   <slot />

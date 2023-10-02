@@ -7,7 +7,7 @@
 
 <Card>
   <div class="row">
-    <div class="col-auto display-1">
+    <div class="col-auto display-3">
       <Icon name={icon} />
     </div>
     <div class="col">

@@ -21,7 +21,7 @@
     <div>Nothing to show</div>
   {/if}
   <ul class="list-unstyled">
-    {#each celebrationsFiltered as celebration (celebration.name)}
+    {#each celebrationsFiltered as celebration (`${celebration.type}-${celebration.name}`)}
       <li>
         <InfoCard
           description={celebration.command}

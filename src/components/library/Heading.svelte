@@ -3,9 +3,6 @@
   export let level: HeadingLevelsType;
 </script>
 
-<svelte:element
-  this={`h${level}`}
-  class={`h${level + 3} fst-italic text-uppercase`}
->
+<svelte:element this={`h${level}`} class={`fw-bold h${level + 3}`}>
   <slot />
 </svelte:element>

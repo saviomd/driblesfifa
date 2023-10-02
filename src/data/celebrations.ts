@@ -1,5 +1,6 @@
 import type { ICelebration } from "../types";
 import { buttons } from "../utils";
+
 const {
   a,
   b,
@@ -22,17 +23,17 @@ const celebrations: ICelebration[] = [
   {
     command: `${a}`,
     name: "Signature Celebration",
-    type: "Basic",
+    type: "Basics",
   },
   {
     command: `${b}`,
     name: "Random Celebration",
-    type: "Basic",
+    type: "Basics",
   },
   {
     command: `${lb} + ${rb}`,
     name: "Cancel Celebration",
-    type: "Basic",
+    type: "Basics",
   },
   {
     command: `Hold ${x}`,
@@ -62,6 +63,11 @@ const celebrations: ICelebration[] = [
   {
     command: `Hold ${rs} ${down}`,
     name: "Telephone",
+    type: "Running Moves",
+  },
+  {
+    command: `Hold ${rs} ${left}`,
+    name: "Can You Hear Me?",
     type: "Running Moves",
   },
   {
@@ -105,64 +111,19 @@ const celebrations: ICelebration[] = [
     type: "Running Moves",
   },
   {
-    command: `${rs} ${clockwise}`,
+    command: `Spin ${rs} ${clockwise}`,
     name: "Windmill",
     type: "Running Moves",
   },
   {
-    command: `Hold ${lb} Press ${x}`,
-    name: "Scissors",
-    type: "Finishing Moves",
+    command: `Hold ${b}`,
+    name: "One Arm Raised",
+    type: "Running Moves",
   },
   {
-    command: `Hold ${lt} double tap ${x}`,
-    name: "Challenge",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lt} spin ${rs} ${counterclockwise}`,
-    name: "Spinning Frog (Offline Only)",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} Press ${rs}`,
-    name: "One Eye",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} double tap ${b}`,
-    name: "Swagger",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} hold ${rs} ${up}`,
-    name: "Nailbiter",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} press ${rs}`,
-    name: "Pigeon",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} Flick ${rs} ${up} ${up}`,
-    name: "Guitar Dance",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} ${rs} Flick ${left} Flick ${left}`,
-    name: "Knee Slide",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lt} ${rs} Flick ${right} Flick ${right}`,
-    name: "Speed Walk (Offline Only)",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lb} spin ${rs} ${clockwise}`,
-    name: "Knee Slide Spin",
-    type: "Finishing Moves",
+    command: `Tap ${b} then hold ${b}`,
+    name: "Finger Points",
+    type: "Running Moves",
   },
   {
     command: `Press ${a}`,
@@ -170,8 +131,98 @@ const celebrations: ICelebration[] = [
     type: "Finishing Moves",
   },
   {
+    command: `Press ${a}`,
+    name: "Mohamed Salah",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Press ${a}`,
+    name: "James Tarkowski",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Press ${a}`,
+    name: "Steven Bergwijn",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Press ${a}`,
+    name: "Ashley Barnes",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Press ${a}`,
+    name: "Finger Swipe Camera (CAM)",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Press ${a}`,
+    name: "Cry Baby (CAM)",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Press ${a}`,
+    name: "Selfie (Next To Adboard)",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${lb} press ${b}`,
+    name: "Point to the Sky",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${lb} double tap ${b}`,
+    name: "Show Respect",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${lt} Flick ${rs} ${up} ${up}`,
+    name: "Spanish Dance",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${lb} Press ${x}`,
+    name: "Flex",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${lb} Press ${y}`,
+    name: "All Ears",
+    type: "Finishing Moves",
+  },
+  {
     command: `Hold ${lb} Flick ${rs} ${down} ${down}`,
     name: "X",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${lb} hold ${rs} ${right}`,
+    name: "Big Man",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${lb} hold ${rs} ${left}`,
+    name: "Baby Girl",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${lb} Flick ${rs} ${down} ${up}`,
+    name: "Knee Slide Drag",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${lb} Flick ${rs} ${right} ${up}`,
+    name: "Walk Like Me",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${lb} Flick ${rs} ${up} ${up}`,
+    name: "Mask",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${lb} spin ${rs} ${clockwise}`,
+    name: "Knee Slide Spin",
     type: "Finishing Moves",
   },
   {
@@ -195,33 +246,13 @@ const celebrations: ICelebration[] = [
     type: "Finishing Moves",
   },
   {
-    command: `Hold ${lb} double tap ${b}`,
-    name: "Show Respect",
+    command: `Hold ${lt} double tap ${x}`,
+    name: "Think",
     type: "Finishing Moves",
   },
   {
     command: `Hold ${lt} double tap ${y}`,
     name: "Stir The Pot",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lb} press ${b}`,
-    name: "Point to the Sky",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lt} Flick ${rs} ${up} ${up}`,
-    name: "Spanish Dance",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} double tap ${y}`,
-    name: "World Beater",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} Press ${y}`,
-    name: "The Salute",
     type: "Finishing Moves",
   },
   {
@@ -236,7 +267,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${lt} hold ${rs} ${down}`,
-    name: "Heart",
+    name: "Heart Symbol",
     type: "Finishing Moves",
   },
   {
@@ -256,37 +287,67 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${lt} Flick ${rs} ${right} ${left}`,
-    name: "Tea",
+    name: "Who Am I",
     type: "Finishing Moves",
   },
   {
-    command: `Hold ${lt} Flick ${rs} ${down} ${down}`,
+    command: `Hold ${lt} Flick ${rs} ${right} ${right}`,
     name: "Neighbourhood",
     type: "Finishing Moves",
   },
   {
     command: `Hold ${lt} Flick ${rs} ${left} ${left}`,
-    name: "Knee Slide Fail",
+    name: "Faking It",
     type: "Finishing Moves",
   },
   {
-    command: `Hold ${lb} Flick ${rs} ${up} ${up}`,
-    name: "Mask",
+    command: `Hold ${lt} spin ${rs} ${clockwise}`,
+    name: "Tumble",
     type: "Finishing Moves",
   },
   {
-    command: `Hold ${rb} Flick ${rs} ${right} ${right}`,
-    name: "Break Dance",
+    command: `Hold ${lt} spin ${rs} ${counterclockwise}`,
+    name: "Twist Flip (agile players) or Cartwheel Roll",
     type: "Finishing Moves",
   },
   {
-    command: `Hold ${lb} Press ${y}`,
-    name: "Riding the Wave",
+    command: `Hold ${rt} Press ${rs}`,
+    name: "Rugby",
     type: "Finishing Moves",
   },
   {
-    command: `Hold ${rt} hold ${rs} ${left}`,
-    name: "Relax (Offline Only)",
+    command: `Hold ${rb} double tap ${y}`,
+    name: "Elbow",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${rt} double tap ${b}`,
+    name: "Kiss The Ring",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${rb} Press ${y}`,
+    name: "The Salute",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${rt} Flick ${rs} ${left} ${left}`,
+    name: "Hop & Point",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${rb} double tap ${b}`,
+    name: "Push It Down",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${rb} Flick ${rs} ${left} ${left}`,
+    name: "Glamour Slide",
+    type: "Finishing Moves",
+  },
+  {
+    command: `Hold ${rb} Flick ${rs} ${up} ${down}`,
+    name: "Giant",
     type: "Finishing Moves",
   },
   {
@@ -295,143 +356,8 @@ const celebrations: ICelebration[] = [
     type: "Finishing Moves",
   },
   {
-    command: `Hold ${rt} spin ${rs} ${clockwise}`,
-    name: "Uncontrolled Backflip",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} spin ${rs} ${counterclockwise}`,
-    name: "Handstand",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} ${rs} Flick ${down} Flick ${down}`,
-    name: "Hop & Point",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lb} Flick ${rs} ${down} ${up}`,
-    name: "Knee Slide Drag",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lb} double tap ${x}`,
-    name: "KO",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} Press ${b}`,
-    name: "Right Here Right Now",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lt} Flick ${rs} ${down} ${up}`,
-    name: "Surf and Flex",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} ${rs} Hold ${left}`,
-    name: "Stand Tall",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lt} double tap ${b}`,
-    name: "Little Brother",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lt} press ${rs}`,
-    name: "Fingers",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} hold ${rs} ${right}`,
-    name: "Kiss The Ground",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} hold ${rs} ${down}`,
-    name: "Disbelief",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} double tap ${x}`,
-    name: "Backflips",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} double tap ${x}`,
-    name: "Peace",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lt} spin ${rs} ${clockwise}`,
-    name: "Waddle (Offline Only)",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} Flick ${rs} ${left} ${right}`,
-    name: "Golf Swing",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} Flick ${rs} ${down} ${up}`,
-    name: "Matador",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} Flick ${rs} ${up} ${down}`,
-    name: "Goggles",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} Flick ${rs} ${right} ${left}`,
-    name: "Dance",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} Flick ${rs} ${right} ${left}`,
-    name: "Gamer",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} spin ${rs} ${clockwise}`,
-    name: "The Worm",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} Flick ${rs} ${down} ${down}`,
-    name: "Tea For Two",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} Flick ${rs} ${up} ${down}`,
+    command: `Hold ${rt} Flick ${rs} ${up} ${up}`,
     name: "Eyes And Arms",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} Flick ${rs} ${right} ${right}`,
-    name: "Dance & Spin",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} press ${x}`,
-    name: "Picture",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} press ${y}`,
-    name: "Cradle Swing",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rt} double tap ${y}`,
-    name: "Kiss The Ring",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${rb} hold ${rs} ${up}`,
-    name: "Flying Dive",
     type: "Finishing Moves",
   },
   {
@@ -445,54 +371,234 @@ const celebrations: ICelebration[] = [
     type: "Finishing Moves",
   },
   {
-    command: `Hold ${lb} hold ${rs} ${right}`,
-    name: "Big Person",
+    command: `Hold ${rb} Flick ${rs} ${right} ${left}`,
+    name: "Gamer",
     type: "Finishing Moves",
   },
   {
-    command: `Hold ${lb} hold ${rs} ${left}`,
-    name: "The Baby",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lb} Flick ${rs} ${left} ${right}`,
-    name: "Walk Like Me",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lb} Press ${rs}`,
-    name: "Giddy Up",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lb} double tap ${y}`,
-    name: "Calm Down (Offline Only)",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lb} Hold ${rs} ${up}`,
-    name: "Phone It In",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lb} Hold ${rs} ${down}`,
-    name: "Motorbike",
-    type: "Finishing Moves",
-  },
-  {
-    command: `Hold ${lb} Hold ${rs} ${up} ${down}`,
-    name: "Hang Loose",
+    command: `Hold ${lb} hold ${rs} ${down}`,
+    name: "Happy Walk",
     type: "Finishing Moves",
   },
   {
     command: `Hold ${lb} Hold ${rs} ${right} ${left}`,
-    name: "Arm Swing",
+    name: "Arms Swing",
     type: "Finishing Moves",
   },
   {
-    command: `Hold ${lb} Hold ${rs} ${right} ${right}`,
-    name: "Point",
-    type: "Finishing Moves",
+    command: `Hold ${rt} hold ${rs} ${up}`,
+    name: "Many Bows",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} hold ${rs} ${right}`,
+    name: "Kiss The Ground",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} double tap ${x}`,
+    name: "Disbelief",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} double tap ${x}`,
+    name: "Backflips",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} double tap ${x}`,
+    name: "Peace",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} press ${rs}`,
+    name: "Cockroach",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} Flick ${rs} ${up} ${up}`,
+    name: "River Dance",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} Flick ${rs} ${right} ${right}`,
+    name: "Break Dance",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} hold ${rs} ${left}`,
+    name: "Relax (Offline Only)",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} spin ${rs} ${counterclockwise}`,
+    name: "Backwards Worm",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} spin ${rs} ${clockwise}`,
+    name: "Uncontrolled Backflip",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} spin ${rs} ${counterclockwise}`,
+    name: "Handstand",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} Flick ${rs} ${up} ${up}`,
+    name: "Spin & Fall",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} Flick ${rs} ${left} ${left}`,
+    name: "Rowing on Knees",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} Flick ${rs} ${right} ${right}`,
+    name: "Dance & Spin",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} press ${x}`,
+    name: "Knee Walk",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} press ${y}`,
+    name: "Cradle Swing",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} double tap ${y}`,
+    name: "Baby",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} hold ${rs} ${up}`,
+    name: "Flying Dive",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} hold ${rs} ${right}`,
+    name: "Karate Kicks",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} hold ${rs} ${down}`,
+    name: "Jumping Kicks",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} Flick ${rs} ${down} ${up}`,
+    name: "Ice Skating",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} Flick ${rs} ${left} ${right}`,
+    name: "Golf Swing",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} Flick ${rs} ${down} ${up}`,
+    name: "Matador",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} Flick ${rs} ${up} ${down}`,
+    name: "Dance 2",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} Flick ${rs} ${left} ${right}`,
+    name: "Dance 3",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rt} Flick ${rs} ${right} ${left}`,
+    name: "Dance 4",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${lb} double tap ${x}`,
+    name: "KO",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} Press ${b}`,
+    name: "Right Here Right Now",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${lt} Flick ${rs} ${down} ${up}`,
+    name: "Surf and Flex",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} ${rs} Hold ${left}`,
+    name: "Stand Tall",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${lt} double tap ${b}`,
+    name: "Kiss The Wrist",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${lt} press ${rs}`,
+    name: "Rock On",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${lb} double tap ${y}`,
+    name: "Calm Down",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${lb} Hold ${rs} ${up}`,
+    name: "Phone It In",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${lb} Hold ${rs} ${down}`,
+    name: "Motorbike",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${lb} Flick ${rs} ${up} ${down}`,
+    name: "Hang Loose",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${lb} Flick ${rs} ${right} ${left}`,
+    name: "Muevelo",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${lb} Flick ${rs} ${right} ${right}`,
+    name: "Predator",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} Flick ${rs} ${right} ${left}`,
+    name: "Push Ups",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} + ${rs} ${clockwise}`,
+    name: "Penguin",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${rb} Flick ${rs} ${down} ${down}`,
+    name: "Dance",
+    type: "Pro Unlockables",
+  },
+  {
+    command: `Hold ${lb} Press ${rs}`,
+    name: "Bye",
+    type: "Pro Unlockables",
   },
 ];
 

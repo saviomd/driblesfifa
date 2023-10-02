@@ -1,6 +1,6 @@
 <script lang="ts">
   import { InfoCard, ListHeader } from "../components/app";
-  import { perks } from "../data";
+  import { playStyles } from "../data";
   import { filterList } from "../utils";
 
   let filter = "";
@@ -9,19 +9,19 @@
     filter = value;
   };
 
-  $: perksFiltered = filterList({
+  $: playStylesFiltered = filterList({
     filter,
-    list: perks,
+    list: playStyles,
   });
 </script>
 
 <main>
-  <ListHeader {filter} {setFilter} title="Perks" />
-  {#if !perksFiltered.length}
+  <ListHeader {filter} {setFilter} title="Play Styles" />
+  {#if !playStylesFiltered.length}
     <div>Nothing to show</div>
   {/if}
   <ul class="list-unstyled">
-    {#each perksFiltered as perk (perk.name)}
+    {#each playStylesFiltered as perk (perk.name)}
       <li>
         <InfoCard
           description={perk.description}

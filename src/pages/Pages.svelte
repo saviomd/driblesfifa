@@ -1,8 +1,8 @@
 <script lang="ts">
   import Celebrations from "./Celebrations.svelte";
-  import Divisions from "./Divisions.svelte";
   import Home from "./Home.svelte";
-  import Perks from "./Perks.svelte";
+  import PlayStyles from "./PlayStyles.svelte";
+  import ReputationLevels from "./ReputationLevels.svelte";
   import SkillMoves from "./SkillMoves.svelte";
   import { currentPage } from "../stores";
 </script>
@@ -13,8 +13,8 @@
   <SkillMoves />
 {:else if $currentPage === "Celebrations"}
   <Celebrations />
-{:else if $currentPage === "Perks"}
-  <Perks />
-{:else if $currentPage === "Divisions"}
-  <Divisions />
+{:else if $currentPage === "Play Styles"}
+  <PlayStyles />
+{:else if $currentPage === "Reputation Levels"}
+  <ReputationLevels />
 {/if}

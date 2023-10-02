@@ -5,7 +5,6 @@ const {
   a,
   b,
   clockwise,
-  counterclockwise,
   down,
   downleft,
   downright,
@@ -24,11 +23,6 @@ const {
 } = buttons;
 
 const skillMoves: ISkillMove[] = [
-  {
-    command: `Double Tap ${rb}`,
-    name: "Bridge Skill",
-    stars: 1,
-  },
   {
     command: `Hold ${lb} + ${rb} + ${rs} Direction`,
     name: "Directional Nutmeg",
@@ -50,8 +44,13 @@ const skillMoves: ISkillMove[] = [
     stars: 1,
   },
   {
-    command: `Hold ${lb} + ${rs}`,
-    name: "Flick Up For Volley",
+    command: `${rs}`,
+    name: "Flick Up",
+    stars: 1,
+  },
+  {
+    command: `Hold ${lb} + ${rb} + ${ls} ${down}`,
+    name: "First Time Feint Turn",
     stars: 1,
   },
   {
@@ -60,12 +59,12 @@ const skillMoves: ISkillMove[] = [
     stars: 2,
   },
   {
-    command: `${rs} Flick ${right}`,
+    command: `${rs} Flick ${left}`,
     name: "Body Feint Right",
     stars: 2,
   },
   {
-    command: `${rs} Flick ${left}`,
+    command: `${rs} Flick ${right}`,
     name: "Body Feint Left",
     stars: 2,
   },
@@ -140,27 +139,57 @@ const skillMoves: ISkillMove[] = [
     stars: 3,
   },
   {
+    command: `${rs} ${left} ${downleft} ${down} ${downright} ${right}`,
+    name: "Feint Left & Exit Right",
+    stars: 3,
+  },
+  {
+    command: `${rs} ${right} ${downright} ${down} ${downleft} ${left}`,
+    name: "Feint Right & Exit Left",
+    stars: 3,
+  },
+  {
+    command: `Hold ${lt} + ${rs} ${left} ${right} or ${right} ${left}`,
+    name: "Stutter Feint",
+    stars: 3,
+  },
+  {
     command: `Hold ${lb} + ${rs}`,
-    name: "Ball Hop (While Standing)",
+    name: "Ball Hop (while standing)",
+    stars: 4,
+  },
+  {
+    command: `Hold ${lb} + ${rs} Flick ${up} Flick ${left} or ${right}`,
+    name: "Ball Roll Drag",
+    stars: 4,
+  },
+  {
+    command: `Hold ${lt} + ${rs} Hold ${down}`,
+    name: "Drag Back Turn",
+    stars: 4,
+  },
+  {
+    command: `Hold ${lb} + ${rb} + ${rs} Flick Direction`,
+    name: "Flair Nutmegs",
     stars: 4,
   },
   {
     command: `${rs} Flick ${up} ${down}`,
-    name: "Heel To Heel Flick",
+    name: "Heel To Heel",
     stars: 4,
   },
   {
-    command: `${rs} Flick ${down} ${up} ${up}`,
+    command: `${rs} Flick ${down} ${up}`,
     name: "Simple Rainbow",
     stars: 4,
   },
   {
-    command: `Hold ${rb} + ${rs} ${down} ${downright} ${right} ${upright} ${up} ${upleft} ${left}`,
+    command: `Hold ${lt} + Hold ${rb} + ${rs} ${down} ${downright} ${right} ${upright} ${up} ${upleft} ${left}`,
     name: "Spin Left",
     stars: 4,
   },
   {
-    command: `Hold ${rb} + ${rs} ${down} ${downleft} ${left} ${upleft} ${up} ${upright} ${right}`,
+    command: `Hold ${lt} + Hold ${rb} + ${rs} ${down} ${downleft} ${left} ${upleft} ${up} ${upright} ${right}`,
     name: "Spin Right",
     stars: 4,
   },
@@ -176,37 +205,32 @@ const skillMoves: ISkillMove[] = [
   },
   {
     command: `${rs} Hold ${left} ${ls} Hold ${right}`,
-    name: "Ball Roll Cut Right",
-    stars: 4,
-  },
-  {
-    command: `${rs} Hold ${right} ${ls} Hold ${left}`,
     name: "Ball Roll Cut Left",
     stars: 4,
   },
   {
+    command: `${rs} Hold ${right} ${ls} Hold ${left}`,
+    name: "Ball Roll Cut Right",
+    stars: 4,
+  },
+  {
     command: `Hold ${rt} + ${x} or ${b} then ${a}`,
-    name: "Fake Pass (While Standing)",
+    name: "Fake Pass (while standing)",
     stars: 4,
   },
   {
     command: `Hold ${rt} + ${x} or ${b} then ${a} + ${ls} ${upleft}`,
-    name: "Fake Pass Exit Left (While Standing)",
+    name: "Fake Pass Exit Left (while standing)",
     stars: 4,
   },
   {
     command: `Hold ${rt} + ${x} or ${b} then ${a} + ${ls} ${upright}`,
-    name: "Fake Pass Exit Right (While Standing)",
+    name: "Fake Pass Exit Right (while standing)",
     stars: 4,
   },
   {
     command: `${rs} Hold ${down}`,
     name: "Quick Ball Rolls",
-    stars: 4,
-  },
-  {
-    command: `Hold ${lb} + ${rs} Flick ${down} Flick ${left} or ${right}`,
-    name: "Drag To Heel",
     stars: 4,
   },
   {
@@ -240,6 +264,21 @@ const skillMoves: ISkillMove[] = [
     stars: 4,
   },
   {
+    command: `Hold ${lb} + ${rs} Flick ${down} Flick ${left} or ${right}`,
+    name: "Drag To Heel",
+    stars: 4,
+  },
+  {
+    command: `Hold ${lb} + ${rs} Flick ${up} Flick ${down}`,
+    name: "Heel to Ball Roll",
+    stars: 4,
+  },
+  {
+    command: `Hold ${lb} + ${rs} Flick ${down} Flick ${down}`,
+    name: "Ball Roll Cut",
+    stars: 4,
+  },
+  {
     command: `${rs} ${right} ${downright} ${down} ${downleft} ${left}`,
     name: "Elastico",
     stars: 5,
@@ -265,17 +304,17 @@ const skillMoves: ISkillMove[] = [
     stars: 5,
   },
   {
-    command: `${rs} Hold ${right} Flick ${up}`,
+    command: `${rs} Hold ${left} Flick ${up}`,
     name: "Ball Roll & Flick Left (while running)",
     stars: 5,
   },
   {
-    command: `${rs} Hold ${left} Flick ${up}`,
+    command: `${rs} Hold ${right} Flick ${up}`,
     name: "Ball Roll & Flick Right (while running)",
     stars: 5,
   },
   {
-    command: `Hold ${rb} + ${rs} Flick ${up} Flick ${down}`,
+    command: `Hold ${lt} + Hold ${rb} + ${rs} Flick ${up} Flick ${down}`,
     name: "Heel Flick Turn",
     stars: 5,
   },
@@ -310,83 +349,78 @@ const skillMoves: ISkillMove[] = [
     stars: 5,
   },
   {
-    command: `Hold ${rb} + ${rs} ${right} ${downright} ${down} ${downleft} ${left}`,
-    name: "Elastico Chop Left",
-    stars: 5,
-  },
-  {
-    command: `Hold ${rb} + ${rs} ${left} ${downleft} ${down} ${downright} ${right}`,
-    name: "Elastico Chop Right",
-    stars: 5,
-  },
-  {
-    command: `Hold ${rb} + ${rs} Flick ${up} Flick ${left}`,
-    name: "Spin Flick Left",
-    stars: 5,
-  },
-  {
-    command: `Hold ${rb} + ${rs} Flick ${up} Flick ${right}`,
-    name: "Spin Flick Right",
-    stars: 5,
-  },
-  {
-    command: `Hold ${lb} + ${rs} Hold ${up}`,
-    name: "Flick Over",
-    stars: 5,
-  },
-  {
-    command: `Hold ${lb} + ${rs} Flick ${up} Flick ${left}`,
-    name: "Tornado Spin Left",
-    stars: 5,
-  },
-  {
-    command: `Hold ${lb} + ${rs} Flick ${up} Flick ${right}`,
-    name: "Tornado Spin Right",
-    stars: 5,
-  },
-  {
     command: `Hold ${lt} + ${x} or ${b} then ${a} + ${ls} ${down}`,
     name: "Rabona Fake (while jogging)",
     stars: 5,
   },
   {
-    command: `Juggling, ${lt} + Hold ${rb}`,
-    name: "Laces Flick Up",
+    command: `Hold ${lt} + Hold ${rb} + ${rs} ${right} ${downright} ${down} ${downleft} ${left}`,
+    name: "Elastico Chop Left",
     stars: 5,
   },
   {
-    command: `Juggling, Hold ${ls} ${down}`,
+    command: `Hold ${lt} + Hold ${rb} + ${rs} ${left} ${downleft} ${down} ${downright} ${right}`,
+    name: "Elastico Chop Right",
+    stars: 5,
+  },
+  {
+    command: `Hold ${lt} + Hold ${rb} + ${rs} Flick ${up} Flick ${right}`,
+    name: "Spin Flick",
+    stars: 5,
+  },
+  {
+    command: `${rs} Hold ${up}`,
+    name: "Flick Over",
+    stars: 5,
+  },
+  {
+    command: `Hold ${lt} + Hold ${rb} + ${rs} Flick ${up} Flick ${left}`,
+    name: "Tornado Spin",
+    stars: 5,
+  },
+  {
+    command: `Hold ${lt} + ${rs} ${left} ${right} or ${right} ${left}`,
+    name: "Heel Fake",
+    stars: 5,
+  },
+  {
+    command: `Hold ${lb} + ${rs} Flick ${down} Flick ${up}`,
+    name: "Flair Rainbow",
+    stars: 5,
+  },
+  {
+    command: `Juggling, Hold ${lt} + ${rb} + ${ls} ${down}`,
     name: "Sombrero Flick Backwards",
     stars: 5,
   },
   {
-    command: `Juggling, Hold ${ls} ${left}`,
+    command: `Juggling, Hold ${lt} + ${rb} + ${ls} ${left}`,
     name: "Sombrero Flick Left",
     stars: 5,
   },
   {
-    command: `Juggling, Hold ${ls} ${right}`,
+    command: `Juggling, Hold ${lt} + ${rb} + ${ls} ${right}`,
     name: "Sombrero Flick Right",
     stars: 5,
   },
   {
-    command: `Juggling, ${rs} ${clockwise} or ${rs} ${counterclockwise}`,
+    command: `Juggling, Hold ${lt} + ${rs} ${clockwise}`,
     name: "Around the World",
     stars: 5,
   },
   {
-    command: `Juggling, ${rs} Flick ${right} Flick ${left}`,
+    command: `Juggling, Hold ${lt} + ${rs} Flick ${right} Flick ${left}`,
     name: "In Air Elastico",
     stars: 5,
   },
   {
-    command: `Juggling, ${rs} Flick ${left} Flick ${right}`,
+    command: `Juggling, Hold ${lt} + ${rs} Flick ${left} Flick ${right}`,
     name: "Reverse In Air Elastico",
     stars: 5,
   },
   {
     command: `Juggling, Hold ${ls} ${up}`,
-    name: "Flick Up For Volley",
+    name: "Flick Up",
     stars: 5,
   },
   {
@@ -395,7 +429,7 @@ const skillMoves: ISkillMove[] = [
     stars: 5,
   },
   {
-    command: `Juggling, ${rs} ${clockwise} then ${rs} Flick ${up}`,
+    command: `Juggling, Hold ${lt} + ${rs} ${clockwise} then ${rs} Flick ${up}`,
     name: "T. Around the World",
     stars: 5,
   },

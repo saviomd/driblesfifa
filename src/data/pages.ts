@@ -10,16 +10,16 @@ const pages: IPage[] = [
     title: "Skill Moves",
   },
   {
-    icon: "child-reaching",
+    icon: "hand-fist",
     title: "Celebrations",
   },
   {
-    icon: "hand-fist",
-    title: "Perks",
+    icon: "diamond",
+    title: "Play Styles",
   },
   {
     icon: "arrow-trend-up",
-    title: "Divisions",
+    title: "Reputation Levels",
   },
 ];
 
