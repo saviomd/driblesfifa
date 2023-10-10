@@ -5,7 +5,7 @@
   export let title: string;
 </script>
 
-<Card>
+<Card hasOpacity>
   <div class="row">
     <div class="col-auto display-3">
       <Icon name={icon} />

@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/js/solid";
 import "@fortawesome/fontawesome-free/js/fontawesome";
-import "./app.css";
+import "./App.css";
 import App from "./App.svelte";
 
 const app = new App({

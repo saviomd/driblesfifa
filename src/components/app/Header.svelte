@@ -1,5 +1,9 @@
-<header class="bg-dark my-3 navbar navbar-dark rounded">
-  <div class="container-fluid">
-    <div class="fw-bold navbar-brand">Dribles FIFA 24</div>
-  </div>
+<script lang="ts">
+  import { MainContainer } from "../library";
+</script>
+
+<header class="border-bottom border-secondary py-2 text-bg-dark">
+  <MainContainer>
+    <div class="fw-bold lead">Dribles FIFA 24</div>
+  </MainContainer>
 </header>

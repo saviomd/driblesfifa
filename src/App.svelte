@@ -1,17 +1,16 @@
 <script lang="ts">
   import { Footer, Header, Nav } from "./components/app";
-  import { Analytics } from "./components/library";
+  import { Analytics, MainContainer } from "./components/library";
   import Pages from "./pages/Pages.svelte";
+  import { currentPage } from "./stores";
 </script>
 
-<div class="container-fluid">
-  <div class="justify-content-center mb-5 pb-5 row">
-    <div class="col-12 col-sm-8 col-md-6">
-      <Header />
-      <Nav />
-      <Pages />
-      <Footer />
-    </div>
-  </div>
+<Header />
+<div class={`py-3 ${$currentPage === "Home" ? "bg-home min-vh-100" : ""}`}>
+  <MainContainer>
+    <Nav />
+    <Pages />
+    <Footer />
+  </MainContainer>
 </div>
 <Analytics />

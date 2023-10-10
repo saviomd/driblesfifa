@@ -1,24 +1,26 @@
 <script lang="ts">
-  import { Icon } from "../library";
+  import { Icon, MainContainer } from "../library";
   import { pages } from "../../data";
   import { currentPage } from "../../stores";
 </script>
 
-<div class="fixed-bottom">
-  <nav class="bg-dark nav nav-justified pb-3 rounded shadow">
-    {#each pages as page}
-      <button
-        class={`btn btn-link nav-link py-3 ${
-          $currentPage === page.title ? "active text-white" : "text-muted"
-        }`}
-        on:click={() => {
-          $currentPage = page.title;
-          window.scrollTo({ behavior: "auto", top: 0 });
-        }}
-      >
-        <Icon name={page.icon} />
-        <div class="d-none d-sm-block small">{page.title}</div>
-      </button>
-    {/each}
-  </nav>
+<div class="border-top border-secondary fixed-bottom pb-3 text-bg-dark">
+  <MainContainer>
+    <nav class="lead nav nav-justified">
+      {#each pages as page}
+        <button
+          class={`btn btn-link nav-link ${
+            $currentPage === page.title ? "active text-white" : "text-muted"
+          }`}
+          on:click={() => {
+            $currentPage = page.title;
+            window.scrollTo({ behavior: "instant", top: 0 });
+          }}
+          title={page.title}
+        >
+          <Icon name={page.icon} />
+        </button>
+      {/each}
+    </nav>
+  </MainContainer>
 </div>

@@ -4,7 +4,7 @@
 </script>
 
 <main>
-  <ul class="list-unstyled">
+  <ul class="list-unstyled py-5">
     {#each pages as page}
       {#if page.title !== "Home"}
         <li>

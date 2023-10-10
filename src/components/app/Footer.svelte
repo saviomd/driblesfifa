@@ -1,7 +1,7 @@
-<footer class="border-light border-top my-5 py-1 small">
+<footer class="border-secondary border-top my-5 pb-5 pt-1 small">
   {`© 2012-2017...2022-${new Date().getFullYear()} `}
   <a
-    class="text-light"
+    class="text-reset"
     href="http://saviomd.com/"
     rel="noreferrer"
     target="_blank"

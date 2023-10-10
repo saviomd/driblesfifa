@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { ReputationCard } from "../components/app";
-  import { Heading } from "../components/library";
+  import { ListHeader, ReputationCard } from "../components/app";
   import { reputationLevels } from "../data";
 </script>
 
 <main>
-  <Heading level={1}>Reputation Levels</Heading>
+  <ListHeader title="Reputation Levels" />
   <ul class="list-unstyled">
     {#each reputationLevels as reputationLevel}
       <li>
