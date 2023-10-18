@@ -25,6 +25,7 @@
       <li>
         <InfoCard
           description={perk.description}
+          relatedAttributes={perk.relatedAttributes}
           tag={perk.type}
           title={perk.name}
         />

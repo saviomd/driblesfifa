@@ -6,6 +6,7 @@
     StarCountType,
   } from "../../types";
   export let description: string;
+  export let relatedAttributes: string[] = [];
   export let tag: CelebrationType | PlayStyleType | StarCountType;
   export let title: string;
 </script>
@@ -26,4 +27,13 @@
     </div>
   </div>
   <div>{description}</div>
+  {#if relatedAttributes.length}
+    <div class="fw-bold mt-3">Related attributes</div>
+    <ul class="ps-3">
+      {#each relatedAttributes as attribute}
+        <!-- !!! badges? -->
+        <li>{attribute}</li>
+      {/each}
+    </ul>
+  {/if}
 </Card>

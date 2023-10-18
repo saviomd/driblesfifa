@@ -4,9 +4,9 @@
   import { currentPage } from "../../stores";
 </script>
 
-<div class="border-top border-secondary fixed-bottom pb-3 text-bg-dark">
+<div class="border-top border-secondary fixed-bottom pb-4 text-bg-dark">
   <MainContainer>
-    <nav class="lead nav nav-justified">
+    <nav class="fs-4 nav nav-justified">
       {#each pages as page}
         <button
           class={`btn btn-link nav-link ${

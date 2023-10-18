@@ -12,6 +12,7 @@ export interface IPage {
 export interface IPlayStyle {
   description: string;
   name: string;
+  relatedAttributes: string[];
   type: PlayStyleType;
 }
 
