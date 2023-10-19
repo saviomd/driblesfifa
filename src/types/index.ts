@@ -11,6 +11,7 @@ export interface IPage {
 
 export interface IPlayStyle {
   description: string;
+  iconPath: string;
   name: string;
   relatedAttributes: string[];
   type: PlayStyleType;
@@ -21,6 +22,7 @@ export interface IReputationLevel {
   level: number;
   name: string;
   rewards?: string[];
+  tier: number;
 }
 
 export interface ISkillMove {

@@ -12,6 +12,7 @@
           fans={reputationLevel.fans}
           level={reputationLevel.level}
           rewards={reputationLevel.rewards}
+          tier={reputationLevel.tier}
           title={reputationLevel.name}
         />
       </li>

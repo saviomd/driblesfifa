@@ -21,13 +21,14 @@
     <div>Nothing to show</div>
   {/if}
   <ul class="list-unstyled">
-    {#each playStylesFiltered as perk (perk.name)}
+    {#each playStylesFiltered as playStyle (playStyle.name)}
       <li>
         <InfoCard
-          description={perk.description}
-          relatedAttributes={perk.relatedAttributes}
-          tag={perk.type}
-          title={perk.name}
+          description={playStyle.description}
+          iconPath={playStyle.iconPath}
+          relatedAttributes={playStyle.relatedAttributes}
+          tag={playStyle.type}
+          title={playStyle.name}
         />
       </li>
     {/each}

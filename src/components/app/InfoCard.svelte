@@ -6,6 +6,7 @@
     StarCountType,
   } from "../../types";
   export let description: string;
+  export let iconPath: string = "";
   export let relatedAttributes: string[] = [];
   export let tag: CelebrationType | PlayStyleType | StarCountType;
   export let title: string;
@@ -27,13 +28,28 @@
     </div>
   </div>
   <div>{description}</div>
-  {#if relatedAttributes.length}
-    <div class="fw-bold mt-3">Related attributes</div>
-    <ul class="ps-3">
-      {#each relatedAttributes as attribute}
-        <!-- !!! badges? -->
-        <li>{attribute}</li>
-      {/each}
-    </ul>
+  {#if iconPath}
+    <div class="mt-3 row">
+      <div class="col-auto">
+        <img
+          alt={title}
+          height={64}
+          src={`https://media.contentapi.ea.com/content/dam/ea/fc/fc-24/common/playstyles/${iconPath}.png.adapt.1456w.png`}
+          width={64}
+        />
+      </div>
+      <div class="col">
+        <div class="fw-bold">Related attributes</div>
+        {#if relatedAttributes.length}
+          <ul class="ps-3">
+            {#each relatedAttributes as attribute}
+              <li>{attribute}</li>
+            {/each}
+          </ul>
+        {:else}
+          --
+        {/if}
+      </div>
+    </div>
   {/if}
 </Card>
