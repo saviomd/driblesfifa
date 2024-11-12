@@ -17,18 +17,15 @@
 
 <main>
   <ListHeader {filter} {setFilter} title="Skill Moves" />
-  {#if !skillMovesFiltered.length}
+  {#if skillMovesFiltered.length}
+    <ul class="list-unstyled">
+      {#each skillMovesFiltered as { command, name, stars } (`${name}-${stars}`)}
+        <li>
+          <InfoCard description={command} tag={stars} title={name} />
+        </li>
+      {/each}
+    </ul>
+  {:else}
     <div>Nothing to show</div>
   {/if}
-  <ul class="list-unstyled">
-    {#each skillMovesFiltered as skillMove (`${skillMove.name}${skillMove.stars}`)}
-      <li>
-        <InfoCard
-          description={skillMove.command}
-          tag={skillMove.stars}
-          title={skillMove.name}
-        />
-      </li>
-    {/each}
-  </ul>
 </main>

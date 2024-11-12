@@ -17,18 +17,15 @@
 
 <main>
   <ListHeader {filter} {setFilter} title="Celebrations" />
-  {#if !celebrationsFiltered.length}
+  {#if celebrationsFiltered.length}
+    <ul class="list-unstyled">
+      {#each celebrationsFiltered as { command, name, type } (`${type}-${name}`)}
+        <li>
+          <InfoCard description={command} tag={type} title={name} />
+        </li>
+      {/each}
+    </ul>
+  {:else}
     <div>Nothing to show</div>
   {/if}
-  <ul class="list-unstyled">
-    {#each celebrationsFiltered as celebration (`${celebration.type}-${celebration.name}`)}
-      <li>
-        <InfoCard
-          description={celebration.command}
-          tag={celebration.type}
-          title={celebration.name}
-        />
-      </li>
-    {/each}
-  </ul>
 </main>

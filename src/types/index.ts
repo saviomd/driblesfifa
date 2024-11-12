@@ -18,11 +18,13 @@ export interface IPlayStyle {
 }
 
 export interface IReputationLevel {
+  aiSquadRating: number;
+  facilitiesBudget: number;
   fans: number;
-  level: number;
-  name: string;
-  rewards?: string[];
-  tier: number;
+  repGroup: number;
+  repLevel: number;
+  repTier: string;
+  stadiumTierReward?: number;
 }
 
 export interface ISkillMove {

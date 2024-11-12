@@ -5,10 +5,10 @@
 
 <main>
   <ul class="list-unstyled py-5">
-    {#each pages as page}
-      {#if page.title !== "Home"}
+    {#each pages as { icon, title }}
+      {#if title !== "Home"}
         <li>
-          <HomeCard icon={page.icon} title={page.title} />
+          <HomeCard {icon} {title} />
         </li>
       {/if}
     {/each}

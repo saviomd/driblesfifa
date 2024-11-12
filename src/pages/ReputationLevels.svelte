@@ -6,14 +6,16 @@
 <main>
   <ListHeader title="Reputation Levels" />
   <ul class="list-unstyled">
-    {#each reputationLevels as reputationLevel}
+    {#each reputationLevels as { aiSquadRating, facilitiesBudget, fans, repGroup, repLevel, repTier, stadiumTierReward }}
       <li>
         <ReputationCard
-          fans={reputationLevel.fans}
-          level={reputationLevel.level}
-          rewards={reputationLevel.rewards}
-          tier={reputationLevel.tier}
-          title={reputationLevel.name}
+          {aiSquadRating}
+          {facilitiesBudget}
+          {fans}
+          {repGroup}
+          {repLevel}
+          {repTier}
+          {stadiumTierReward}
         />
       </li>
     {/each}

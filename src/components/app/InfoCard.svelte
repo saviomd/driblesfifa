@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge, Card, Heading, Stars } from "../library";
+  import { Badge, Card, Heading, Image, Stars } from "../library";
   import type {
     CelebrationType,
     PlayStyleType,
@@ -31,23 +31,23 @@
   {#if iconPath}
     <div class="mt-3 row">
       <div class="col-auto">
-        <img
+        <Image
           alt={title}
           height={64}
-          src={`https://media.contentapi.ea.com/content/dam/ea/fc/fc-24/common/playstyles/${iconPath}.png.adapt.1456w.png`}
+          src={`https://drop-assets.ea.com/images/${iconPath}.png?q=40&w=2560`}
           width={64}
         />
       </div>
       <div class="col">
-        <div class="fw-bold">Related attributes</div>
+        Related attributes
         {#if relatedAttributes.length}
-          <ul class="ps-3">
+          <ul class="fw-bold ps-3">
             {#each relatedAttributes as attribute}
               <li>{attribute}</li>
             {/each}
           </ul>
         {:else}
-          --
+          <div class="fw-bold">--</div>
         {/if}
       </div>
     </div>

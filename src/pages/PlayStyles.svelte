@@ -17,20 +17,21 @@
 
 <main>
   <ListHeader {filter} {setFilter} title="Play Styles" />
-  {#if !playStylesFiltered.length}
+  {#if playStylesFiltered.length}
+    <ul class="list-unstyled">
+      {#each playStylesFiltered as { description, iconPath, name, relatedAttributes, type } (name)}
+        <li>
+          <InfoCard
+            {description}
+            {iconPath}
+            {relatedAttributes}
+            tag={type}
+            title={name}
+          />
+        </li>
+      {/each}
+    </ul>
+  {:else}
     <div>Nothing to show</div>
   {/if}
-  <ul class="list-unstyled">
-    {#each playStylesFiltered as playStyle (playStyle.name)}
-      <li>
-        <InfoCard
-          description={playStyle.description}
-          iconPath={playStyle.iconPath}
-          relatedAttributes={playStyle.relatedAttributes}
-          tag={playStyle.type}
-          title={playStyle.name}
-        />
-      </li>
-    {/each}
-  </ul>
 </main>

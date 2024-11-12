@@ -4,6 +4,6 @@
 
 <header class="border-bottom border-secondary py-2 text-bg-dark">
   <MainContainer>
-    <div class="fw-bold lead">Dribles FIFA 24</div>
+    <div class="fw-bold lead">Dribles FIFA 25</div>
   </MainContainer>
 </header>

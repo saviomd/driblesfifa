@@ -202,12 +202,12 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${lb} hold ${rs} ${left}`,
-    name: "Baby Girl",
+    name: "Baby",
     type: "Finishing Moves",
   },
   {
     command: `Hold ${lb} Flick ${rs} ${down} ${up}`,
-    name: "Knee Slide Drag",
+    name: "Knee Slide 1",
     type: "Finishing Moves",
   },
   {
@@ -227,7 +227,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${lb} spin ${rs} ${counterclockwise}`,
-    name: "Floor Spin",
+    name: "Arms To Crowd",
     type: "Finishing Moves",
   },
   {
@@ -277,7 +277,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${lt} Flick ${rs} ${up} ${down}`,
-    name: "Pipe",
+    name: "Driving",
     type: "Finishing Moves",
   },
   {
@@ -287,7 +287,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${lt} Flick ${rs} ${right} ${left}`,
-    name: "Who Am I",
+    name: "Tea",
     type: "Finishing Moves",
   },
   {
@@ -312,12 +312,12 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${rt} Press ${rs}`,
-    name: "Rugby",
+    name: "One Eye",
     type: "Finishing Moves",
   },
   {
     command: `Hold ${rb} double tap ${y}`,
-    name: "Elbow",
+    name: "Boxing",
     type: "Finishing Moves",
   },
   {
@@ -337,12 +337,12 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${rb} double tap ${b}`,
-    name: "Push It Down",
+    name: "Swagger",
     type: "Finishing Moves",
   },
   {
     command: `Hold ${rb} Flick ${rs} ${left} ${left}`,
-    name: "Glamour Slide",
+    name: "Knee Slide",
     type: "Finishing Moves",
   },
   {
@@ -382,12 +382,12 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${lb} Hold ${rs} ${right} ${left}`,
-    name: "Arms Swing",
+    name: "Chicken Dance",
     type: "Finishing Moves",
   },
   {
     command: `Hold ${rt} hold ${rs} ${up}`,
-    name: "Many Bows",
+    name: "Hands Crossed",
     type: "Pro Unlockables",
   },
   {
@@ -397,7 +397,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${rt} double tap ${x}`,
-    name: "Disbelief",
+    name: "Fists",
     type: "Pro Unlockables",
   },
   {
@@ -412,17 +412,17 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${rb} press ${rs}`,
-    name: "Cockroach",
+    name: "Pigeon",
     type: "Pro Unlockables",
   },
   {
     command: `Hold ${rb} Flick ${rs} ${up} ${up}`,
-    name: "River Dance",
+    name: "Guitar Dance",
     type: "Pro Unlockables",
   },
   {
     command: `Hold ${rb} Flick ${rs} ${right} ${right}`,
-    name: "Break Dance",
+    name: "Hopping",
     type: "Pro Unlockables",
   },
   {
@@ -432,7 +432,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${rb} spin ${rs} ${counterclockwise}`,
-    name: "Backwards Worm",
+    name: "Eye of the Storm",
     type: "Pro Unlockables",
   },
   {
@@ -442,12 +442,12 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${rt} spin ${rs} ${counterclockwise}`,
-    name: "Handstand",
+    name: "Darts",
     type: "Pro Unlockables",
   },
   {
     command: `Hold ${rt} Flick ${rs} ${up} ${up}`,
-    name: "Spin & Fall",
+    name: "Eyes and Arms",
     type: "Pro Unlockables",
   },
   {
@@ -462,7 +462,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${rt} press ${x}`,
-    name: "Knee Walk",
+    name: "Picture",
     type: "Pro Unlockables",
   },
   {
@@ -472,22 +472,22 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${rt} double tap ${y}`,
-    name: "Baby",
+    name: "Kiss The Ring",
     type: "Pro Unlockables",
   },
   {
     command: `Hold ${rb} hold ${rs} ${up}`,
-    name: "Flying Dive",
+    name: "Jump Slide",
     type: "Pro Unlockables",
   },
   {
     command: `Hold ${rb} hold ${rs} ${right}`,
-    name: "Karate Kicks",
+    name: "Slide Salute",
     type: "Pro Unlockables",
   },
   {
     command: `Hold ${rb} hold ${rs} ${down}`,
-    name: "Jumping Kicks",
+    name: "Slide and Flex",
     type: "Pro Unlockables",
   },
   {
@@ -507,7 +507,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${rt} Flick ${rs} ${up} ${down}`,
-    name: "Dance 2",
+    name: "Goggles",
     type: "Pro Unlockables",
   },
   {
@@ -517,7 +517,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${rt} Flick ${rs} ${right} ${left}`,
-    name: "Dance 4",
+    name: "Time Check",
     type: "Pro Unlockables",
   },
   {
@@ -532,7 +532,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${lt} Flick ${rs} ${down} ${up}`,
-    name: "Surf and Flex",
+    name: "Low Fist Pump",
     type: "Pro Unlockables",
   },
   {
@@ -542,7 +542,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${lt} double tap ${b}`,
-    name: "Kiss The Wrist",
+    name: "Timber",
     type: "Pro Unlockables",
   },
   {
@@ -562,7 +562,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${lb} Hold ${rs} ${down}`,
-    name: "Motorbike",
+    name: "Happy Walk",
     type: "Pro Unlockables",
   },
   {
@@ -572,7 +572,7 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${lb} Flick ${rs} ${right} ${left}`,
-    name: "Muevelo",
+    name: "Chicken Dance",
     type: "Pro Unlockables",
   },
   {
@@ -582,17 +582,17 @@ const celebrations: ICelebration[] = [
   },
   {
     command: `Hold ${rb} Flick ${rs} ${right} ${left}`,
-    name: "Push Ups",
+    name: "Gamer",
     type: "Pro Unlockables",
   },
   {
     command: `Hold ${rb} + ${rs} ${clockwise}`,
-    name: "Penguin",
+    name: "Don't look and Think",
     type: "Pro Unlockables",
   },
   {
     command: `Hold ${rb} Flick ${rs} ${down} ${down}`,
-    name: "Dance",
+    name: "Energy",
     type: "Pro Unlockables",
   },
   {
