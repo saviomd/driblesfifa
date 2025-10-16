@@ -1,3 +1,5 @@
+import { playStyleTypes } from "src/data";
+
 export interface ICelebration {
   command: string;
   name: string;
@@ -13,8 +15,7 @@ export interface IPlayStyle {
   description: string;
   iconPath: string;
   name: string;
-  relatedAttributes: string[];
-  type: PlayStyleType;
+  type: typeof playStyleTypes[keyof typeof playStyleTypes];
 }
 
 export interface IReputationLevel {
@@ -42,13 +43,5 @@ export type CelebrationType =
 export type DivisionColorsType = "info" | "success" | "warning";
 
 export type HeadingLevelsType = 1 | 2 | 3 | 4 | 5 | 6;
-
-export type PlayStyleType =
-  | "Ball Control"
-  | "Defending"
-  | "Goalkeeper"
-  | "Passing"
-  | "Physical"
-  | "Scoring";
 
 export type StarCountType = 1 | 2 | 3 | 4 | 5;

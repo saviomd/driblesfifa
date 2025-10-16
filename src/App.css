@@ -1,6 +1,6 @@
 .bg-home {
   background-attachment: fixed;
-  background-image: url(/img/bg-home.jpg);
-  background-position: center;
+  background-image: url(/img/cover.jpg);
+  background-position: center top;
   background-size: cover;
 }

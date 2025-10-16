@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { InfoCard, ListHeader } from "../components/app";
+  import { ListHeader, PlayStyleCard } from "../components/app";
   import { playStyles } from "../data";
   import { filterList } from "../utils";
 
@@ -19,15 +19,9 @@
   <ListHeader {filter} {setFilter} title="Play Styles" />
   {#if playStylesFiltered.length}
     <ul class="list-unstyled">
-      {#each playStylesFiltered as { description, iconPath, name, relatedAttributes, type } (name)}
+      {#each playStylesFiltered as { description, iconPath, name, type } (name)}
         <li>
-          <InfoCard
-            {description}
-            {iconPath}
-            {relatedAttributes}
-            tag={type}
-            title={name}
-          />
+          <PlayStyleCard {description} {iconPath} {name} {type} />
         </li>
       {/each}
     </ul>

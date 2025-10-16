@@ -13,7 +13,7 @@ const reputationLevels: IReputationLevel[] = [
   },
   {
     aiSquadRating: 80,
-    facilitiesBudget: 1,
+    facilitiesBudget: 1.1,
     fans: 1,
     repGroup: 0,
     repLevel: 2,
@@ -38,7 +38,7 @@ const reputationLevels: IReputationLevel[] = [
   },
   {
     aiSquadRating: 84,
-    facilitiesBudget: 1.4,
+    facilitiesBudget: 1.5,
     fans: 5,
     repGroup: 1,
     repLevel: 5,
@@ -46,7 +46,7 @@ const reputationLevels: IReputationLevel[] = [
   },
   {
     aiSquadRating: 84,
-    facilitiesBudget: 1.5,
+    facilitiesBudget: 1.7,
     fans: 7.5,
     repGroup: 1,
     repLevel: 6,
@@ -54,7 +54,7 @@ const reputationLevels: IReputationLevel[] = [
   },
   {
     aiSquadRating: 86,
-    facilitiesBudget: 1.5,
+    facilitiesBudget: 1.9,
     fans: 10,
     repGroup: 2,
     repLevel: 7,
@@ -63,15 +63,15 @@ const reputationLevels: IReputationLevel[] = [
   },
   {
     aiSquadRating: 86,
-    facilitiesBudget: 1.6,
-    fans: 12.5,
+    facilitiesBudget: 2.1,
+    fans: 14,
     repGroup: 2,
     repLevel: 8,
     repTier: "Well Known",
   },
   {
     aiSquadRating: 88,
-    facilitiesBudget: 1.7,
+    facilitiesBudget: 2.3,
     fans: 25,
     repGroup: 3,
     repLevel: 9,
@@ -79,7 +79,7 @@ const reputationLevels: IReputationLevel[] = [
   },
   {
     aiSquadRating: 88,
-    facilitiesBudget: 1.8,
+    facilitiesBudget: 2.5,
     fans: 50,
     repGroup: 3,
     repLevel: 10,

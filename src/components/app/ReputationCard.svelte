@@ -1,12 +1,13 @@
 <script lang="ts">
   import { Card, Heading, Image } from "../library";
-  export let aiSquadRating: number;
-  export let facilitiesBudget: number;
-  export let fans: number;
-  export let repGroup: number;
-  export let repLevel: number;
-  export let repTier: string;
-  export let stadiumTierReward: number;
+  import type { IReputationLevel } from "../../types";
+  export let aiSquadRating: IReputationLevel["aiSquadRating"];
+  export let facilitiesBudget: IReputationLevel["facilitiesBudget"];
+  export let fans: IReputationLevel["fans"];
+  export let repGroup: IReputationLevel["repGroup"];
+  export let repLevel: IReputationLevel["repLevel"];
+  export let repTier: IReputationLevel["repTier"];
+  export let stadiumTierReward: IReputationLevel["stadiumTierReward"];
 </script>
 
 <Card>
@@ -15,9 +16,9 @@
       <div class="h1">{repLevel}</div>
       <Image
         alt={repTier}
-        height={64}
+        height={72}
         src={`https://media.contentapi.ea.com/content/dam/eacom/fc/pro-clubs/reputation-tier${repGroup}.png`}
-        width={64}
+        width={72}
       />
     </div>
     <div class="col">

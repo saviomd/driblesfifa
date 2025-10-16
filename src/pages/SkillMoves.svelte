@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { InfoCard, ListHeader } from "../components/app";
+  import { BaseCard, ListHeader } from "../components/app";
   import { skillMoves } from "../data";
   import { filterList } from "../utils";
 
@@ -21,7 +21,7 @@
     <ul class="list-unstyled">
       {#each skillMovesFiltered as { command, name, stars } (`${name}-${stars}`)}
         <li>
-          <InfoCard description={command} tag={stars} title={name} />
+          <BaseCard description={command} tag={stars} title={name} />
         </li>
       {/each}
     </ul>

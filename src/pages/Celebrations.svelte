@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { InfoCard, ListHeader } from "../components/app";
+  import { BaseCard, ListHeader } from "../components/app";
   import { celebrations } from "../data";
   import { filterList } from "../utils";
 
@@ -21,7 +21,7 @@
     <ul class="list-unstyled">
       {#each celebrationsFiltered as { command, name, type } (`${type}-${name}`)}
         <li>
-          <InfoCard description={command} tag={type} title={name} />
+          <BaseCard description={command} tag={type} title={name} />
         </li>
       {/each}
     </ul>
