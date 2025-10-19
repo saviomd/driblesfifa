@@ -18,8 +18,16 @@ const pages: IPage[] = [
     title: "Play Styles",
   },
   {
+    icon: "square",
+    title: "Player Levels",
+  },
+  {
     icon: "arrow-trend-up",
     title: "Reputation Levels",
+  },
+  {
+    icon: "comment",
+    title: "Quick Chat",
   },
 ];
 

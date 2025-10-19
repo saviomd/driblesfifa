@@ -4,3 +4,19 @@
   background-position: center top;
   background-size: cover;
 }
+
+.bg-card-1 {
+  background-color: sienna;
+}
+
+.bg-card-2 {
+  background-color: gray;
+}
+
+.bg-card-3 {
+  background-color: goldenrod;
+}
+
+.bg-card-4 {
+  background-color: slateblue;
+}

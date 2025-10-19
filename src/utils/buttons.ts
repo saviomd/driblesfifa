@@ -9,6 +9,7 @@ const buttons = {
   rt: "RT",
   ls: "LS",
   rs: "RS",
+  dpad: "DPAD",
   up: "↑",
   upright: "↗",
   right: "→",

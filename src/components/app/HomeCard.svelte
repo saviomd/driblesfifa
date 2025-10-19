@@ -13,7 +13,13 @@
     <div class="col">
       <Heading level={1}>{title}</Heading>
       <div class="text-end">
-        <Button onClick={() => ($currentPage = title)} stretched={true}>
+        <Button
+          onClick={() => {
+            $currentPage = title;
+            window.scrollTo({ behavior: "instant", top: 0 });
+          }}
+          stretched={true}
+        >
           <Icon name="chevron-right" />
         </Button>
       </div>

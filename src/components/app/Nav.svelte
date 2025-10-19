@@ -7,7 +7,7 @@
 <div class="border-top border-secondary fixed-bottom pb-4 text-bg-dark">
   <MainContainer>
     <nav class="fs-4 nav nav-justified">
-      {#each pages as page}
+      {#each pages.slice(0, 5) as page}
         <button
           class={`btn btn-link nav-link ${
             $currentPage === page.title ? "active text-white" : "text-muted"

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Badge, Card, Heading, Stars } from "../library";
-  import type { CelebrationType, StarCountType } from "../../types";
+  import type { IQuickChat, CelebrationType, StarCountType } from "../../types";
   export let description: string;
-  export let tag: CelebrationType | StarCountType;
+  export let tag: IQuickChat["category"] | CelebrationType | StarCountType;
   export let title: string;
 </script>
 

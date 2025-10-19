@@ -1,4 +1,4 @@
-import { playStyleTypes } from "src/data";
+import { playStyleTypes, quickChatCategories } from "../data";
 
 export interface ICelebration {
   command: string;
@@ -11,11 +11,31 @@ export interface IPage {
   title: string;
 }
 
+export interface IPlayerLevel {
+  axpNeeded: number;
+  level: number;
+  rewards: {
+    ap: number;
+    cardUpgrade?: 1 | 2 | 3 | 4;
+    newPlayStyleSlot?: boolean;
+    newSignaturePerk?: boolean;
+    signaturePlayStyleUpgrade?: boolean;
+  };
+}
+
 export interface IPlayStyle {
   description: string;
   iconPath: string;
   name: string;
   type: typeof playStyleTypes[keyof typeof playStyleTypes];
+}
+
+export interface IQuickChat {
+  category: typeof quickChatCategories[keyof typeof quickChatCategories];
+  messages: {
+    command: string;
+    name: string;
+  }[];
 }
 
 export interface IReputationLevel {
