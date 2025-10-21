@@ -16,7 +16,7 @@
 </script>
 
 <main>
-  <ListHeader {filter} {setFilter} title="Play Styles" />
+  <ListHeader {filter} {setFilter} title="PlayStyles" />
   {#if playStylesFiltered.length}
     <ul class="list-unstyled">
       {#each playStylesFiltered as { description, iconPath, name, type } (name)}

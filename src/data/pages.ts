@@ -15,7 +15,7 @@ const pages: IPage[] = [
   },
   {
     icon: "diamond",
-    title: "Play Styles",
+    title: "PlayStyles",
   },
   {
     icon: "square",

@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { Card } from "../library";
+  import { Card, Icon } from "../library";
   import type { IPlayerLevel } from "../../types";
   export let axpNeeded: IPlayerLevel["axpNeeded"];
   export let axpNeededDiff: IPlayerLevel["axpNeeded"];
   export let cardColor: IPlayerLevel["rewards"]["cardUpgrade"];
   export let level: IPlayerLevel["level"];
   export let rewards: IPlayerLevel["rewards"];
+  export let totalAp: IPlayerLevel["rewards"]["ap"];
 </script>
 
 <Card>
@@ -27,22 +28,35 @@
       </div>
       <div>
         Rewards
-        <ul>
+        <ul class="ps-3">
           <li>
-            Archetype points
             <span class="fw-bold">{rewards.ap}</span>
+            AP
+            <span class="small">({totalAp})</span>
           </li>
           {#if rewards.cardUpgrade}
-            <li>Card Upgrade</li>
+            <li>
+              <Icon color={`card-${cardColor}`} name="square" />
+              Card Upgrade
+            </li>
           {/if}
           {#if rewards.newSignaturePerk}
-            <li>New Signature Perk</li>
+            <li>
+              <Icon name="star" />
+              New Signature Perk
+            </li>
           {/if}
           {#if rewards.newPlayStyleSlot}
-            <li>New PlayStyle slot</li>
+            <li>
+              <Icon name="diamond" />
+              New PlayStyle slot
+            </li>
           {/if}
           {#if rewards.signaturePlayStyleUpgrade}
-            <li>Signature PlayStyle Upgrade</li>
+            <li>
+              <Icon name="gem" />
+              Signature PlayStyle Upgrade
+            </li>
           {/if}
         </ul>
       </div>

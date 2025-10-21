@@ -7,7 +7,7 @@
 
 <Card>
   <Heading level={2}>{category}</Heading>
-  <ul>
+  <ul class="ps-3">
     {#each messages as { command, name } (`${name}`)}
       <li>
         <div class="row">

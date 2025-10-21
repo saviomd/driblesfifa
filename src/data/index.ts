@@ -2,6 +2,7 @@ export { default as celebrations } from "./celebrations";
 export { default as pages } from "./pages";
 export { default as playerLevels } from "./playerLevels";
 export { default as playStyles } from "./playStyles";
+export { default as playStyleNames } from "./playStyleNames";
 export { default as playStyleTypes } from "./playStyleTypes";
 export { default as quickChat } from "./quickChat";
 export { default as quickChatCategories } from "./quickChatCategories";

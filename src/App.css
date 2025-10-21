@@ -1,3 +1,10 @@
+:root {
+  --card-1: sienna;
+  --card-2: gray;
+  --card-3: goldenrod;
+  --card-4: slateblue;
+}
+
 .bg-home {
   background-attachment: fixed;
   background-image: url(/img/cover.jpg);
@@ -6,17 +13,33 @@
 }
 
 .bg-card-1 {
-  background-color: sienna;
+  background-color: var(--card-1);
 }
 
 .bg-card-2 {
-  background-color: gray;
+  background-color: var(--card-2);
 }
 
 .bg-card-3 {
-  background-color: goldenrod;
+  background-color: var(--card-3);
 }
 
 .bg-card-4 {
-  background-color: slateblue;
+  background-color: var(--card-4);
+}
+
+.text-card-1 {
+  color: var(--card-1);
+}
+
+.text-card-2 {
+  color: var(--card-2);
+}
+
+.text-card-3 {
+  color: var(--card-3);
+}
+
+.text-card-4 {
+  color: var(--card-4);
 }

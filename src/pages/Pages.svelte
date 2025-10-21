@@ -15,7 +15,7 @@
   <Home />
 {:else if $currentPage === "Player Levels"}
   <PlayerLevelRewards />
-{:else if $currentPage === "Play Styles"}
+{:else if $currentPage === "PlayStyles"}
   <PlayStyles />
 {:else if $currentPage === "Quick Chat"}
   <QuickChat />
