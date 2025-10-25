@@ -1,3 +1,4 @@
+export { default as ArchetypeCard } from "./ArchetypeCard.svelte";
 export { default as BaseCard } from "./BaseCard.svelte";
 export { default as Footer } from "./Footer.svelte";
 export { default as Header } from "./Header.svelte";

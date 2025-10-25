@@ -1,4 +1,3 @@
-// !!! criar componente de imagem?
 import type { IReputationLevel } from "../types";
 
 const reputationLevels: IReputationLevel[] = [

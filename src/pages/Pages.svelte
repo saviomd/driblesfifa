@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Archetypes from "./Archetypes.svelte";
   import Celebrations from "./Celebrations.svelte";
   import Home from "./Home.svelte";
   import PlayerLevelRewards from "./PlayerLevels.svelte";
@@ -9,7 +10,9 @@
   import { currentPage } from "../stores";
 </script>
 
-{#if $currentPage === "Celebrations"}
+{#if $currentPage === "Archetypes"}
+  <Archetypes />
+{:else if $currentPage === "Celebrations"}
   <Celebrations />
 {:else if $currentPage === "Home"}
   <Home />

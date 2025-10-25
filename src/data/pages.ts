@@ -18,6 +18,10 @@ const pages: IPage[] = [
     title: "PlayStyles",
   },
   {
+    icon: "circle-notch",
+    title: "Archetypes",
+  },
+  {
     icon: "square",
     title: "Player Levels",
   },

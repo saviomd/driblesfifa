@@ -1,4 +1,20 @@
-import { playStyleTypes, quickChatCategories } from "../data";
+import {
+  attributeNames,
+  perkNames,
+  playStyleTypes,
+  quickChatCategories,
+  specializationNames,
+} from "../data";
+
+export interface IArchetype {
+  inspiredBy: string;
+  keyAttributes: typeof attributeNames[keyof typeof attributeNames][];
+  name: string;
+  signaturePerks: typeof perkNames[keyof typeof perkNames][];
+  signaturePlayStyles: IPlayStyle[];
+  specializations: typeof specializationNames[keyof typeof specializationNames][];
+  type: string;
+}
 
 export interface ICelebration {
   command: string;
