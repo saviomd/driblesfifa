@@ -10,6 +10,7 @@ const attributeNames = {
   defAware: "Def. Aware",
   dribbling: "Dribbling",
   finishing: "Finishing",
+  fkAccuracy: "FK Accuracy",
   gkDiving: "GK Diving",
   gkHandling: "GK Handling",
   gkKicking: "GK Kicking",

@@ -4,23 +4,25 @@
   import { currentPage } from "../../stores";
 </script>
 
-<div class="border-top border-secondary fixed-bottom pb-4 text-bg-dark">
+<div class="border-top border-secondary fixed-bottom text-bg-dark">
   <MainContainer>
-    <nav class="fs-4 nav nav-justified">
-      {#each pages.slice(0, 5) as page}
-        <button
-          class={`btn btn-link nav-link ${
-            $currentPage === page.title ? "active text-white" : "text-muted"
-          }`}
-          on:click={() => {
-            $currentPage = page.title;
-            window.scrollTo({ behavior: "instant", top: 0 });
-          }}
-          title={page.title}
-        >
-          <Icon name={page.icon} />
-        </button>
-      {/each}
-    </nav>
+    <div class="table-responsive">
+      <nav class="flex-nowrap row">
+        {#each pages as page}
+          <button
+            class={`btn btn-link col-auto fs-4 p-4 pt-2 ${
+              $currentPage === page.title ? "active text-white" : "text-muted"
+            }`}
+            on:click={() => {
+              $currentPage = page.title;
+              window.scrollTo({ behavior: "instant", top: 0 });
+            }}
+            title={page.title}
+          >
+            <Icon name={page.icon} />
+          </button>
+        {/each}
+      </nav>
+    </div>
   </MainContainer>
 </div>

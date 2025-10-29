@@ -44,6 +44,9 @@ export interface IPlayStyle {
   iconPath: string;
   name: string;
   type: typeof playStyleTypes[keyof typeof playStyleTypes];
+  unlockCriteria: {
+    [key: typeof attributeNames[keyof typeof attributeNames]]: 75 | 80 | 85;
+  };
 }
 
 export interface IQuickChat {

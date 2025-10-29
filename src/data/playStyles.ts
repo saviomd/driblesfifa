@@ -1,3 +1,4 @@
+import attributeNames from "./attributeNames";
 import playStyleNames from "./playStyleNames";
 import playStyleTypes from "./playStyleTypes";
 import type { IPlayStyle } from "../types";
@@ -13,6 +14,11 @@ const playStyles: IPlayStyle[] = [
       "468u1R1p2k1fA6WBHi0OEn/fb9d49ed2a8fb500cd5a184937b96b34/Finesse_Shot",
     name: playStyleNames.finesseShot,
     type: scoring,
+    unlockCriteria: {
+      [attributeNames.vision]: 80,
+      [attributeNames.finishing]: 75,
+      [attributeNames.curve]: 80,
+    },
   },
   {
     description: "Performs Chip Shots faster and with greater accuracy.",
@@ -20,6 +26,11 @@ const playStyles: IPlayStyle[] = [
       "6Gl08kt7odn1fJNX74CS2P/984feac3cd8d99902f5cb5131d5fd26a/Chip_Shot",
     name: playStyleNames.chipShot,
     type: scoring,
+    unlockCriteria: {
+      [attributeNames.reactions]: 75,
+      [attributeNames.composure]: 80,
+      [attributeNames.ballControl]: 80,
+    },
   },
   {
     description: "Performs Power Shots faster and with increased speed.",
@@ -27,6 +38,11 @@ const playStyles: IPlayStyle[] = [
       "3ohVoKWSsvT44qgjabWqfV/e536ef26ad854c3c4cbf63ed7954b9cd/Power_Shot",
     name: playStyleNames.powerShot,
     type: scoring,
+    unlockCriteria: {
+      [attributeNames.finishing]: 80,
+      [attributeNames.shotPower]: 75,
+      [attributeNames.longShots]: 80,
+    },
   },
   {
     description:
@@ -35,6 +51,11 @@ const playStyles: IPlayStyle[] = [
       "1razu2wcM3XA82VvB7NyUm/eec6b07080e49d6bf2d7a7951a22375f/Dead_Ball",
     name: playStyleNames.deadBall,
     type: scoring,
+    unlockCriteria: {
+      [attributeNames.crossing]: 80,
+      [attributeNames.fkAccuracy]: 75,
+      [attributeNames.shotPower]: 80,
+    },
   },
   {
     description:
@@ -43,6 +64,11 @@ const playStyles: IPlayStyle[] = [
       "3ync8fbblS4zLzF3p1VXmT/7752a5103c2ebd8be5cf1819379c66f4/Precision_Header",
     name: playStyleNames.precisionHeader,
     type: scoring,
+    unlockCriteria: {
+      [attributeNames.jumping]: 80,
+      [attributeNames.strength]: 80,
+      [attributeNames.headingAcc]: 75,
+    },
   },
   {
     description:
@@ -51,6 +77,11 @@ const playStyles: IPlayStyle[] = [
       "2sRRBHcIe0zrDwYaRI2xG3/d02b8c8855de853470897009e030eb5d/Acrobatic",
     name: playStyleNames.acrobatic,
     type: scoring,
+    unlockCriteria: {
+      [attributeNames.agility]: 80,
+      [attributeNames.reactions]: 80,
+      [attributeNames.volleys]: 75,
+    },
   },
   {
     description:
@@ -59,6 +90,11 @@ const playStyles: IPlayStyle[] = [
       "1NfyWsEpQ7s9bhWWt92lbn/5b5dbeb0e55c2e9241cdc26c70ee2d2c/Low_Driven_Shot",
     name: playStyleNames.lowDrivenShot,
     type: scoring,
+    unlockCriteria: {
+      [attributeNames.composure]: 80,
+      [attributeNames.finishing]: 75,
+      [attributeNames.shotPower]: 80,
+    },
   },
   {
     description:
@@ -67,6 +103,11 @@ const playStyles: IPlayStyle[] = [
       "2v8I0GQrtREaEJzJcyStKe/e46d719e4e5ed88ac5a1f671c7448f4a/Gamechanger",
     name: playStyleNames.gamechanger,
     type: scoring,
+    unlockCriteria: {
+      [attributeNames.composure]: 80,
+      [attributeNames.finishing]: 75,
+      [attributeNames.curve]: 80,
+    },
   },
   {
     description:
@@ -75,6 +116,11 @@ const playStyles: IPlayStyle[] = [
       "2K5BYfVYRnrdjt8F3hwI04/62f147b6a436c107bfa3d042c1d5728d/Incisive_Pass",
     name: playStyleNames.incisivePass,
     type: passing,
+    unlockCriteria: {
+      [attributeNames.vision]: 75,
+      [attributeNames.longPass]: 80,
+      [attributeNames.curve]: 80,
+    },
   },
   {
     description:
@@ -83,6 +129,10 @@ const playStyles: IPlayStyle[] = [
       "1mXBWIBgJSpYoIa1C4r5FX/7220e78a4049530f4e9fa642b1656fa4/Pinged_Pass",
     name: playStyleNames.pingedPass,
     type: passing,
+    unlockCriteria: {
+      [attributeNames.longPass]: 85,
+      [attributeNames.shortPass]: 80,
+    },
   },
   {
     description:
@@ -91,6 +141,10 @@ const playStyles: IPlayStyle[] = [
       "7jwRDD4zkOsqRpc821t73d/16d46d57a5dfc7dd5dd5f8de0fd26a99/Long_Ball_Pass",
     name: playStyleNames.longBallPass,
     type: passing,
+    unlockCriteria: {
+      [attributeNames.vision]: 85,
+      [attributeNames.longPass]: 80,
+    },
   },
   {
     description:
@@ -99,6 +153,11 @@ const playStyles: IPlayStyle[] = [
       "2tvHC5JQ2sXrN8wUTJWLEA/94b0f6a78d1a9e1348a33c9772f23afd/Tiki_Taka",
     name: playStyleNames.tikiTaka,
     type: passing,
+    unlockCriteria: {
+      [attributeNames.reactions]: 80,
+      [attributeNames.ballControl]: 80,
+      [attributeNames.shortPass]: 75,
+    },
   },
   {
     description:
@@ -107,6 +166,10 @@ const playStyles: IPlayStyle[] = [
       "FfTP29PWrRWZjEaiCCVoa/a1b345e4ae7023ed78b1efd68d28f392/Whipped_Pass",
     name: playStyleNames.whippedPass,
     type: passing,
+    unlockCriteria: {
+      [attributeNames.crossing]: 80,
+      [attributeNames.longPass]: 75,
+    },
   },
   {
     description:
@@ -115,6 +178,11 @@ const playStyles: IPlayStyle[] = [
       "4fpo31RdL5T0vrzNqcSc4x/f82209bfd51270dcc447d4313b3e61f1/Inventive",
     name: playStyleNames.inventive,
     type: passing,
+    unlockCriteria: {
+      [attributeNames.composure]: 80,
+      [attributeNames.longPass]: 75,
+      [attributeNames.curve]: 80,
+    },
   },
   {
     description:
@@ -122,6 +190,11 @@ const playStyles: IPlayStyle[] = [
     iconPath: "7lHjpOBSghE6Ywt1jgVv1C/21f9914d00f073d79d4b46cac71b9087/Jockey",
     name: playStyleNames.jockey,
     type: defending,
+    unlockCriteria: {
+      [attributeNames.agility]: 75,
+      [attributeNames.defAware]: 80,
+      [attributeNames.standTackle]: 80,
+    },
   },
   {
     description:
@@ -129,6 +202,11 @@ const playStyles: IPlayStyle[] = [
     iconPath: "2Rlftzr8lqUdI29suCQVWe/43c6c36e8bd5fa26b88478d4354611a2/Block",
     name: playStyleNames.block,
     type: defending,
+    unlockCriteria: {
+      [attributeNames.agility]: 80,
+      [attributeNames.strength]: 75,
+      [attributeNames.reactions]: 80,
+    },
   },
   {
     description:
@@ -137,6 +215,10 @@ const playStyles: IPlayStyle[] = [
       "5ysv7Iw8jDHl7sp1JXqIa7/d34004fed8c95bde083dcf8257391a70/Intercept",
     name: playStyleNames.intercept,
     type: defending,
+    unlockCriteria: {
+      [attributeNames.aggression]: 80,
+      [attributeNames.interceptions]: 80,
+    },
   },
   {
     description:
@@ -145,6 +227,11 @@ const playStyles: IPlayStyle[] = [
       "4xPnUcL7thizFB7qmhlwUR/1ade7a0f77d5e875c2db869964540a35/Anticipate",
     name: playStyleNames.anticipate,
     type: defending,
+    unlockCriteria: {
+      [attributeNames.balance]: 80,
+      [attributeNames.defAware]: 75,
+      [attributeNames.standTackle]: 80,
+    },
   },
   {
     description:
@@ -153,6 +240,10 @@ const playStyles: IPlayStyle[] = [
       "7mI1lrxE0pv9iJfQFki9OA/8c1ecac325f923e049be72231c8c968a/Slide_Tackle",
     name: playStyleNames.slideTackle,
     type: defending,
+    unlockCriteria: {
+      [attributeNames.aggression]: 80,
+      [attributeNames.slideTackle]: 75,
+    },
   },
   {
     description:
@@ -161,6 +252,10 @@ const playStyles: IPlayStyle[] = [
       "3rsDbUXd3MZX39YTsk6lKe/404db89f2237eeb7466668a730c52a4b/Aerial_Fortress",
     name: playStyleNames.aerialFortress,
     type: defending,
+    unlockCriteria: {
+      [attributeNames.jumping]: 75,
+      [attributeNames.headingAcc]: 75,
+    },
   },
   {
     description:
@@ -169,6 +264,11 @@ const playStyles: IPlayStyle[] = [
       "5Esx7NK4YBU44O4bo07rvb/69ca9417da7fd07905f6c6956ad93f6d/Technical",
     name: playStyleNames.technical,
     type: ballControl,
+    unlockCriteria: {
+      [attributeNames.balance]: 80,
+      [attributeNames.ballControl]: 75,
+      [attributeNames.dribbling]: 80,
+    },
   },
   {
     description:
@@ -176,6 +276,11 @@ const playStyles: IPlayStyle[] = [
     iconPath: "1aGsvwKyIFlRG1eoJSS0Ot/a4d3d661ff962795a632fe86439d2146/Rapid",
     name: playStyleNames.rapid,
     type: ballControl,
+    unlockCriteria: {
+      [attributeNames.acceleration]: 75,
+      [attributeNames.sprintSpeed]: 80,
+      [attributeNames.dribbling]: 80,
+    },
   },
   {
     description:
@@ -184,6 +289,10 @@ const playStyles: IPlayStyle[] = [
       "3f727XsoDVLbT49oMk0HBu/2787568be8ccb2d5daa2d18fabacad97/First_Touch",
     name: playStyleNames.firstTouch,
     type: ballControl,
+    unlockCriteria: {
+      [attributeNames.composure]: 80,
+      [attributeNames.ballControl]: 75,
+    },
   },
   {
     description:
@@ -192,6 +301,11 @@ const playStyles: IPlayStyle[] = [
       "47Ygd5ri33RgjIYGiTAJpj/f0723e6f2f89a98fb6e8200c3659c6a9/Trickster",
     name: playStyleNames.trickster,
     type: ballControl,
+    unlockCriteria: {
+      [attributeNames.acceleration]: 80,
+      [attributeNames.agility]: 75,
+      [attributeNames.dribbling]: 80,
+    },
   },
   {
     description:
@@ -200,6 +314,11 @@ const playStyles: IPlayStyle[] = [
       "5rUHwyLJRnvGV53Ba4Pj6M/9a3238695ae8103667ba02af391ac209/Press_Proven",
     name: playStyleNames.pressProven,
     type: ballControl,
+    unlockCriteria: {
+      [attributeNames.strength]: 75,
+      [attributeNames.composure]: 80,
+      [attributeNames.ballControl]: 80,
+    },
   },
   {
     description: "Accelerates faster during Explosive Sprint.",
@@ -207,6 +326,11 @@ const playStyles: IPlayStyle[] = [
       "1xG25Zp3wvkLA5YewKiZah/f27f5fabd1e899fc0bbb817d2db233b1/Quick_Step",
     name: playStyleNames.quickStep,
     type: physical,
+    unlockCriteria: {
+      [attributeNames.acceleration]: 80,
+      [attributeNames.sprintSpeed]: 80,
+      [attributeNames.stamina]: 80,
+    },
   },
   {
     description:
@@ -215,6 +339,10 @@ const playStyles: IPlayStyle[] = [
       "2vVuRxgvPNaAuFGqZZ9nDY/3e2505addd5a6b353becdeaf7173d187/Relentless",
     name: playStyleNames.relentless,
     type: physical,
+    unlockCriteria: {
+      [attributeNames.agility]: 80,
+      [attributeNames.stamina]: 80,
+    },
   },
   {
     description:
@@ -223,12 +351,21 @@ const playStyles: IPlayStyle[] = [
       "51OlohNQvoEwW0aLhknAHh/58fa7d903d10f6d8cfa2622f62ba6b6f/Long_Throw",
     name: playStyleNames.longThrow,
     type: physical,
+    unlockCriteria: {
+      [attributeNames.strength]: 80,
+      [attributeNames.vision]: 75,
+    },
   },
   {
     description: "Greater strength when performing physical tackles.",
     iconPath: "7euMJ2jVypFrFPQesWuGGm/14019168b12faac1584a2920d5c2d5d9/Bruiser",
     name: playStyleNames.bruiser,
     type: physical,
+    unlockCriteria: {
+      [attributeNames.strength]: 75,
+      [attributeNames.aggression]: 80,
+      [attributeNames.defAware]: 80,
+    },
   },
   {
     description: "Greater strength when performing shield dribbles.",
@@ -236,6 +373,11 @@ const playStyles: IPlayStyle[] = [
       "2sNQz8b9dgV0hW8vl7oOvV/d7a503dbd4c73b232055b3ca06aa88eb/Enforcer",
     name: playStyleNames.enforcer,
     type: physical,
+    unlockCriteria: {
+      [attributeNames.balance]: 80,
+      [attributeNames.strength]: 75,
+      [attributeNames.ballControl]: 80,
+    },
   },
   {
     description:
@@ -244,6 +386,11 @@ const playStyles: IPlayStyle[] = [
       "3CjCz29sjIt1xMZTRDi4vQ/8ecb201b0ae7d6d536d03c847a768ffa/Far_Throw",
     name: playStyleNames.farThrow,
     type: goalkeeper,
+    unlockCriteria: {
+      [attributeNames.vision]: 75,
+      [attributeNames.longPass]: 75,
+      [attributeNames.gkKicking]: 80,
+    },
   },
   {
     description:
@@ -252,6 +399,11 @@ const playStyles: IPlayStyle[] = [
       "1s2muXoHUmP1T0vGYKXSl1/6d265b13804069371f16a58788703a33/Footwork",
     name: playStyleNames.footwork,
     type: goalkeeper,
+    unlockCriteria: {
+      [attributeNames.agility]: 80,
+      [attributeNames.balance]: 80,
+      [attributeNames.gkReflexes]: 75,
+    },
   },
   {
     description:
@@ -260,6 +412,11 @@ const playStyles: IPlayStyle[] = [
       "4Uvgm6UNiSz3say1zZqKDC/51837f53072d5e01063699f6d2b7401a/Cross_Claimer",
     name: playStyleNames.crossClaimer,
     type: goalkeeper,
+    unlockCriteria: {
+      [attributeNames.jumping]: 80,
+      [attributeNames.strength]: 80,
+      [attributeNames.gkPos]: 75,
+    },
   },
   {
     description:
@@ -268,6 +425,11 @@ const playStyles: IPlayStyle[] = [
       "4wwnzFkg1zLTAc4QSsXiWO/5fa897cf739a93bddf3556e2323f9b8b/1v1_Close_Down",
     name: playStyleNames.oneVOneCloseDown,
     type: goalkeeper,
+    unlockCriteria: {
+      [attributeNames.acceleration]: 80,
+      [attributeNames.agility]: 75,
+      [attributeNames.aggression]: 80,
+    },
   },
   {
     description:
@@ -276,6 +438,11 @@ const playStyles: IPlayStyle[] = [
       "7zbtymM2pCbANuM7wKFYZU/698e8ece65867df97e61189ac6666463/Far_Reach",
     name: playStyleNames.farReach,
     type: goalkeeper,
+    unlockCriteria: {
+      [attributeNames.agility]: 80,
+      [attributeNames.reactions]: 80,
+      [attributeNames.gkDiving]: 75,
+    },
   },
   {
     description:
@@ -284,6 +451,11 @@ const playStyles: IPlayStyle[] = [
       "6nb9RYWNVuvUaLZDskFao7/0ad930b0874e7c9454b31de942c0d3f1/Deflector",
     name: playStyleNames.deflector,
     type: goalkeeper,
+    unlockCriteria: {
+      [attributeNames.strength]: 75,
+      [attributeNames.gkDiving]: 80,
+      [attributeNames.gkReflexes]: 75,
+    },
   },
 ];
 

@@ -25,7 +25,7 @@
         Inspired by
         <div class="fw-bold">{inspiredBy}</div>
       </div>
-      <div class="col-auto">
+      <div class="border-secondary border-start col-auto">
         Signature PlayStyles
         <ul class="fw-bold ps-3">
           {#each signaturePlayStyles as { iconPath, name } (`${name}`)}
@@ -41,7 +41,7 @@
           {/each}
         </ul>
       </div>
-      <div class="col-auto">
+      <div class="border-secondary border-start col-auto">
         Key Attributes
         <ul class="fw-bold ps-3">
           {#each keyAttributes as attribute (`${attribute}`)}
@@ -49,7 +49,7 @@
           {/each}
         </ul>
       </div>
-      <div class="col-auto">
+      <div class="border-secondary border-start col-auto">
         Specializations
         <ul class="fw-bold ps-3">
           {#each specializations as specialization (`${specialization}`)}
@@ -57,7 +57,7 @@
           {/each}
         </ul>
       </div>
-      <div class="col-auto">
+      <div class="border-secondary border-start col-auto">
         Signature Perks
         <ul class="fw-bold ps-3">
           {#each signaturePerks as perk (`${perk}`)}

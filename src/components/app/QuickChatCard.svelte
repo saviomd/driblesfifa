@@ -7,16 +7,12 @@
 
 <Card>
   <Heading level={2}>{category}</Heading>
-  <ul class="ps-3">
-    {#each messages as { command, name } (`${name}`)}
-      <li>
-        <div class="row">
-          <div class="col">{name}</div>
-          <div class="col-auto">
-            <span class="fw-bold">{command}</span>
-          </div>
-        </div>
-      </li>
-    {/each}
-  </ul>
+  {#each messages as { command, name } (`${name}`)}
+    <div class="row">
+      <div class="col-6 text-end">{name}</div>
+      <div class="col-6">
+        <span class="fw-bold">{command}</span>
+      </div>
+    </div>
+  {/each}
 </Card>
