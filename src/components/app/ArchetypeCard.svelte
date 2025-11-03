@@ -19,52 +19,52 @@
       <Badge>{type}</Badge>
     </div>
   </div>
-  <div class="table-responsive">
-    <div class="flex-nowrap row">
-      <div class="col-auto">
-        Inspired by
-        <div class="fw-bold">{inspiredBy}</div>
-      </div>
-      <div class="border-secondary border-start col-auto">
-        Signature PlayStyles
-        <ul class="fw-bold ps-3">
-          {#each signaturePlayStyles as { iconPath, name } (`${name}`)}
-            <li>
-              <Image
-                alt={name}
-                height={36}
-                src={`https://drop-assets.ea.com/images/${iconPath}.png?q=40&w=2560`}
-                width={36}
-              />
-              {name}
-            </li>
-          {/each}
-        </ul>
-      </div>
-      <div class="border-secondary border-start col-auto">
-        Key Attributes
-        <ul class="fw-bold ps-3">
-          {#each keyAttributes as attribute (`${attribute}`)}
-            <li>{attribute}</li>
-          {/each}
-        </ul>
-      </div>
-      <div class="border-secondary border-start col-auto">
-        Specializations
-        <ul class="fw-bold ps-3">
-          {#each specializations as specialization (`${specialization}`)}
-            <li>{specialization}</li>
-          {/each}
-        </ul>
-      </div>
-      <div class="border-secondary border-start col-auto">
-        Signature Perks
-        <ul class="fw-bold ps-3">
-          {#each signaturePerks as perk (`${perk}`)}
-            <li>{perk}</li>
-          {/each}
-        </ul>
-      </div>
-    </div>
+  <div class="mb-3">
+    Inspired by
+    <span class="fw-bold">{inspiredBy}</span>
+  </div>
+  <div class="mb-3">
+    Signature PlayStyles
+    <ul class="fw-bold ps-3">
+      {#each signaturePlayStyles as { iconPath, name } (`${name}`)}
+        <li>
+          <Image
+            alt={name}
+            height={36}
+            src={`https://drop-assets.ea.com/images/${iconPath}.png?q=40&w=2560`}
+            width={36}
+          />
+          {name}
+        </li>
+      {/each}
+    </ul>
+  </div>
+  <div class="mb-3">
+    Signature Perks
+    <ul class="list-inline">
+      {#each signaturePerks as perk (`${perk}`)}
+        <li class="list-inline-item">
+          <span class="badge text-bg-secondary">{perk}</span>
+        </li>
+      {/each}
+    </ul>
+  </div>
+  <div class="mb-3">
+    Specializations
+    <ul class="fw-bold ps-3">
+      {#each specializations as specialization (`${specialization}`)}
+        <li>{specialization}</li>
+      {/each}
+    </ul>
+  </div>
+  <div class="mb-3">
+    Key Attributes
+    <ul class="list-inline">
+      {#each keyAttributes as attribute (`${attribute}`)}
+        <li class="list-inline-item">
+          <span class="badge text-bg-secondary">{attribute}</span>
+        </li>
+      {/each}
+    </ul>
   </div>
 </Card>

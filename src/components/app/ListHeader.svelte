@@ -5,7 +5,7 @@
   export let title: string;
 
   const clearFilter = () => {
-    filter = "";
+    setFilter("");
   };
 </script>
 

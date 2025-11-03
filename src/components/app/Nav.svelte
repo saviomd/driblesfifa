@@ -7,10 +7,10 @@
 <div class="border-top border-secondary fixed-bottom text-bg-dark">
   <MainContainer>
     <div class="table-responsive">
-      <nav class="flex-nowrap row">
+      <nav class="flex-nowrap pb-4 row">
         {#each pages as page}
           <button
-            class={`btn btn-link col-auto fs-4 p-4 pt-2 ${
+            class={`btn btn-link col-auto fs-4 px-4 py-2 ${
               $currentPage === page.title ? "active text-white" : "text-muted"
             }`}
             on:click={() => {

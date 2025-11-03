@@ -6,23 +6,23 @@
 </script>
 
 <Card hasOpacity>
-  <div class="row">
+  <div class="align-items-center row">
     <div class="col-auto display-3">
       <Icon name={icon} />
     </div>
     <div class="col">
       <Heading level={1}>{title}</Heading>
-      <div class="text-end">
-        <Button
-          onClick={() => {
-            $currentPage = title;
-            window.scrollTo({ behavior: "instant", top: 0 });
-          }}
-          stretched={true}
-        >
-          <Icon name="chevron-right" />
-        </Button>
-      </div>
+    </div>
+    <div class="col-auto">
+      <Button
+        onClick={() => {
+          $currentPage = title;
+          window.scrollTo({ behavior: "instant", top: 0 });
+        }}
+        stretched={true}
+      >
+        <Icon name="chevron-right" />
+      </Button>
     </div>
   </div>
 </Card>

@@ -17,19 +17,21 @@
 
 <main>
   <ListHeader {filter} {setFilter} title="Archetypes" />
-  <ul class="list-unstyled">
-    {#each archetypesFiltered as { inspiredBy, keyAttributes, name, signaturePerks, signaturePlayStyles, specializations, type } (`${name}`)}
-      <li>
-        <ArchetypeCard
-          {inspiredBy}
-          {keyAttributes}
-          {name}
-          {signaturePerks}
-          {signaturePlayStyles}
-          {specializations}
-          {type}
-        />
-      </li>
-    {/each}
-  </ul>
+  <div class="table-responsive">
+    <ul class="flex-nowrap list-unstyled row">
+      {#each archetypesFiltered as { inspiredBy, keyAttributes, name, signaturePerks, signaturePlayStyles, specializations, type } (`${name}`)}
+        <li class="col-10">
+          <ArchetypeCard
+            {inspiredBy}
+            {keyAttributes}
+            {name}
+            {signaturePerks}
+            {signaturePlayStyles}
+            {specializations}
+            {type}
+          />
+        </li>
+      {/each}
+    </ul>
+  </div>
 </main>
