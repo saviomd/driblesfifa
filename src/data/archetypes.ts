@@ -4,7 +4,7 @@ import perkNames from "./perkNames";
 import playStyleNames from "./playStyleNames";
 import specializationNames from "./specializationNames";
 import type { IArchetype } from "../types";
-import { getPlayStyleByName } from "../utils";
+import { getPlayStyleByName, getSpecializationByName } from "../utils";
 
 const { defender, forward, goalkeeper, midfielder } = archetypeTypes;
 
@@ -24,9 +24,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.farReach),
     ],
     specializations: [
-      specializationNames.shotStopperPlus,
-      specializationNames.spider,
-      specializationNames.octopus,
+      getSpecializationByName(specializationNames.shotStopperPlus),
+      getSpecializationByName(specializationNames.spider),
+      getSpecializationByName(specializationNames.octopus),
     ],
     type: goalkeeper,
   },
@@ -45,9 +45,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.oneVOneCloseDown),
     ],
     specializations: [
-      specializationNames.sweeperKeeperPlus,
-      specializationNames.launcher,
-      specializationNames.extra,
+      getSpecializationByName(specializationNames.sweeperKeeperPlus),
+      getSpecializationByName(specializationNames.launcher),
+      getSpecializationByName(specializationNames.extra),
     ],
     type: goalkeeper,
   },
@@ -66,9 +66,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.anticipate),
     ],
     specializations: [
-      specializationNames.progressorPlus,
-      specializationNames.pioneer,
-      specializationNames.janitor,
+      getSpecializationByName(specializationNames.progressorPlus),
+      getSpecializationByName(specializationNames.pioneer),
+      getSpecializationByName(specializationNames.janitor),
     ],
     type: defender,
   },
@@ -87,9 +87,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.bruiser),
     ],
     specializations: [
-      specializationNames.bossPlus,
-      specializationNames.enforcer,
-      specializationNames.capitano,
+      getSpecializationByName(specializationNames.bossPlus),
+      getSpecializationByName(specializationNames.enforcer),
+      getSpecializationByName(specializationNames.capitano),
     ],
     type: defender,
   },
@@ -108,9 +108,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.relentless),
     ],
     specializations: [
-      specializationNames.enginePlus,
-      specializationNames.everywhere,
-      specializationNames.gadget,
+      getSpecializationByName(specializationNames.enginePlus),
+      getSpecializationByName(specializationNames.everywhere),
+      getSpecializationByName(specializationNames.gadget),
     ],
     type: defender,
   },
@@ -129,9 +129,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.quickStep),
     ],
     specializations: [
-      specializationNames.marauderPlus,
-      specializationNames.speedster,
-      specializationNames.athlete,
+      getSpecializationByName(specializationNames.marauderPlus),
+      getSpecializationByName(specializationNames.speedster),
+      getSpecializationByName(specializationNames.athlete),
     ],
     type: defender,
   },
@@ -150,9 +150,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.pressProven),
     ],
     specializations: [
-      specializationNames.recyclerPlus,
-      specializationNames.driver,
-      specializationNames.thief,
+      getSpecializationByName(specializationNames.recyclerPlus),
+      getSpecializationByName(specializationNames.driver),
+      getSpecializationByName(specializationNames.thief),
     ],
     type: midfielder,
   },
@@ -171,9 +171,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.tikiTaka),
     ],
     specializations: [
-      specializationNames.maestroPlus,
-      specializationNames.crasher,
-      specializationNames.heartbeat,
+      getSpecializationByName(specializationNames.maestroPlus),
+      getSpecializationByName(specializationNames.crasher),
+      getSpecializationByName(specializationNames.heartbeat),
     ],
     type: midfielder,
   },
@@ -192,9 +192,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.inventive),
     ],
     specializations: [
-      specializationNames.creatorPlus,
-      specializationNames.architect,
-      specializationNames.sniper,
+      getSpecializationByName(specializationNames.creatorPlus),
+      getSpecializationByName(specializationNames.architect),
+      getSpecializationByName(specializationNames.sniper),
     ],
     type: midfielder,
   },
@@ -213,9 +213,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.trickster),
     ],
     specializations: [
-      specializationNames.sparkPlus,
-      specializationNames.joker,
-      specializationNames.ace,
+      getSpecializationByName(specializationNames.sparkPlus),
+      getSpecializationByName(specializationNames.joker),
+      getSpecializationByName(specializationNames.ace),
     ],
     type: midfielder,
   },
@@ -234,9 +234,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.technical),
     ],
     specializations: [
-      specializationNames.magicianPlus,
-      specializationNames.hotshot,
-      specializationNames.invader,
+      getSpecializationByName(specializationNames.magicianPlus),
+      getSpecializationByName(specializationNames.hotshot),
+      getSpecializationByName(specializationNames.invader),
     ],
     type: forward,
   },
@@ -255,9 +255,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.firstTouch),
     ],
     specializations: [
-      specializationNames.finisherPlus,
-      specializationNames.presser,
-      specializationNames.hunter,
+      getSpecializationByName(specializationNames.finisherPlus),
+      getSpecializationByName(specializationNames.presser),
+      getSpecializationByName(specializationNames.hunter),
     ],
     type: forward,
   },
@@ -276,9 +276,9 @@ const archetypes: IArchetype[] = [
       getPlayStyleByName(playStyleNames.precisionHeader),
     ],
     specializations: [
-      specializationNames.targetPlus,
-      specializationNames.roamer,
-      specializationNames.runner,
+      getSpecializationByName(specializationNames.targetPlus),
+      getSpecializationByName(specializationNames.roamer),
+      getSpecializationByName(specializationNames.runner),
     ],
     type: forward,
   },

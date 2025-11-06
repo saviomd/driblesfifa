@@ -53,7 +53,7 @@ const playStyles: IPlayStyle[] = [
     type: scoring,
     unlockCriteria: {
       [attributeNames.crossing]: 80,
-      [attributeNames.fkAccuracy]: 75,
+      [attributeNames.fkAcc]: 75,
       [attributeNames.shotPower]: 80,
     },
   },

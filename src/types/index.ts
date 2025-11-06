@@ -3,7 +3,6 @@ import {
   perkNames,
   playStyleTypes,
   quickChatCategories,
-  specializationNames,
 } from "../data";
 
 export interface IArchetype {
@@ -12,7 +11,7 @@ export interface IArchetype {
   name: string;
   signaturePerks: typeof perkNames[keyof typeof perkNames][];
   signaturePlayStyles: IPlayStyle[];
-  specializations: typeof specializationNames[keyof typeof specializationNames][];
+  specializations: ISpecialization[];
   type: string;
 }
 
@@ -49,6 +48,11 @@ export interface IPlayStyle {
   };
 }
 
+export interface IPlayStylePlus {
+  iconPath: string;
+  name: string;
+}
+
 export interface IQuickChat {
   category: typeof quickChatCategories[keyof typeof quickChatCategories];
   messages: {
@@ -71,6 +75,12 @@ export interface ISkillMove {
   command: string;
   name: string;
   stars: StarCountType;
+}
+
+export interface ISpecialization {
+  name: string;
+  newSignaturePlayStyle: IPlayStylePlus;
+  unlockCriteria: { [key: string]: 90 | 92 };
 }
 
 export type CelebrationType =

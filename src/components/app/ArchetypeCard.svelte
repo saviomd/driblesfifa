@@ -52,8 +52,26 @@
   <div class="mb-3">
     Specializations
     <ul class="fw-bold ps-3">
-      {#each specializations as specialization (`${specialization}`)}
-        <li>{specialization}</li>
+      {#each specializations as { name, newSignaturePlayStyle, unlockCriteria } (`${name}`)}
+        <li>
+          <div>{name}</div>
+          <div>
+            <Image
+              alt={newSignaturePlayStyle.name}
+              height={36}
+              src={`https://drop-assets.ea.com/images/${newSignaturePlayStyle.iconPath}.png?q=40&w=2560`}
+              width={36}
+            />
+            {newSignaturePlayStyle.name}
+          </div>
+          <ul class="list-inline">
+            {#each Object.entries(unlockCriteria) as [key, value] (`${key}`)}
+              <li class="list-inline-item">
+                <span class="badge text-bg-secondary">{key} {value}</span>
+              </li>
+            {/each}
+          </ul>
+        </li>
       {/each}
     </ul>
   </div>
