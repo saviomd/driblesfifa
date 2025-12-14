@@ -2,7 +2,8 @@
   --card-1: sienna;
   --card-2: gray;
   --card-3: goldenrod;
-  --card-4: slateblue;
+  --card-4: royalblue;
+  --card-5: teal;
 }
 
 .bg-home {
@@ -28,6 +29,10 @@
   background-color: var(--card-4);
 }
 
+.bg-card-5 {
+  background-color: var(--card-5);
+}
+
 .text-card-1 {
   color: var(--card-1);
 }
@@ -42,4 +47,8 @@
 
 .text-card-4 {
   color: var(--card-4);
+}
+
+.text-card-5 {
+  color: var(--card-5);
 }

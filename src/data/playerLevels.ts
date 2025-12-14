@@ -91,6 +91,25 @@ const playerLevels: IPlayerLevel[] = [
   { axpNeeded: 52430, level: 58, rewards: { ap: 25 } },
   { axpNeeded: 54150, level: 59, rewards: { ap: 25 } },
   { axpNeeded: 55870, level: 60, rewards: { ap: 50, newPlayStyleSlot: true } },
+  { axpNeeded: 57590, level: 61, rewards: { ap: 25 } },
+  { axpNeeded: 59310, level: 62, rewards: { ap: 25 } },
+  { axpNeeded: 61030, level: 63, rewards: { ap: 25 } },
+  { axpNeeded: 62750, level: 64, rewards: { ap: 25 } },
+  { axpNeeded: 64470, level: 65, rewards: { ap: 50, cardUpgrade: 4 } },
+  { axpNeeded: 66190, level: 66, rewards: { ap: 25 } },
+  { axpNeeded: 67910, level: 67, rewards: { ap: 25 } },
+  { axpNeeded: 69630, level: 68, rewards: { ap: 25 } },
+  { axpNeeded: 71350, level: 69, rewards: { ap: 25 } },
+  { axpNeeded: 73070, level: 70, rewards: { ap: 50, newPlayStyleSlot: true } },
+  { axpNeeded: 74790, level: 71, rewards: { ap: 25 } },
+  { axpNeeded: 76510, level: 72, rewards: { ap: 25 } },
+  { axpNeeded: 78230, level: 73, rewards: { ap: 25 } },
+  { axpNeeded: 79950, level: 74, rewards: { ap: 25 } },
+  {
+    axpNeeded: 81670,
+    level: 75,
+    rewards: { ap: 75, cardUpgrade: 5, signaturePlayStyleUpgrade: true },
+  },
 ];
 
 export default playerLevels;

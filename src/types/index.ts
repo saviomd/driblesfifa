@@ -31,7 +31,7 @@ export interface IPlayerLevel {
   level: number;
   rewards: {
     ap: number;
-    cardUpgrade?: 1 | 2 | 3 | 4;
+    cardUpgrade?: 1 | 2 | 3 | 4 | 5;
     newPlayStyleSlot?: boolean;
     newSignaturePerk?: boolean;
     signaturePlayStyleUpgrade?: boolean;
