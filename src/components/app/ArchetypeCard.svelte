@@ -25,16 +25,18 @@
   </div>
   <div class="mb-3">
     Signature PlayStyles
-    <ul class="fw-bold ps-3">
+    <ul class="list-inline">
       {#each signaturePlayStyles as { iconPath, name } (`${name}`)}
-        <li>
-          <Image
-            alt={name}
-            height={36}
-            src={`https://drop-assets.ea.com/images/${iconPath}.png?q=40&w=2560`}
-            width={36}
-          />
-          {name}
+        <li class="list-inline-item mb-2">
+          <span class="badge text-bg-secondary">
+            <Image
+              alt={name}
+              height={24}
+              src={`https://drop-assets.ea.com/images/${iconPath}.png?q=40&w=2560`}
+              width={24}
+            />
+            {name}
+          </span>
         </li>
       {/each}
     </ul>

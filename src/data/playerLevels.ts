@@ -133,6 +133,20 @@ const playerLevels: IPlayerLevel[] = [
     level: 90,
     rewards: { ap: 63, cardUpgrade: 6, newPlayStyleSlot: true },
   },
+  { axpNeeded: 114570, level: 91, rewards: { ap: 31 } },
+  { axpNeeded: 116820, level: 92, rewards: { ap: 31 } },
+  { axpNeeded: 119070, level: 93, rewards: { ap: 31 } },
+  { axpNeeded: 121320, level: 94, rewards: { ap: 31 } },
+  {
+    axpNeeded: 123570,
+    level: 95,
+    rewards: {
+      ap: 100,
+      cardUpgrade: 7,
+      newPlayStyleSlot: true,
+      signaturePlayStyleUpgrade: true,
+    },
+  },
 ];
 
 export default playerLevels;

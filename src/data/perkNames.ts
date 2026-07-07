@@ -12,7 +12,7 @@ const perkNames = {
   goalkeepersFavourite: "Goalkeepers Favourite",
   grasshopperPasser: "Grasshopper Passer",
   highSpeedCrosser: "High Speed Crosser",
-  lowShotPower: "Low Shot Power",
+  lowShotSaver: "Low Shot Saver",
   oneVOneMaster: "1v1 Master",
   physicalPasser: "Physical Passer",
   physicalShooter: "Physical Shooter",

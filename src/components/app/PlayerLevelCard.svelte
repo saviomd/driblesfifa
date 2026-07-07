@@ -13,9 +13,11 @@
   <div class="row">
     <div class="col-4">
       <h2
-        class={`bg-card-${cardColor} bg-gradient fw-bold h1 mb-0 py-4 rounded text-center text-light`}
+        class={`bg-card-${cardColor} bg-gradient fw-bold h1 mb-0 p-2 rounded`}
       >
-        {level}
+        <div class="bg-dark bg-gradient py-3 rounded text-center text-light">
+          {level}
+        </div>
       </h2>
     </div>
     <div class="col-8">

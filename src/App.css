@@ -6,6 +6,7 @@
   --card-4: slateblue;
   --card-5: teal;
   --card-6: royalblue;
+  --card-7: whitesmoke;
 }
 
 .bg-home {
@@ -39,6 +40,10 @@
   background-color: var(--card-6);
 }
 
+.bg-card-7 {
+  background-color: var(--card-7);
+}
+
 .text-card-1 {
   color: var(--card-1);
 }
@@ -61,4 +66,8 @@
 
 .text-card-6 {
   color: var(--card-6);
+}
+
+.text-card-7 {
+  color: var(--card-7);
 }

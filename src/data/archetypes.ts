@@ -18,10 +18,12 @@ const archetypes: IArchetype[] = [
       attributeNames.gkReflexes,
     ],
     name: "Shot stopper",
-    signaturePerks: [perkNames.lowShotPower, perkNames.readyToAct],
+    signaturePerks: [perkNames.lowShotSaver, perkNames.readyToAct],
     signaturePlayStyles: [
-      getPlayStyleByName(playStyleNames.footwork),
       getPlayStyleByName(playStyleNames.farReach),
+      getPlayStyleByName(playStyleNames.footwork),
+      getPlayStyleByName(playStyleNames.longBallPass),
+      getPlayStyleByName(playStyleNames.deflector),
     ],
     specializations: [
       getSpecializationByName(specializationNames.shotStopperPlus),
@@ -41,8 +43,10 @@ const archetypes: IArchetype[] = [
     name: "Sweeper Keeper",
     signaturePerks: [perkNames.backOption, perkNames.rushSpecialist],
     signaturePlayStyles: [
-      getPlayStyleByName(playStyleNames.crossClaimer),
       getPlayStyleByName(playStyleNames.oneVOneCloseDown),
+      getPlayStyleByName(playStyleNames.farReach),
+      getPlayStyleByName(playStyleNames.deflector),
+      getPlayStyleByName(playStyleNames.farThrow),
     ],
     specializations: [
       getSpecializationByName(specializationNames.sweeperKeeperPlus),
@@ -54,8 +58,8 @@ const archetypes: IArchetype[] = [
   {
     inspiredBy: "Fernando Hierro",
     keyAttributes: [
-      attributeNames.composure,
       attributeNames.longPass,
+      attributeNames.composure,
       attributeNames.defAware,
       attributeNames.standTackle,
     ],
@@ -64,6 +68,8 @@ const archetypes: IArchetype[] = [
     signaturePlayStyles: [
       getPlayStyleByName(playStyleNames.longBallPass),
       getPlayStyleByName(playStyleNames.anticipate),
+      getPlayStyleByName(playStyleNames.incisivePass),
+      getPlayStyleByName(playStyleNames.intercept),
     ],
     specializations: [
       getSpecializationByName(specializationNames.progressorPlus),
@@ -75,16 +81,18 @@ const archetypes: IArchetype[] = [
   {
     inspiredBy: "Nemanja Vidić",
     keyAttributes: [
-      attributeNames.strength,
-      attributeNames.aggression,
       attributeNames.headingAcc,
       attributeNames.slideTackle,
+      attributeNames.strength,
+      attributeNames.aggression,
     ],
     name: "Boss",
     signaturePerks: [perkNames.shuffler, perkNames.boxController],
     signaturePlayStyles: [
-      getPlayStyleByName(playStyleNames.aerialFortress),
       getPlayStyleByName(playStyleNames.bruiser),
+      getPlayStyleByName(playStyleNames.aerialFortress),
+      getPlayStyleByName(playStyleNames.precisionHeader),
+      getPlayStyleByName(playStyleNames.anticipate),
     ],
     specializations: [
       getSpecializationByName(specializationNames.bossPlus),
@@ -96,16 +104,18 @@ const archetypes: IArchetype[] = [
   {
     inspiredBy: "Park Ji Sung",
     keyAttributes: [
-      attributeNames.stamina,
-      attributeNames.interceptions,
       attributeNames.shortPass,
+      attributeNames.interceptions,
       attributeNames.standTackle,
+      attributeNames.stamina,
     ],
     name: "Engine",
     signaturePerks: [perkNames.tracker, perkNames.presser],
     signaturePlayStyles: [
-      getPlayStyleByName(playStyleNames.jockey),
       getPlayStyleByName(playStyleNames.relentless),
+      getPlayStyleByName(playStyleNames.jockey),
+      getPlayStyleByName(playStyleNames.anticipate),
+      getPlayStyleByName(playStyleNames.rapid),
     ],
     specializations: [
       getSpecializationByName(specializationNames.enginePlus),
@@ -118,15 +128,17 @@ const archetypes: IArchetype[] = [
     inspiredBy: "Cafu",
     keyAttributes: [
       attributeNames.sprintSpeed,
-      attributeNames.stamina,
       attributeNames.crossing,
       attributeNames.slideTackle,
+      attributeNames.stamina,
     ],
     name: "Marauder",
     signaturePerks: [perkNames.highSpeedCrosser, perkNames.tackleAndRun],
     signaturePlayStyles: [
-      getPlayStyleByName(playStyleNames.whippedPass),
       getPlayStyleByName(playStyleNames.quickStep),
+      getPlayStyleByName(playStyleNames.whippedPass),
+      getPlayStyleByName(playStyleNames.technical),
+      getPlayStyleByName(playStyleNames.trickster),
     ],
     specializations: [
       getSpecializationByName(specializationNames.marauderPlus),
@@ -138,16 +150,18 @@ const archetypes: IArchetype[] = [
   {
     inspiredBy: "Michaël Essien",
     keyAttributes: [
-      attributeNames.strength,
+      attributeNames.longShots,
       attributeNames.interceptions,
       attributeNames.defAware,
-      attributeNames.longShots,
+      attributeNames.strength,
     ],
     name: "Recycler",
     signaturePerks: [perkNames.pressAndPass, perkNames.physicalPasser],
     signaturePlayStyles: [
-      getPlayStyleByName(playStyleNames.intercept),
       getPlayStyleByName(playStyleNames.pressProven),
+      getPlayStyleByName(playStyleNames.intercept),
+      getPlayStyleByName(playStyleNames.powerShot),
+      getPlayStyleByName(playStyleNames.tikiTaka),
     ],
     specializations: [
       getSpecializationByName(specializationNames.recyclerPlus),
@@ -159,16 +173,18 @@ const archetypes: IArchetype[] = [
   {
     inspiredBy: "Tony Kroos",
     keyAttributes: [
-      attributeNames.composure,
       attributeNames.vision,
-      attributeNames.ballControl,
       attributeNames.longPass,
+      attributeNames.ballControl,
+      attributeNames.composure,
     ],
     name: "Maestro",
     signaturePerks: [perkNames.flyTrap, perkNames.eagleEyes],
     signaturePlayStyles: [
       getPlayStyleByName(playStyleNames.pingedPass),
       getPlayStyleByName(playStyleNames.tikiTaka),
+      getPlayStyleByName(playStyleNames.longBallPass),
+      getPlayStyleByName(playStyleNames.incisivePass),
     ],
     specializations: [
       getSpecializationByName(specializationNames.maestroPlus),
@@ -180,9 +196,9 @@ const archetypes: IArchetype[] = [
   {
     inspiredBy: "Andrés Iniesta",
     keyAttributes: [
+      attributeNames.longShots,
       attributeNames.vision,
       attributeNames.shortPass,
-      attributeNames.longShots,
       attributeNames.curve,
     ],
     name: "Creator",
@@ -190,6 +206,8 @@ const archetypes: IArchetype[] = [
     signaturePlayStyles: [
       getPlayStyleByName(playStyleNames.incisivePass),
       getPlayStyleByName(playStyleNames.inventive),
+      getPlayStyleByName(playStyleNames.gamechanger),
+      getPlayStyleByName(playStyleNames.quickStep),
     ],
     specializations: [
       getSpecializationByName(specializationNames.creatorPlus),
@@ -209,8 +227,10 @@ const archetypes: IArchetype[] = [
     name: "Spark",
     signaturePerks: [perkNames.bailOut, perkNames.cutBackSpecialist],
     signaturePlayStyles: [
-      getPlayStyleByName(playStyleNames.rapid),
       getPlayStyleByName(playStyleNames.trickster),
+      getPlayStyleByName(playStyleNames.rapid),
+      getPlayStyleByName(playStyleNames.inventive),
+      getPlayStyleByName(playStyleNames.technical),
     ],
     specializations: [
       getSpecializationByName(specializationNames.sparkPlus),
@@ -223,15 +243,17 @@ const archetypes: IArchetype[] = [
     inspiredBy: "Ronaldinho",
     keyAttributes: [
       attributeNames.acceleration,
-      attributeNames.balance,
       attributeNames.finishing,
       attributeNames.curve,
+      attributeNames.balance,
     ],
     name: "Magician",
     signaturePerks: [perkNames.getawayDriver, perkNames.ankleBreaker],
     signaturePlayStyles: [
-      getPlayStyleByName(playStyleNames.finesseShot),
       getPlayStyleByName(playStyleNames.technical),
+      getPlayStyleByName(playStyleNames.finesseShot),
+      getPlayStyleByName(playStyleNames.chipShot),
+      getPlayStyleByName(playStyleNames.inventive),
     ],
     specializations: [
       getSpecializationByName(specializationNames.magicianPlus),
@@ -243,16 +265,18 @@ const archetypes: IArchetype[] = [
   {
     inspiredBy: "Alex Morgan",
     keyAttributes: [
-      attributeNames.reactions,
-      attributeNames.composure,
       attributeNames.finishing,
       attributeNames.volleys,
+      attributeNames.reactions,
+      attributeNames.composure,
     ],
     name: "Finisher",
     signaturePerks: [perkNames.fakeToReal, perkNames.oneVOneMaster],
     signaturePlayStyles: [
       getPlayStyleByName(playStyleNames.lowDrivenShot),
       getPlayStyleByName(playStyleNames.firstTouch),
+      getPlayStyleByName(playStyleNames.quickStep),
+      getPlayStyleByName(playStyleNames.acrobatic),
     ],
     specializations: [
       getSpecializationByName(specializationNames.finisherPlus),
@@ -264,16 +288,18 @@ const archetypes: IArchetype[] = [
   {
     inspiredBy: "Zlatan Ibrahimović",
     keyAttributes: [
+      attributeNames.shotPower,
+      attributeNames.headingAcc,
       attributeNames.jumping,
       attributeNames.strength,
-      attributeNames.headingAcc,
-      attributeNames.shotPower,
     ],
     name: "Target",
     signaturePerks: [perkNames.sixthSense, perkNames.physicalShooter],
     signaturePlayStyles: [
       getPlayStyleByName(playStyleNames.powerShot),
       getPlayStyleByName(playStyleNames.precisionHeader),
+      getPlayStyleByName(playStyleNames.tikiTaka),
+      getPlayStyleByName(playStyleNames.pressProven),
     ],
     specializations: [
       getSpecializationByName(specializationNames.targetPlus),
